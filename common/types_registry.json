@@ -1,0 +1,31 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "$id": "https://example.com/common_types.json",
+    "title": "Common Data Types for Insurance Application",
+    "description": "Standardized data types used across various insurance application schemas.",
+    "definitions": {
+        "date": {
+            "type": "string",
+            "format": "date",
+            "description": "A date in 'YYYY-MM-DD' format."
+        },
+        "currency": {
+            "type": "number",
+            "format": "currency",
+            "description": "A monetary value, typically with 2 decimal places.",
+            "minimum": 0
+        },
+        "country": {
+            "type": "string",
+            "format": "string",
+            "description": "ISO 3166-1 alpha-2 country code (e.g., 'US' for United States, 'IN' for India.",
+            "minimum": 0
+        },
+        "phone": {
+            "type": "string",
+            "format": "string",
+            "description": "E.164 international format, ensuring all non-numeric characters except the leading '+' are removed.",
+            "minimum": 0
+        }
+    }
+}

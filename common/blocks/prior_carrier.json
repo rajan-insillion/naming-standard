@@ -1,0 +1,49 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "$id": "https://insillion-schemas/common/blocks/prior_carrier.json",
+    "title": "Prior Carrier Information",
+    "description": "Details about a prior insurance carrier and policy. (Properties omitted as requested)",
+    "type": "object",
+    "properties": {
+        "year": {
+            "type": "string",
+            "description": "Year the prior policy was effective.",
+            "long-description": "The calendar year in which the previous insurance policy was in effect."
+        },
+        "name": {
+            "type": "string",
+            "description": "Name of the prior insurance carrier.",
+            "long-description": "The full legal name of the insurance company that provided coverage to the insured in the prior policy period."
+        },
+        "line": {
+            "type": "string",
+            "description": "Line of business for this license - property, liability, engineering, workers comp, life",
+            "long-description": "The specific line of business (e.g., property, liability) covered by the prior insurance policy."
+        },
+        "policy_no": {
+            "type": "string",
+            "description": "Policy number from the prior carrier.",
+            "long-description": "The unique identification number assigned by the previous insurance carrier to the prior policy."
+        },
+        "premium": {
+            "type": "number",
+            "description": "Premium paid for the prior policy.",
+            "long-description": "The total amount of premium paid for the prior insurance policy."
+        },
+        "total_si": {
+            "type": "currency",
+            "description": "Total Sum Insured (SI) or Total Insured Value (TIV)",
+            "long-description": "The aggregate sum insured or total insured value (TIV) across all coverages or locations under the prior policy."
+        },
+        "start_date": {
+            "type": "date",
+            "description": "Effective start date of the prior policy.",
+            "long-description": "The date when the prior insurance policy became active and coverage began."
+        },
+        "end_date": {
+            "type": "date",
+            "description": "Expiry date of the prior policy.",
+            "long-description": "The date when the prior insurance policy expired and coverage ceased."
+        }
+    }
+}

@@ -1,0 +1,39 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "$id": "https://example.com/insillion-schemas/common/blocks/blanket.json",
+    "title": "Blanket Coverage Entry",
+    "description": "Details for a single blanket coverage item.",
+    "type": "object",
+    "properties": {
+        "id": {
+            "type": "string",
+            "description": "Unique identifier for this blanket coverage entry.",
+            "long-description": "A unique alphanumeric identifier assigned to differentiate individual blanket coverage schedules or entries."
+        },
+        "blanket_no": {
+            "type": "string",
+            "description": "(US) The blanket cover number",
+            "long-description": "(US) A specific alphanumeric identification number assigned to a blanket coverage item, allowing one amount of insurance to cover multiple items or locations."
+        },
+        "description": {
+            "type": "string",
+            "description": "(US) The description of the blanket cover",
+            "long-description": "(US) A brief textual description of what the blanket coverage applies to (e.g., 'All Buildings', 'Business Personal Property at all locations')."
+        },
+        "limit_amount": {
+            "type": "currency",
+            "description": "Total limit of insurance for this blanket coverage.",
+            "long-description": "The maximum monetary amount that will be paid for losses under this specific blanket coverage, regardless of the number of items or locations covered."
+        },
+        "loc_nos_covered": {
+            "type": "string",
+            "description": "(US) comma-separated list of location numbers covered under this blanket",
+            "long-description": "(US) A string containing a comma-separated list of location identifiers that are encompassed by this blanket insurance coverage."
+        },
+        "blanket_type": {
+            "type": "string",
+            "description": "Type of blanket coverage (e.g., Property, Contents).",
+            "long-description": "The category or type of assets that are covered under this blanket policy, such as 'Building', 'Business Personal Property', 'Stock', or a combination."
+        }
+    }
+}

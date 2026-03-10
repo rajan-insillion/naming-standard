@@ -1,0 +1,338 @@
+{
+    "_app_form_name": "ACORD 140",
+    "_app_form_version": "2016/03",
+    "application_date": {"type": "date"},
+    "cust_ref_id": {"type": "string", "description": "agency/broker/customer reference id"},
+    "policy_start_date": {"type": "date"},
+    "policy_start_time": {"type": "string"},
+
+    "agency": {
+        "name":      {"type": "agency"},
+        "address_1": {"type": "string"},
+        "address_2": {"type": "string"},
+        "city":      {"type": "string"},
+        "state":     {"type": "state"},
+        "zipcode":   {"type": "zip"},
+        "country":   {"type": "country"}
+    },
+    "carrier": {
+        "name":      {"type": "carrier"},
+        "naic_code": {"type": "naic"},
+        "policy_no": {"type": "policy_no"}
+    },
+    "insured": {
+        "name": {"type": "company", "description": "first/primary named insured, must match ACORD 125"}
+    },
+
+    "location_^": {
+        "location_id": {"type": "string"},
+        "building_id": {"type": "string"},
+        "building_description": {"type": "string"},
+        "address_1": {"type": "string"},
+        "address_2": {"type": "string"},
+        "city": {"type": "string"},
+        "county": {"type": "string"},
+        "state": {"type": "state"},
+        "zipcode": {"type": "zip"},
+        "occupancy":           {"type": "string", "description": "described use/occupancy of the building"},
+
+        "subjects_of_insurance_^": {
+            "description":         {"type": "string", "description": "e.g. Building, Business Personal Property, Business Income, EDP Equipment, Signs"},
+            "limit_amount":        {"type": "currency", "description": "limit of insurance for this subject"},
+            "co_insurance_percent":{"type": "number", "description": "coinsurance percentage, e.g. 80, 90, 100"},
+            "valuation_@": {
+                "actual_cash_value":  {"type": "bool", "description": "ACV"},
+                "replacement_cost":   {"type": "bool", "description": "RC"},
+                "functional_rc":      {"type": "bool"},
+                "selling_price":      {"type": "bool"},
+                "agreed_value":       {"type": "bool"},
+                "other":              {"type": "bool"}
+            },
+            "loss_cause_@": {
+                "basic":                    {"type": "bool"},
+                "broad":                    {"type": "bool"},
+                "special":                  {"type": "bool"},
+                "special_incl_theft":       {"type": "bool"},
+                "special_excl_theft":       {"type": "bool"},
+                "earthquake":               {"type": "bool"},
+                "flood":                    {"type": "bool"},
+                "windstorm_hail":           {"type": "bool"},
+                "other":                    {"type": "bool"}
+            },
+            "inflation_guard_percent":      {"type": "number"},
+            "deductible":                   {"type": "currency"},
+            "deductible_type":              {"type": "string"},
+            "blanket_no":                   {"type": "string"},
+            "forms":                        {"type": "string", "description":  "Forms and conditions to aplly"}
+
+        },
+        "income_expenses_form_attached":    {"type": "bool", "description":  "ACORD 810 attached?"},
+        "value_report_form_attached":       {"type": "bool", "description":  "ACORD 811 attached?"},
+
+        "additional_coverages": {
+            "spoilage": {
+                "opted":        {"type": "bool"},
+                "description":  {"type": "string"},
+                "limit":        {"type": "currency"},
+                "deductible" :  {"type": "currency"},
+                "refrigeration_agreement": {"type": "bool", "description":"refrigeration maintenance agreement in place?"},
+                "breakdown":    {"type": "bool", "description":  "Breakdown or contamination"},
+                "power_outage": {"type": "bool", "description": "spoilage due to outage covered?"},
+                "selling_price":{"type": "bool","description":"loss settlement at sale price or cost price?"}
+            },
+            "sinkhole": {
+                "accepted": {"type": "bool"},
+                "rejected":  {"type": "bool"},
+                "limit":     {"type": "currency"}
+            },
+            "mine_subsidence": {
+                "accepted": {"type": "bool"},
+                "rejected":  {"type": "bool"},
+                "limit":     {"type": "currency"}
+            },
+
+            "business_income": {
+                "opted": {"type": "bool"},
+                "period_of_indemnity_days": {"type": "number", "description": "maximum period of restoration in days"},
+                "coinsurance_pct": {"type": "number"},
+                "agreed_value": {"type": "bool"},
+                "extended_period_days": {"type": "number"},
+                "extra_expense": {
+                    "opted": {"type": "bool"},
+                    "limit": {"type": "currency"}
+                }
+            },
+            "ordinance_or_law": {
+                "opted": {"type": "bool"},
+                "coverage_a_limit": {"type": "currency", "description": "loss to undamaged portion"},
+                "coverage_b_limit": {"type": "currency", "description": "demolition cost"},
+                "coverage_c_limit": {"type": "currency", "description": "increased cost of construction"}
+            },
+            "inland_marine": {
+                "opted": {"type": "bool"},
+                "description": {"type": "string"},
+                "limit": {"type": "currency"}
+            },
+            "equipment_breakdown": {
+                "opted": {"type": "bool"},
+                "limit": {"type": "currency"}
+            },
+            "accounts_receivable": {
+                "opted": {"type": "bool"},
+                "limit": {"type": "currency"}
+            },
+            "valuable_papers": {
+                "opted": {"type": "bool"},
+                "limit": {"type": "currency"}
+            },
+            "electronic_data_processing": {
+                "opted": {"type": "bool"},
+                "hardware_limit": {"type": "currency"},
+                "software_limit": {"type": "currency"},
+                "extra_expense_limit": {"type": "currency"}
+            },
+            "earthquake": {
+                "opted": {"type": "bool"},
+                "limit": {"type": "currency"},
+                "deductible_pct": {"type": "number"}
+            },
+            "flood": {
+                "opted": {"type": "bool"},
+                "limit": {"type": "currency"},
+                "deductible": {"type": "currency"},
+                "nfip_policy_no": {"type": "string", "description": "National Flood Insurance Program policy number if applicable"}
+            },
+            "wind_hail": {
+                "opted": {"type": "bool"},
+                "limit": {"type": "currency"},
+                "deductible_pct": {"type": "number"}
+            },
+            "other_coverages_description": {"type": "string"}
+        
+        },
+        "historical_landmark":  {"type": "bool"},
+        "open_sides_count":     {"type": "number", "description": "number of open/exposed sides on structure"},   
+        "construction": {
+            "construction_type_@": {
+                "frame":                    {"type": "bool", "description": "1 - Frame"},
+                "joisted_masonry":          {"type": "bool", "description": "2 - Joisted Masonry"},
+                "non_combustible":          {"type": "bool", "description": "3 - Non-Combustible"},
+                "masonry_non_combustible":  {"type": "bool", "description": "4 - Masonry Non-Combustible"},
+                "modified_fire_resistive":  {"type": "bool", "description": "5 - Modified Fire Resistive"},
+                "fire_resistive":           {"type": "bool", "description": "6 - Fire Resistive"}
+            },
+            "distance_to_hydrant":      {"type": "number", "description":"in feet"},
+            "distance_to_fire_station": {"type": "number", "description":"in miles"},
+            "fire_district":            {"type": "string"},
+            "fire_district_code":       {"type": "string", "description": "ISO or local authority fire district code number like 03A, NYC-7, Rural-2"},
+            "protection_class":         {"type": "string", "description": "ISO protection class 1-10"},
+            "stories_count":            {"type": "number"},
+            "basement_count":           {"type": "number", "description":"number of basement levels below ground"},
+            "year_built":               {"type": "number"},
+            "total_area_sqft":          {"type": "number"},
+
+            "occupied_area_sqft":     {"type": "number"},
+            "roofing_type":           {"type": "string"},
+            "heating_type":           {"type": "string"}
+        },
+        "building_improvements": {
+            "wiring_year_updated":    {"type": "number"},
+            "plumbing_year_updated":  {"type": "number"},
+            "roof_year_updated":      {"type": "number"},
+            "heating_year_updated":   {"type": "number"}
+        },
+        "building_code_grade":  {"type": "string", "description": "ISO or local building code compliance grade"},
+        "tax_code":             {"type": "string", "description": "local assessor tax parcel identifier"},
+        "roof_type":            {"type": "string", "description": "roof material e.g. asphalt shingle, metal, built-up, tile"},
+        "wind_class_@": {
+            "resistive":        {"type": "bool"},
+            "semi_resistive":   {"type": "bool"}
+        },
+        "heat": {
+            "wood_burning":      {
+                "opted": {"type": "bool", "description": "includes wood stoves and fireplaces"},
+                "manufacturer": {"type": "string"},
+                "date_installed": {"type": "string"}
+            },
+            "primary": {
+                "boiler": {
+                    "opted":  {"type": "bool"},
+                    "insured":{"type": "bool"}
+                },
+                "solid_fuel": {"opted": {"type": "bool"}},
+                "other": {
+                    "opted": {"type": "bool"},
+                    "description": {"type": "string"}
+                }
+            },
+            "secondary": {
+                "boiler": {
+                    "opted":  {"type": "bool"},
+                    "insured":{"type": "bool"}
+                },
+                "solid_fuel": {"opted": {"type": "bool"}},
+                "other": {
+                    "opted": {"type": "bool"},
+                    "description": {"type": "string"}
+                }
+            }
+        },
+        "surrounding": {
+            "front": {
+                "exposure":  {"type": "string", "description": "description of adjacent structure or open space e.g. masonry commercial, vacant lot, street"},
+                "distance":  {"type": "string", "description": "distance in feet to adjacent exposure e.g. 10 ft, attached, 50 ft"}
+            },
+            "rear": {
+                "exposure":  {"type": "string", "description": "description of adjacent structure or open space"},
+                "distance":  {"type": "string", "description": "distance in feet to adjacent exposure"}
+            },
+            "left": {
+                "exposure":  {"type": "string", "description": "description of adjacent structure or open space"},
+                "distance":  {"type": "string", "description": "distance in feet to adjacent exposure"}
+            },
+            "right": {
+                "exposure":  {"type": "string", "description": "description of adjacent structure or open space"},
+                "distance":  {"type": "string", "description": "distance in feet to adjacent exposure"}
+            }
+        },
+        "burglar_alarm": {
+            "alarm_type":           {"type": "string", "description": "type of burglar alarm e.g. motion sensor, door contact, dual tech"},
+            "certificate_no":       {"type": "string", "description": "alarm monitoring certificate number"},
+            "certificate_expiry":   {"type": "date"},
+            "monitoring_type_@": {
+                "central":  {"type": "bool", "description": "monitored by UL listed central station"},
+                "local":    {"type": "bool", "description": "local gong audible alarm only, no monitoring"}
+            },
+            "central_station_has_keys": {"type": "bool", "description": "central station has keys to premises"},
+            "installed_serviced_by":    {"type": "string", "description": "company that installed and services the alarm"},
+            "extent":                   {"type": "string", "description": "coverage extent e.g. full, partial, perimeter only"},
+            "grade":                    {"type": "string", "description": "alarm system grade/quality rating e.g. A, B, UL certified"},
+            "guards_watchmen_count":    {"type": "number", "description": "number of security guards or watchmen on premises"},
+            "clock_hourly":             {"type": "bool", "description": "guards make hourly clock rounds"}
+        },
+        "fire_protection": {
+            "description":          {"type": "string", "description": "fire suppression systems installed e.g. sprinklers, standpipes, CO2, chemical systems"},
+            "sprinkler_percent":    {"type": "number", "description": "percentage of premises covered by sprinklers 0-100"},
+            "alarm_manufacturer":   {"type": "string", "description": "fire alarm system manufacturer e.g. Honeywell, Simplex, Notifier"},
+            "monitoring_type_@": {
+                "central":  {"type": "bool", "description": "fire alarm monitored by UL listed central station"},
+                "local":    {"type": "bool", "description": "local gong audible alarm only, no monitoring"}
+            }
+        },        
+        "additional_interest_^": {
+            "interest_type_@": {
+                "lenders_loss_payable": {"type": "bool"},
+                "loss_payee":           {"type": "bool"},
+                "mortgagee":            {"type": "bool"},
+                "other":                {"type": "bool"}
+            },
+            "rank":              {"type": "string"},
+            "evidence_@": {
+                "certificate":  {"type": "bool"}
+            },
+            "name":              {"type": "string"},
+            "address_1":         {"type": "string"},
+            "address_2":         {"type": "string"},
+            "city":              {"type": "string"},
+            "state":             {"type": "state"},
+            "zipcode":           {"type": "zip"},
+            "reference_loan_no": {"type": "string"},
+            "location":          {"type": "string"},
+            "building":          {"type": "string"},
+            "item_class":        {"type": "string"},
+            "item_no":           {"type": "string"},
+            "item_description":  {"type": "string"}
+        },
+
+
+        "rating": {
+            "territory":        {"type": "string"},
+            "protection_class": {"type": "string"},
+            "building_rate":    {"type": "number"},
+            "contents_rate":    {"type": "number"},
+            "building_premium": {"type": "currency"},
+            "contents_premium": {"type": "currency"},
+            "bi_premium":       {"type": "currency"},
+            "total_premium":    {"type": "currency"}
+        }
+    },
+
+    "additional_interest_^": {
+        "interest_type_@": {
+            "additional_insured": {"type": "bool"},
+            "loss_payee":         {"type": "bool"},
+            "mortgagee":          {"type": "bool"},
+            "lenders_loss_payable": {"type": "bool"},
+            "lienholder":         {"type": "bool"},
+            "other":              {"type": "bool"}
+        },
+        "rank":              {"type": "string"},
+        "name":              {"type": "string"},
+        "address_1":         {"type": "string"},
+        "address_2":         {"type": "string"},
+        "city":              {"type": "string"},
+        "state":             {"type": "state"},
+        "zipcode":           {"type": "zip"},
+        "reference_loan_no": {"type": "string"},
+        "location":          {"type": "string"},
+        "building":          {"type": "string"},
+        "item_class":        {"type": "string"},
+        "item_no":           {"type": "string"},
+        "item_description":  {"type": "string"}
+    },
+    "blanket_^": {
+        "blanket_no":      {"type": "string"},
+        "description":     {"type": "string"},
+        "limit_amount":    {"type": "currency"},
+        "loc_nos_covered": {"type": "string", "description": "comma-separated list of location numbers covered under this blanket"}
+    },
+
+    "remarks": {"type": "string", "description": "additional remarks; ACORD 101 may be attached if more space required"},
+
+    "signature": {
+        "applicant_signature_date":  {"type": "date"},
+        "producer_name":             {"type": "string"},
+        "producer_state_license_no": {"type": "string"},
+        "national_producer_number":  {"type": "string", "description": "NPN, required in Florida"}
+    }    
+}

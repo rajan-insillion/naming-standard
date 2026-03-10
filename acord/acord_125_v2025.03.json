@@ -1,0 +1,404 @@
+{
+    "_app_form_name": "ACORD 125",
+    "_app_form_version": "2025/03",
+    "application_date": {"type": "date"},
+    "cust_ref_id": {"type": "string", "description": "agency/broker/customer reference id"},
+    "policy_start_date": {"type": "date", "description": "proposed effective date"},
+    "policy_start_time": {"type": "string"},
+    "policy_end_date": {"type": "date", "description": "proposed expiry date"},
+
+    "agency": {
+        "name":     {"type": "agency"},
+        "address_1":{"type": "string"},
+        "address_2":{"type": "string"},
+        "city":     {"type": "string"},
+        "state":    {"type": "state"},
+        "zipcode":  {"type": "zip"}
+    },
+    "producer": {
+        "name":     {"type": "string"},
+        "phone_no": {"type": "phone_no"},
+        "fax_no":   {"type": "phone_no"},
+        "email":    {"type": "email"},
+        "code":     {"type": "string", "description": "insurer assigned producer code"},
+        "sub_code": {"type": "string"}
+    },
+    "carrier": {
+        "name":         {"type": "carrier"},
+        "naic_code":    {"type": "naic"},
+        "product":      {"type": "string", "description": "program/product description"},
+        "product_code": {"type": "string", "description": "program/product code"},
+        "policy_no":    {"type": "policy_no"},
+        "underwriter":  {"type": "string"},
+        "branch_office":{"type": "string", "description": "carrier branch office"}
+    },
+    "transaction_type_@": {
+        "quote":    {"type": "bool"},
+        "policy":   {"type": "bool"},
+        "renew":    {"type": "bool"},
+        "endorsement": {"type": "bool"},
+        "cancel":   {"type": "bool"},
+        "bound":    {"type": "bool"}
+    },
+    "line_of_business": {
+        "boiler_machinary":     {"opted": {"type": "bool"}, "premium": {"type": "number"}},
+        "business_auto":        {"opted": {"type": "bool"}, "premium": {"type": "number"}},
+        "business_owner":       {"opted": {"type": "bool"}, "premium": {"type": "number"}},
+        "commercial_general_liability": {"opted": {"type": "bool"}, "premium": {"type": "number"}},
+        "commercial_inland_marine": {"opted": {"type": "bool"}, "premium": {"type": "number"}},
+        "commercial_property":  {"opted": {"type": "bool"}, "premium": {"type": "number"}},
+        "crime":                {"opted":  {"type": "bool"}, "premium": {"type": "number"}},
+        "cyber_privacy":        {"opted": {"type": "bool"}, "premium": {"type": "number"}},
+        "fiduciary_liability":  {"opted": {"type": "bool"}, "premium": {"type": "number"}},
+        "garage_dealer":        {"opted": {"type": "bool"}, "premium": {"type": "number"}},
+        "liquor_liability":     {"opted": {"type": "bool"}, "premium": {"type": "number"}},
+        "motor_carrier":        {"opted": {"type": "bool"}, "premium": {"type": "number"}},
+        "truckers":             {"opted": {"type": "bool"}, "premium": {"type": "number"}},
+        "umbrella":             {"opted": {"type": "bool"}, "premium": {"type": "number"}},
+        "yacht":                {"opted": {"type": "bool"}, "premium": {"type": "number"}}
+    },
+    "attachments": {
+        "accounts_receivables": {"type": "bool"},
+        "additional_interest_schedule": {"type": "bool"},
+        "location_information": {"type": "bool", "description": "premise information schedule"},
+        "appartment_supplement": {"type": "bool"},
+        "condo_bylaws": {"type": "bool", "description": "condo association bylaws"},
+        "contractors_supplement": {"type": "bool"},
+        "coverages_schedule": {"type": "bool"},
+        "dealers_section": {"type": "bool"},
+        "drivers_information": {"type": "bool"},
+        "eds_section": {"type": "bool"},
+        "glass_signs": {"type": "bool"},
+        "hotel_motel_supplement": {"type": "bool"},
+        "inst_builders_risk": {"type": "bool", "description": "installation/builders risk"},
+        "intnl_liability": {"type": "bool", "description": "international liability exposure supplement"},
+        "intnl_property": {"type": "bool", "description": "international properties exposure supplement"},
+        "loss_summary": {"type": "bool"},
+        "open_cargo_section": {"type": "bool"},
+        "premium_payment": {"type": "bool"},
+        "professional_liability": {"type": "bool"},
+        "restaurant_tavern": {"type": "bool"},
+        "statement_schedule": {"type": "bool", "description": "statement/schedule of values (SOV)"},
+        "state_supplement": {"type": "bool"},
+        "vacant_building_supp": {"type": "bool"},
+        "vehicle_schedule": {"type": "bool"},
+        "other_attachment": {"type": "bool", "description": "user defined or undefined attachment"}
+    },
+    "payment": {
+        "billing_@": {
+            "direct": {"type": "bool"},
+            "agency": {"type": "bool"}
+        },
+        "plan": {"type": "string"},
+        "method": {"type": "string"},
+        "audit": {"type": "string"},
+        "deposit": {"type": "currency"},
+        "minimum_premium": {"type": "currency"},
+        "premium": {"type": "currency"}
+    },
+    "insured": {
+        "name": {"type": "company", "description": "first / primary insured name"},
+        "address_1": {"type": "string"},
+        "address_2": {"type": "string"},
+        "city": {"type": "string"},
+        "state": {"type": "state"},
+        "zipcode": {"type": "zip"},
+        "general_liability_code": {"type": "string", "description": "GL code"},
+        "sic_code": {"type": "string"},
+        "naic_code": {"type": "string"},
+        "tax_code": {"type": "string", "description": "Tax code, FEIN or SOC section number"},
+        "phone_no": {"type": "phone_no"},
+        "website": {"type": "website"},
+        "legal_entity_@": {
+            "corporation": {"type": "bool"},
+            "individual": {"type": "bool"},
+            "joint_venture": {"type": "bool"},
+            "llc": {"type": "bool"},
+            "not_for_profit": {"type": "bool"},
+            "partnership": {"type": "bool"},
+            "subchapter_s_corp": {"type": "bool"},
+            "trust": {"type": "bool"},
+            "other": {"type": "bool"}
+        }
+    },
+
+    "other_insured_^": {
+        "name": {"type": "company", "description": "other insured name"},
+        "address_1": {"type": "string"},
+        "address_2": {"type": "string"},
+        "city": {"type": "string"},
+        "state": {"type": "state"},
+        "zipcode": {"type": "zip"},
+        "general_liability_code": {"type": "string", "description": "GL code"},
+        "sic_code": {"type": "string"},
+        "naic_code": {"type": "string"},
+        "tax_code": {"type": "string", "description": "Tax code, FEIN or SOC section number"},
+        "phone_no": {"type": "phone_no"},
+        "website": {"type": "website"},
+        "legal_entity_@": {
+            "corporation": {"type": "bool"},
+            "individual": {"type": "bool"},
+            "joint_venture": {"type": "bool"},
+            "llc": {"type": "bool"},
+            "not_for_profit": {"type": "bool"},
+            "partnership": {"type": "bool"},
+            "subchapter_s_corp": {"type": "bool"},
+            "trust": {"type": "bool"},
+            "other": {"type": "bool"}
+        }
+    },
+    "contact_^": {
+        "contact_type": {"type": "string"},
+        "name": {"type": "string"},
+        "phone_no": {"type": "phone_no"},
+        "phone_type_@": {
+            "home": {"type": "bool"},
+            "business": {"type": "bool"},
+            "cell": {"type": "bool"}
+        },
+        "alt_phone_no": {"type": "phone_no"},
+        "alt_phone_type_@": {
+            "home": {"type": "bool"},
+            "business": {"type": "bool"},
+            "cell": {"type": "bool"}
+        },
+        "email": {"type": "email"},
+        "alt_email": {"type": "email"}
+    },
+
+    "location_^": {
+        "location_id": {"type": "string"},
+        "building_id": {"type": "string"},
+        "building_description": {"type": "string"},
+        "address_1": {"type": "string"},
+        "address_2": {"type": "string"},
+        "city": {"type": "string"},
+        "county": {"type": "string"},
+        "state": {"type": "state"},
+        "zipcode": {"type": "zip"},
+        "city_limit_@": {
+            "inside": {"type": "bool"},
+            "outside": {"type": "bool"},
+            "nowhere": {"type": "bool"}
+        },
+        "interest_@": {
+            "owner": {"type": "bool"},
+            "tenant": {"type": "bool"},
+            "other": {"type": "bool"}
+        },
+        "full_time_emp_count": {"type": "number"},
+        "part_time_emp_count": {"type": "number"},
+        "annual_revenue": {"type": "currency"},
+        "area_sqft": {"type": "number", "description": "Occupied area"},
+        "public_area_sqft": {"type": "number"},
+        "total_area_sqft": {"type": "number"},
+        "description": {"type": "string"},
+        "sub_leased": {"type": "YN"}
+    },
+    "business_type_@": {
+        "appartments": {"type": "bool"},
+        "condos": {"type": "bool"},
+        "contractor": {"type": "bool"},
+        "institutional": {"type": "bool"},
+        "manufacturing": {"type": "bool"},
+        "office": {"type": "bool"},
+        "restaurant": {"type": "bool"},
+        "retail": {"type": "bool"},
+        "service": {"type": "bool"},
+        "wholesale": {"type": "bool"},
+        "others": {"type": "bool"}
+    },
+    "business_start_date": {"type": "date"},
+    "business_description": {"type": "string"},
+    "additional_interest_^": {
+        "interest_type_@": {
+            "additional_insured":   {"type": "bool"},
+            "breach_of_warranty":   {"type": "bool"},
+            "co_owner":             {"type": "bool"},
+            "employee_as_lessor":   {"type": "bool"},
+            "leaseback_owner":      {"type": "bool"},
+            "lenders_loss_payable": {"type": "bool"},
+            "lienholder":           {"type": "bool"},
+            "loss_payee":           {"type": "bool"},
+            "mortgagee":            {"type": "bool"},
+            "owner":                {"type": "bool"},
+            "registrant":            {"type": "bool"},
+            "trustee":              {"type": "bool"}
+        },
+        "rank":              {"type": "string"},
+        "evidence_@": {
+            "certificate":  {"type": "bool"},
+            "policy":       {"type": "bool"},
+            "other":        {"type": "bool"}
+        },
+        "name":              {"type": "string"},
+        "address_1":         {"type": "string"},
+        "address_2":         {"type": "string"},
+        "city":              {"type": "string"},
+        "state":             {"type": "state"},
+        "zipcode":           {"type": "zip"},
+        "reference_loan_no": {"type": "string"},
+        "location":          {"type": "string"},
+        "building":          {"type": "string"},
+        "item_class":        {"type": "string"},
+        "item_no":           {"type": "string"},
+        "item_description":  {"type": "string"},
+        "interest_end_date": {"type": "date"},
+        "interest_reason":   {"type": "string"},
+        "lein_amount":       {"type": "number"}
+    },
+    "qa": {
+        "is_subsidiary": {
+            "opted": {"type": "YN"},
+            "parent_company": {"type": "string"},
+            "relationship": {"type": "string"},
+            "ownership_percent": {"type": "number"}
+        },
+        "has_subsidiaries": {
+            "opted": {"type": "YN"},
+            "subsidiary_name": {"type": "string"},
+            "relationship": {"type": "string"},
+            "ownership_percent": {"type": "number"}
+
+        },
+        "safety_program": {
+            "opted": {"type": "YN"},
+            "manual_safety": {"type": "bool"},
+            "safety_position": {"type": "bool"},
+            "monthly_meetings": {"type": "bool"},
+            "osha": {"type": "bool"},
+            "other": {"type": "bool"}
+        },
+        "flammables": {
+            "opted": {"type": "YN"},
+            "flammable_exposure": {"type": "string"}
+        },
+        "other_policies_^": {
+            "opted": {"type": "YN"},
+            "line_of_business": {"type": "string"},
+            "policy_no": {"type": "policy_no"}
+        },
+        "declined": {
+            "opted": {"type": "YN"},
+            "non_payment": {"type": "bool"},
+            "non_renewal": {"type": "bool"},
+            "agent_refused": {"type": "bool"},
+            "underwriter_refused": {"type": "bool"},
+            "condition_corrected": {"type": "bool"}
+        },
+        "sexual_abuse_claims": {
+            "opted": {"type": "YN"},
+            "description": {"type": "string"}
+        },
+        "criminal_indictment": {
+            "opted": {"type": "YN"},
+            "description": {"type": "string"}
+        },
+        "fire_code": {
+            "opted": {"type": "YN"},
+            "violations_^": {
+                "date": {"type": "date"},
+                "description": {"type": "string"},
+                "resolution": {"type": "string"},
+                "resolved_on": {"type": "date"}
+            }
+        },
+        "foreclosure": {
+            "opted": {"type": "YN"},
+            "occurance_^": {
+                "date": {"type": "date"},
+                "description": {"type": "string"},
+                "resolution": {"type": "string"},
+                "resolved_on": {"type": "date"}
+            }
+        },
+        "lien": {
+            "opted": {"type": "YN"},
+            "occurance_^": {
+                "date": {"type": "date"},
+                "description": {"type": "string"},
+                "resolution": {"type": "string"},
+                "resolved_on": {"type": "date"}
+            }
+        },
+        "under_trust": {
+            "opted": {"type": "YN"},
+            "trust_name": {"type": "string"}
+        },
+        "other_uncovered_businesses": {
+            "opted": {"type": "YN"},
+            "description": {"type": "string"}
+        },
+        "drones": {
+            "owns_operates": {
+                "opted": {"type": "YN"},
+                "description": {"type": "string"}
+            },
+            "hiers_operators": {
+                "opted": {"type": "YN"},
+                "description": {"type": "string"}
+            }
+        },
+        "remarks": {"type": "string"}
+    },
+    "prior_carrier_^": {
+        "year": {"type": "year"},
+        "carrier": {
+            "general_liability": {
+                "name": {"type": "carrier"},
+                "policy_no": {"type": "policy_no"},
+                "premium": {"type": "number"},
+                "start_date": {"type": "date"},
+                "end_date": {"type": "date"}
+            },
+            "automobile": {
+                "name": {"type": "carrier"},
+                "policy_no": {"type": "policy_no"},
+                "premium": {"type": "number"},
+                "start_date": {"type": "date"},
+                "end_date": {"type": "date"}
+            },
+            "property": {
+                "name": {"type": "carrier"},
+                "policy_no": {"type": "policy_no"},
+                "premium": {"type": "number"},
+                "start_date": {"type": "date"},
+                "end_date": {"type": "date"}
+            },
+            "other": {
+                "lob": {"type": "string"},
+                "name": {"type": "carrier"},
+                "policy_no": {"type": "policy_no"},
+                "premium": {"type": "number"},
+                "start_date": {"type": "date"},
+                "end_date": {"type": "date"}
+            }
+        }
+    },
+    "loss_run": {
+        "no_prior_losses": {"type": "bool"},
+        "year_count": {"type": "number"},
+        "total_loss": {"type": "currency"},
+        "history_^": {
+            "date": {"type": "date"},
+            "line_of_business": {"type": "string"},
+            "description": {"type": "string"},
+            "claim_date": {"type": "date"},
+            "amount_paid": {"type": "currency"},
+            "amount_reserved": {"type": "currency"},
+            "subrogation": {"type": "YN"},
+            "claim_open": {"type": "YN"}
+        }
+    },
+    "signature": {
+        "applicant_signature_date":    {"type": "date"},
+        "producer_name":               {"type": "string"},
+        "producer_state_license_no":   {"type": "string"},
+        "national_producer_number":    {"type": "string", "description": "NPN, required in Florida"}
+    },
+    "blanket_^": {
+        "id": {"type": "string"},
+        "limit_amount": {"type": "currency"},
+        "_type": {"type": "string"}
+    }
+}

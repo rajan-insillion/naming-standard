@@ -1,0 +1,11 @@
+
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "$id": "https://example.com/insillion-schemas/lob/liability/directors_officers.json",
+    "title": "Directors & Officers (D&O) Coverage",
+    "description": "Placeholder for Directors & Officers liability coverage details. To be expanded.",
+    "type": "object",
+    "properties": {
+        
+    }
+}

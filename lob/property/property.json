@@ -1,0 +1,1567 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "$id": "https://example.com/insillion-schemas/lob/property/property.json",
+    "title": "Property Coverage Details",
+    "description": "Information related to property insurance coverages. (Properties omitted as requested)",
+    "type": "object",
+    "properties": {
+        "income_expenses_form_attached": {
+            "type": "boolean",
+            "description": "(US) ACORD 810 attached?",
+            "long-description": "(US) A boolean flag indicating whether the ACORD 810 form, which details income and expenses for business interruption coverage, is attached to the application."
+        },
+        "value_report_form_attached": {
+            "type": "boolean",
+            "description": "(US) ACORD 811 attached?",
+            "long-description": "(US) A boolean flag indicating whether the ACORD 811 form, used for reporting fluctuating values of inventory or other property, is attached to the application."
+        },
+        "coverages": {},
+        "premises_^": {
+            "location_id": {
+                "type": "string",
+                "description": "Reference to location_id",
+                "long-description": "A unique identifier linking this specific property premises information to a broader location definition listed in the 'location' section."
+            },
+            "interest_@": {
+                "owner": {
+                    "type": "boolean",
+                    "description": "Indicates if the insured is the owner of the premises.",
+                    "long-description": "A boolean flag indicating that the insured holds the legal title and ownership of the property premises."
+                },
+                "tenant": {
+                    "type": "boolean",
+                    "description": "Indicates if the insured is a tenant of the premises.",
+                    "long-description": "A boolean flag indicating that the insured occupies the property premises under a lease agreement, without holding ownership."
+                },
+                "other": {
+                    "type": "boolean",
+                    "description": "Indicates if the insured has another interest in the premises.",
+                    "long-description": "A boolean flag indicating that the insured has a legal or financial interest in the property premises that is neither full ownership nor a tenancy."
+                }
+            },
+            "risk_location_type_@": {
+                "industrial": {
+                    "type": "boolean",
+                    "description": "(IN) Primarily used for industrial activities.",
+                    "long-description": "In India, a boolean flag indicating that the risk location is primarily used for industrial activities such as manufacturing or heavy processing."
+                },
+                "non_industrial": {
+                    "type": "boolean",
+                    "description": "(IN) Primarily used for non-industrial purposes (e.g., commercial, retail).",
+                    "long-description": "In India, a boolean flag indicating that the risk location is used for non-industrial purposes, such as commercial offices, retail, or residential."
+                },
+                "mixed": {
+                    "type": "boolean",
+                    "description": "(IN) Has a combination of industrial and non-industrial uses.",
+                    "long-description": "In India, a boolean flag indicating that the risk location has a combination of industrial and non-industrial uses."
+                }
+            },
+            "subjects_of_insurance_^": {
+                "description": {
+                    "type": "string",
+                    "description": "(US) e.g. Building, Business Personal Property, Business Income, EDP Equipment, Signs",
+                    "long-description": "(US) A specific item or category of property being insured, such as the physical building, business contents, loss of income, electronic data processing equipment, or exterior signs."
+                },
+                "limit_amount": {
+                    "type": "currency",
+                    "description": "(US) limit of insurance for this subject",
+                    "long-description": "(US) The maximum monetary amount the insurer will pay for loss or damage to this specific subject of insurance."
+                },
+                "co_insurance_percent": {
+                    "type": "number",
+                    "description": "(US) coinsurance percentage, e.g. 80, 90, 100; (IN) average clause percentage; underinsurance waiver up to 15% applies for BSUS/BLUS",
+                    "long-description": "(US) (IN) The percentage of the property's total value that the insured is required to carry as coverage; if less is carried, the insured may be penalized in case of a partial loss. In India, this is referred to as the average clause percentage, with specific waivers for BSUS/BLUS."
+                },
+                "valuation_@": {
+                    "actual_cash_value": {
+                        "type": "boolean",
+                        "description": "(US) ACV",
+                        "long-description": "(US) A boolean flag indicating that loss settlement will be based on the replacement cost less depreciation, considering age and wear and tear."
+                    },
+                    "replacement_cost": {
+                        "type": "boolean",
+                        "description": "(US) RC",
+                        "long-description": "(US) A boolean flag indicating that loss settlement will be based on the cost to replace the damaged property with new property of similar kind and quality, without deduction for depreciation."
+                    },
+                    "functional_rc": {
+                        "type": "boolean",
+                        "description": "(US) Loss settlement based on functionally equivalent replacement cost.",
+                        "long-description": "(US) A boolean flag indicating that loss settlement will be based on the cost to repair or replace the damaged property with less costly, but functionally equivalent, materials or property."
+                    },
+                    "selling_price": {
+                        "type": "boolean",
+                        "description": "(US) Loss settlement for finished goods at selling price.",
+                        "long-description": "(US) A boolean flag indicating that loss settlement for finished goods will be based on their selling price, including any profit that would have been earned."
+                    },
+                    "agreed_value": {
+                        "type": "boolean",
+                        "description": "(US) Loss settlement based on a pre-agreed property value.",
+                        "long-description": "(US) A boolean flag indicating that the insurer and insured have agreed upon a specific value for the property prior to any loss, which will be the basis for settlement."
+                    },
+                    "market_value": {
+                        "type": "boolean",
+                        "description": "(IN) MV - new replacement cost minus depreciation",
+                        "long-description": "(IN) A boolean flag indicating that loss settlement will be based on the current market value of the property, which is typically its new replacement cost minus depreciation."
+                    },
+                    "reinstatement_value": {
+                        "type": "boolean",
+                        "description": "(IN) RIV / RRC - new replacement cost, no depreciation deduction",
+                        "long-description": "(IN) A boolean flag indicating that loss settlement will be based on the Reinstatement Value (RIV) or Replacement Cost (RRC), covering the cost of new replacement without any deduction for depreciation."
+                    },
+                    "book_value": {
+                        "type": "boolean",
+                        "description": "(IN) Loss settlement based on asset's book value.",
+                        "long-description": "(IN) A boolean flag indicating that loss settlement will be based on the value of the asset as recorded in the insured's accounting books (original cost minus accumulated depreciation)."
+                    },
+                    "landed_cost": {
+                        "type": "boolean",
+                        "description": "(IN) for raw material - landed cost at premises",
+                        "long-description": "(IN) A boolean flag indicating that for raw materials, loss settlement will be based on the total cost of materials delivered to the premises, including purchase price, freight, and duties."
+                    },
+                    "other": {
+                        "type": "boolean",
+                        "description": "(US) Indicates another non-listed valuation method.",
+                        "long-description": "(US) A boolean flag indicating that another valuation method, not specifically listed, will be used for loss settlement."
+                    }
+                },
+                "asset_category_@": {
+                    "building_structure": {
+                        "type": "boolean",
+                        "description": "(IN) incl. plinth, foundation, compound wall",
+                        "long-description": "(IN) A boolean flag indicating that the insured asset is the physical building structure itself, including its plinth, foundation, and surrounding compound walls."
+                    },
+                    "plant_machinery": {
+                        "type": "boolean",
+                        "description": "(IN) incl. installation cost",
+                        "long-description": "(IN) A boolean flag indicating that the insured assets are the plant and machinery, including their purchase cost, freight, and installation expenses."
+                    },
+                    "stock_raw_material": {
+                        "type": "boolean",
+                        "description": "(IN) Is the stock a raw material",
+                        "long-description": "(IN) A boolean flag indicating that the insured asset is stock in the form of raw materials used in production."
+                    },
+                    "stock_in_process": {
+                        "type": "boolean",
+                        "description": "(IN) Is the stock in process",
+                        "long-description": "(IN) A boolean flag indicating that the insured asset is stock that is currently undergoing manufacturing or processing."
+                    },
+                    "stock_finished_goods": {
+                        "type": "boolean",
+                        "description": "(IN) Is stock in the form of finished goods",
+                        "long-description": "(IN) A boolean flag indicating that the insured asset is stock in the form of finished products ready for sale."
+                    },
+                    "stock_packing_material": {
+                        "type": "boolean",
+                        "description": "(IN) Is the stock packing material",
+                        "long-description": "(IN) A boolean flag indicating that the insured asset is stock consisting of materials used for packaging finished goods."
+                    },
+                    "furniture_fixtures_fittings": {
+                        "type": "boolean",
+                        "description": "(IN) Insured asset includes furniture, fixtures, and fittings.",
+                        "long-description": "(IN) A boolean flag indicating that the insured assets include furniture, fixtures (e.g., lighting), and fittings (e.g., plumbing) within the premises."
+                    },
+                    "electronic_data_processing": {
+                        "type": "boolean",
+                        "description": "(IN) Insured asset includes electronic data processing equipment.",
+                        "long-description": "(IN) A boolean flag indicating that the insured assets include electronic data processing equipment, such as computers, servers, and related peripherals."
+                    },
+                    "specific_contents": {
+                        "type": "boolean",
+                        "description": "(IN) bullion, manuscripts, securities, explosives - must be separately declared",
+                        "long-description": "(IN) A boolean flag indicating that highly valuable or hazardous contents (e.g., bullion, manuscripts, securities, explosives) are being insured, which typically require separate and specific declaration."
+                    },
+                    "other_contents": {
+                        "type": "boolean",
+                        "description": "(IN) Insured asset includes other general contents.",
+                        "long-description": "(IN) A boolean flag indicating that other general contents not falling into specific categories are being insured."
+                    }
+                },
+                "stock_policy_type_@": {
+                    "specific": {
+                        "type": "boolean",
+                        "description": "(IN) fixed sum insured",
+                        "long-description": "(IN) A boolean flag indicating that the stock is insured for a fixed sum, regardless of fluctuations in its value or quantity."
+                    },
+                    "declaration": {
+                        "type": "boolean",
+                        "description": "(IN) monthly declaration policy for fluctuating stocks",
+                        "long-description": "(IN) A boolean flag indicating that the stock is insured under a declaration policy, where the insured reports stock values periodically (e.g., monthly), and premium is adjusted based on average values."
+                    },
+                    "floater": {
+                        "type": "boolean",
+                        "description": "(IN) floater across multiple locations",
+                        "long-description": "(IN) A boolean flag indicating that the stock is covered under a floater policy, which provides coverage for property that is moved between multiple specified locations, with a single Sum Insured."
+                    }
+                },
+                "declaration_policy_minimum_si": {
+                    "type": "currency",
+                    "description": "(IN) minimum/deposit SI for declaration policy",
+                    "long-description": "(IN) For a declaration policy, this is the minimum or deposit sum insured agreed upon, which forms the basis for initial premium calculation, subject to adjustment based on later declarations."
+                },
+                "loss_cause_@": {
+                    "basic": {
+                        "type": "boolean",
+                        "description": "(US) Coverage for a defined list of basic perils.",
+                        "long-description": "(US) A boolean flag indicating that coverage is provided for a defined list of perils, typically including fire, lightning, explosion, windstorm, hail, smoke, aircraft/vehicle damage, riot, civil commotion, and vandalism."
+                    },
+                    "broad": {
+                        "type": "boolean",
+                        "description": "(US) Coverage for basic perils plus additional causes (e.g., falling objects, water damage).",
+                        "long-description": "(US) A boolean flag indicating that coverage extends beyond basic perils to include additional causes of loss like falling objects, weight of snow/ice/sleet, water damage (from accidental discharge/overflow)."
+                    },
+                    "special": {
+                        "type": "boolean",
+                        "description": "(US) All-risk coverage, excluding specific perils.",
+                        "long-description": "(US) A boolean flag indicating that coverage is provided for all causes of direct physical loss or damage, except for those specifically excluded by the policy."
+                    },
+                    "special_incl_theft": {
+                        "type": "boolean",
+                        "description": "(US) All-risk coverage, explicitly including theft.",
+                        "long-description": "(US) A boolean flag indicating that 'special' cause of loss coverage is chosen and explicitly includes coverage for losses due to theft."
+                    },
+                    "special_excl_theft": {
+                        "type": "boolean",
+                        "description": "(US) All-risk coverage, explicitly excluding theft.",
+                        "long-description": "(US) A boolean flag indicating that 'special' cause of loss coverage is chosen but explicitly excludes coverage for losses due to theft."
+                    },
+                    "earthquake": {
+                        "type": "boolean",
+                        "description": "(US) Specific coverage for earthquake losses.",
+                        "long-description": "(US) A boolean flag indicating specific coverage for losses caused by earthquake, typically added as an endorsement or separate policy."
+                    },
+                    "flood": {
+                        "type": "boolean",
+                        "description": "(US) Specific coverage for flood losses.",
+                        "long-description": "(US) A boolean flag indicating specific coverage for losses caused by flood, typically added as an endorsement or separate policy."
+                    },
+                    "windstorm_hail": {
+                        "type": "boolean",
+                        "description": "(US) Specific coverage for windstorm and hail losses.",
+                        "long-description": "(US) A boolean flag indicating specific coverage for losses caused by windstorm and hail, often subject to a separate deductible."
+                    },
+                    "other": {
+                        "type": "boolean",
+                        "description": "(US) Indicates other non-listed causes of loss are covered.",
+                        "long-description": "(US) A boolean flag indicating that other specific causes of loss, not listed, are covered."
+                    }
+                },
+                "inflation_guard_percent": {
+                    "type": "number",
+                    "description": "(US) Annual percentage to increase coverage for inflation.",
+                    "long-description": "(US) A percentage applied annually to automatically increase the coverage limit to account for inflation, helping to prevent underinsurance over time."
+                },
+                "deductible": {
+                    "type": "currency",
+                    "description": "(US); (IN) compulsory excess in INR; BSUS/BLUS: higher of ₹10,000 or 5% of claim",
+                    "long-description": "(US) (IN) The initial amount of a loss that the insured must bear before the insurance coverage begins to pay. In India, this is often referred to as compulsory excess, with specific rules for BSUS/BLUS policies."
+                },
+                "deductible_type": {
+                    "type": "string",
+                    "description": "(US) The specific type of deductible applied (e.g., per occurrence, aggregate).",
+                    "long-description": "(US) The type of deductible applied, e.g., per occurrence, aggregate, percentage deductible, or named peril deductible."
+                },
+                "blanket_no": {
+                    "type": "string",
+                    "description": "(US) Reference number for blanket policy coverage.",
+                    "long-description": "(US) A unique reference number if this subject of insurance is covered under a blanket policy, meaning one limit applies to multiple items or locations."
+                },
+                "forms": {
+                    "type": "string",
+                    "description": "(US) Forms and conditions to aplly",
+                    "long-description": "(US) A descriptive list or reference codes for the specific insurance forms and conditions that are applicable to this subject of insurance."
+                }
+            },
+            "catastrophe_zones": {
+                "earthquake_zone_@": {
+                    "zone_ii": {
+                        "type": "boolean",
+                        "description": "(IN) BIS IS:1893 seismic zone II - low damage risk",
+                        "long-description": "(IN) A boolean flag indicating that the location falls under BIS IS:1893 seismic zone II, signifying a low damage risk from earthquakes."
+                    },
+                    "zone_iii": {
+                        "type": "boolean",
+                        "description": "(IN) moderate damage risk",
+                        "long-description": "(IN) A boolean flag indicating that the location falls under BIS IS:1893 seismic zone III, signifying a moderate damage risk from earthquakes."
+                    },
+                    "zone_iv": {
+                        "type": "boolean",
+                        "description": "(IN) high damage risk",
+                        "long-description": "(IN) A boolean flag indicating that the location falls under BIS IS:1893 seismic zone IV, signifying a high damage risk from earthquakes."
+                    },
+                    "zone_v": {
+                        "type": "boolean",
+                        "description": "(IN) very high damage risk e.g. parts of J&K, NE states, Gujarat, Uttarakhand",
+                        "long-description": "(IN) A boolean flag indicating that the location falls under BIS IS:1893 seismic zone V, signifying a very high damage risk from earthquakes, common in regions like Jammu & Kashmir, Northeastern states, Gujarat, and Uttarakhand."
+                    }
+                },
+                "cyclone_prone_coast": {
+                    "type": "boolean",
+                    "description": "(IN) Bay of Bengal or Arabian Sea coastal belt",
+                    "long-description": "(IN) A boolean flag indicating whether the location is situated within a coastal belt that is susceptible to cyclones originating from the Bay of Bengal or Arabian Sea."
+                },
+                "flood_zone": {
+                    "type": "boolean",
+                    "description": "(IN) located in designated flood plain or flood-prone district",
+                    "long-description": "(IN) A boolean flag indicating whether the location is situated within a designated flood plain or a district officially identified as prone to flooding."
+                },
+                "stfi_zone_@": {
+                    "zone_a": {
+                        "type": "boolean",
+                        "description": "(IN) highest STFI rating zone",
+                        "long-description": "(IN) A boolean flag indicating that the location is in Zone A, which carries the highest rating for Storm, Tempest, Flood, and Inundation (STFI) perils."
+                    },
+                    "zone_b": {
+                        "type": "boolean",
+                        "description": "(IN) STFI Zone B (moderate rating).",
+                        "long-description": "(IN) A boolean flag indicating that the location is in Zone B for STFI perils, representing a moderate rating."
+                    },
+                    "zone_c": {
+                        "type": "boolean",
+                        "description": "(IN) STFI Zone C (lowest rating).",
+                        "long-description": "(IN) A boolean flag indicating that the location is in Zone C for STFI perils, representing the lowest rating."
+                    }
+                }
+            },
+            "perils_covered": {
+                "inbuilt_perils_@": {
+                    "fire": {
+                        "type": "boolean",
+                        "description": "(IN) FLEXA - Fire incl. fermentation/spontaneous combustion",
+                        "long-description": "(IN) A boolean flag indicating coverage for loss or damage caused by fire, including fire resulting from fermentation or spontaneous combustion, as part of the Fire and Allied Perils (FLEXA) coverage."
+                    },
+                    "lightning": {
+                        "type": "boolean",
+                        "description": "(IN) Coverage for lightning (FLEXA).",
+                        "long-description": "(IN) A boolean flag indicating coverage for loss or damage caused by lightning, as part of the Fire and Allied Perils (FLEXA) coverage."
+                    },
+                    "explosion_implosion": {
+                        "type": "boolean",
+                        "description": "(IN) FLEXA - boilers, gas cylinders etc.",
+                        "long-description": "(IN) A boolean flag indicating coverage for loss or damage caused by explosion or implosion, specifically from items like boilers, gas cylinders, etc., as part of the Fire and Allied Perils (FLEXA) coverage."
+                    },
+                    "aircraft_damage": {
+                        "type": "boolean",
+                        "description": "(IN) FLEXA - impact from aircraft/aerial devices",
+                        "long-description": "(IN) A boolean flag indicating coverage for loss or damage caused by impact from aircraft or other aerial devices, as part of the Fire and Allied Perils (FLEXA) coverage."
+                    },
+                    "riot_strike_malicious_damage": {
+                        "type": "boolean",
+                        "description": "(IN) RSMD",
+                        "long-description": "(IN) A boolean flag indicating coverage for loss or damage caused by riot, strike, and malicious damage (RSMD)."
+                    },
+                    "storm_tempest_flood_inundation": {
+                        "type": "boolean",
+                        "description": "(IN) STFI",
+                        "long-description": "(IN) A boolean flag indicating coverage for loss or damage caused by storm, tempest, flood, and inundation (STFI)."
+                    },
+                    "impact_damage": {
+                        "type": "boolean",
+                        "description": "(IN) by road/rail vehicle or animal - third party",
+                        "long-description": "(IN) A boolean flag indicating coverage for loss or damage caused by impact from external third-party road or rail vehicles or animals."
+                    },
+                    "subsidence_landslide": {
+                        "type": "boolean",
+                        "description": "(IN) includes rockslide",
+                        "long-description": "(IN) A boolean flag indicating coverage for loss or damage caused by subsidence (sinking of ground) or landslide, including rockslides."
+                    },
+                    "bursting_overflowing_water_tanks": {
+                        "type": "boolean",
+                        "description": "(IN) Coverage for bursting/overflowing water tanks/pipes.",
+                        "long-description": "(IN) A boolean flag indicating coverage for loss or damage caused by the bursting or overflowing of water tanks, apparatus, or pipes."
+                    },
+                    "missile_testing": {
+                        "type": "boolean",
+                        "description": "(IN) Coverage for missile testing operations.",
+                        "long-description": "(IN) A boolean flag indicating coverage for loss or damage caused by missile testing operations."
+                    },
+                    "leakage_sprinkler": {
+                        "type": "boolean",
+                        "description": "(IN) automatic sprinkler leakage",
+                        "long-description": "(IN) A boolean flag indicating coverage for loss or damage caused by accidental leakage from automatic sprinkler systems."
+                    },
+                    "bush_fire": {
+                        "type": "boolean",
+                        "description": "(IN) Coverage for bush/forest/jungle fire.",
+                        "long-description": "(IN) A boolean flag indicating coverage for loss or damage caused by bush fire, forest fire, or jungle fire."
+                    },
+                    "earthquake": {
+                        "type": "boolean",
+                        "description": "(IN) inbuilt under BSUS/BLUS; optional add-on under SFSP",
+                        "long-description": "(IN) A boolean flag indicating coverage for loss or damage caused by earthquake. This is an inbuilt peril for Business Small Underserved (BSUS) and Business Large Underserved (BLUS) policies, but an optional add-on for Standard Fire and Special Perils (SFSP) policies."
+                    },
+                    "terrorism": {
+                        "type": "boolean",
+                        "description": "(IN) covered via India Market Terrorism Risk Insurance Pool (IMTRIP)",
+                        "long-description": "(IN) A boolean flag indicating coverage for loss or damage caused by acts of terrorism, which is typically provided through the India Market Terrorism Risk Insurance Pool (IMTRIP)."
+                    }
+                },
+                "stfi_deleted": {
+                    "type": "boolean",
+                    "description": "(IN) STFI perils deleted at inception for premium discount (SFSP only)",
+                    "long-description": "(IN) A boolean flag indicating whether the Storm, Tempest, Flood, and Inundation (STFI) perils have been explicitly removed from coverage at the policy's inception, usually resulting in a premium discount (applicable only for Standard Fire and Special Perils policies)."
+                },
+                "rsmtd_deleted": {
+                    "type": "boolean",
+                    "description": "(IN) RSMD/RSMTD deleted at inception for premium discount (SFSP only)",
+                    "long-description": "(IN) A boolean flag indicating whether the Riot, Strike, Malicious Damage (RSMD) or Riot, Strike, Malicious Damage, Terrorism, Sabotage (RSMTD) perils have been explicitly removed from coverage at the policy's inception, usually resulting in a premium discount (applicable only for Standard Fire and Special Perils policies)."
+                }
+            },
+            "coverages": {
+                "spoilage": {
+                    "opted": {
+                        "type": "boolean",
+                        "description": "Indicates if spoilage coverage is opted for.",
+                        "long-description": "A boolean flag indicating whether coverage for loss due to spoilage of perishable goods is included in the policy."
+                    },
+                    "description": {
+                        "type": "string",
+                        "description": "Description of items covered under spoilage.",
+                        "long-description": "A detailed explanation of the specific types of perishable goods or products that are protected by the spoilage coverage."
+                    },
+                    "limit": {
+                        "type": "currency",
+                        "description": "Limit of insurance for spoilage coverage.",
+                        "long-description": "The maximum monetary amount the insurer will pay for losses related to spoilage."
+                    },
+                    "deductible": {
+                        "type": "currency",
+                        "description": "Deductible amount for spoilage claims.",
+                        "long-description": "The amount the insured must pay out-of-pocket for each spoilage claim before the insurance coverage applies."
+                    },
+                    "refrigeration_agreement": {
+                        "type": "boolean",
+                        "description": "refrigeration maintenance agreement in place?",
+                        "long-description": "A boolean flag indicating whether a formal maintenance agreement is in place for all refrigeration equipment, which can be a condition for spoilage coverage."
+                    },
+                    "breakdown": {
+                        "type": "boolean",
+                        "description": "Breakdown or contamination",
+                        "long-description": "A boolean flag indicating whether spoilage coverage includes losses resulting from mechanical breakdown of refrigeration equipment or contamination."
+                    },
+                    "power_outage": {
+                        "type": "boolean",
+                        "description": "spoilage due to outage covered?",
+                        "long-description": "A boolean flag indicating whether spoilage losses caused by an interruption of electrical power are covered under the policy."
+                    },
+                    "selling_price": {
+                        "type": "boolean",
+                        "description": "loss settlement at sale price or cost price?",
+                        "long-description": "A boolean flag indicating whether the loss settlement for spoilage will be based on the selling price (including anticipated profit) or the cost price of the spoiled goods."
+                    }
+                },
+                "sinkhole": {
+                    "opted": {
+                        "type": "boolean",
+                        "description": "Indicates if sinkhole coverage is opted for.",
+                        "long-description": "A boolean flag indicating whether coverage for loss or damage caused by sinkholes is included in the policy."
+                    },
+                    "limit": {
+                        "type": "currency",
+                        "description": "Limit of insurance for sinkhole coverage.",
+                        "long-description": "The maximum monetary amount the insurer will pay for losses related to sinkholes."
+                    }
+                },
+                "mine_subsidence": {
+                    "opted": {
+                        "type": "boolean",
+                        "description": "Indicates if mine subsidence coverage is opted for.",
+                        "long-description": "A boolean flag indicating whether coverage for loss or damage caused by subsidence of land due to underground mining operations is included."
+                    },
+                    "limit": {
+                        "type": "currency",
+                        "description": "Limit of insurance for mine subsidence coverage.",
+                        "long-description": "The maximum monetary amount the insurer will pay for losses related to mine subsidence."
+                    }
+                },
+                "business_income": {
+                    "opted": {
+                        "type": "boolean",
+                        "description": "Indicates if Business Income coverage is opted for.",
+                        "long-description": "A boolean flag indicating whether coverage for loss of income due to suspension of operations caused by covered perils is included in the policy."
+                    },
+                    "period_of_indemnity_days": {
+                        "type": "number",
+                        "description": "maximum period of restoration in days",
+                        "long-description": "The maximum number of days for which business income loss will be paid, representing the expected time to restore operations after a covered loss."
+                    },
+                    "coinsurance_pct": {
+                        "type": "number",
+                        "description": "Coinsurance percentage for business income.",
+                        "long-description": "The percentage of the insured's annual business income that must be carried as coverage; failure to meet this can result in a penalty at the time of loss."
+                    },
+                    "agreed_value": {
+                        "type": "boolean",
+                        "description": "Indicates if agreed value option is selected for business income.",
+                        "long-description": "A boolean flag indicating whether the insurer and insured have agreed upon a specific business income value in advance, waiving the coinsurance clause."
+                    },
+                    "extended_period_days": {
+                        "type": "number",
+                        "description": "Number of days for extended period of indemnity.",
+                        "long-description": "The additional number of days after the period of restoration (or policy expiry) for which business income coverage continues, to allow the business to return to its pre-loss operational level."
+                    },
+                    "extra_expense": {
+                        "opted": {
+                            "type": "boolean",
+                            "description": "Indicates if Extra Expense coverage is opted for.",
+                            "long-description": "A boolean flag indicating whether coverage for necessary expenses incurred to minimize business interruption or continue operations after a loss is included."
+                        },
+                        "limit": {
+                            "type": "currency",
+                            "description": "Limit of insurance for Extra Expense coverage.",
+                            "long-description": "The maximum monetary amount the insurer will pay for extra expenses incurred to continue operations after a covered loss."
+                        }
+                    }
+                },
+                "ordinance_or_law": {
+                    "opted": {
+                        "type": "boolean",
+                        "description": "Indicates if Ordinance or Law coverage is opted for.",
+                        "long-description": "A boolean flag indicating whether coverage for additional costs incurred due to enforcement of building codes or ordinances after a covered loss is included."
+                    },
+                    "coverage_a_limit": {
+                        "type": "currency",
+                        "description": "loss to undamaged portion",
+                        "long-description": "The limit of insurance under Coverage A for Ordinance or Law, covering the loss of value to the undamaged portion of a building that must be demolished or repaired due to code enforcement."
+                    },
+                    "coverage_b_limit": {
+                        "type": "currency",
+                        "description": "demolition cost",
+                        "long-description": "The limit of insurance under Coverage B for Ordinance or Law, covering the cost to demolish the undamaged portion of a building required by code after a covered loss."
+                    },
+                    "coverage_c_limit": {
+                        "type": "currency",
+                        "description": "increased cost of construction",
+                        "long-description": "The limit of insurance under Coverage C for Ordinance or Law, covering the increased cost to reconstruct or repair a building to comply with current building codes after a covered loss."
+                    }
+                },
+                "inland_marine": {
+                    "opted": {
+                        "type": "boolean",
+                        "description": "Indicates if Inland Marine coverage is opted for.",
+                        "long-description": "A boolean flag indicating whether coverage for property in transit, property of others in the insured's care, or specialized property (e.g., fine art, contractor's equipment) is included."
+                    },
+                    "description": {
+                        "type": "string",
+                        "description": "Description of property covered under Inland Marine.",
+                        "long-description": "A textual description detailing the specific types of property or situations covered under the Inland Marine section of the policy."
+                    },
+                    "limit": {
+                        "type": "currency",
+                        "description": "Limit of insurance for Inland Marine coverage.",
+                        "long-description": "The maximum monetary amount the insurer will pay for losses covered under the Inland Marine section."
+                    }
+                },
+                "equipment_breakdown": {
+                    "opted": {
+                        "type": "boolean",
+                        "description": "Indicates if Equipment Breakdown coverage is opted for.",
+                        "long-description": "A boolean flag indicating whether coverage for sudden and accidental breakdown of machinery and equipment (e.g., boilers, electrical systems, air conditioning) is included."
+                    },
+                    "limit": {
+                        "type": "currency",
+                        "description": "Limit of insurance for Equipment Breakdown coverage.",
+                        "long-description": "The maximum monetary amount the insurer will pay for losses related to equipment breakdown."
+                    }
+                },
+                "accounts_receivable": {
+                    "opted": {
+                        "type": "boolean",
+                        "description": "Indicates if Accounts Receivable coverage is opted for.",
+                        "long-description": "A boolean flag indicating whether coverage for losses incurred when accounts receivable records are damaged or destroyed by a covered peril, making them uncollectible, is included."
+                    },
+                    "limit": {
+                        "type": "currency",
+                        "description": "Limit of insurance for Accounts Receivable coverage.",
+                        "long-description": "The maximum monetary amount the insurer will pay for losses related to damaged or destroyed accounts receivable records."
+                    }
+                },
+                "valuable_papers": {
+                    "opted": {
+                        "type": "boolean",
+                        "description": "Indicates if Valuable Papers and Records coverage is opted for.",
+                        "long-description": "A boolean flag indicating whether coverage for the cost to replace or restore valuable papers and records (e.g., maps, blueprints, financial records) damaged by a covered peril is included."
+                    },
+                    "limit": {
+                        "type": "currency",
+                        "description": "Limit of insurance for Valuable Papers and Records coverage.",
+                        "long-description": "The maximum monetary amount the insurer will pay for losses related to valuable papers and records."
+                    }
+                },
+                "electronic_data_processing": {
+                    "opted": {
+                        "type": "boolean",
+                        "description": "Indicates if Electronic Data Processing (EDP) coverage is opted for.",
+                        "long-description": "A boolean flag indicating whether specialized coverage for computer hardware, software, and data, including risks like power surges, mechanical breakdown, and virus attacks, is included."
+                    },
+                    "hardware_limit": {
+                        "type": "currency",
+                        "description": "Limit for EDP hardware.",
+                        "long-description": "The maximum monetary amount the insurer will pay for physical loss or damage to Electronic Data Processing (EDP) hardware."
+                    },
+                    "software_limit": {
+                        "type": "currency",
+                        "description": "Limit for EDP software.",
+                        "long-description": "The maximum monetary amount the insurer will pay for loss or damage to Electronic Data Processing (EDP) software and data."
+                    },
+                    "extra_expense_limit": {
+                        "type": "currency",
+                        "description": "Limit for extra expense related to EDP.",
+                        "long-description": "The maximum monetary amount the insurer will pay for extra expenses incurred to restore or continue EDP operations after a covered loss."
+                    }
+                },
+                "earthquake": {
+                    "opted": {
+                        "type": "boolean",
+                        "description": "Indicates if Earthquake coverage is opted for.",
+                        "long-description": "A boolean flag indicating whether specific coverage for losses caused by earthquake and related perils (e.g., volcanic eruption, landslide) is included."
+                    },
+                    "limit": {
+                        "type": "currency",
+                        "description": "Limit of insurance for Earthquake coverage.",
+                        "long-description": "The maximum monetary amount the insurer will pay for losses caused by earthquakes."
+                    },
+                    "deductible_pct": {
+                        "type": "number",
+                        "description": "Deductible percentage for earthquake claims.",
+                        "long-description": "The deductible for earthquake claims expressed as a percentage of the total insured value or loss, rather than a fixed monetary amount."
+                    }
+                },
+                "flood": {
+                    "opted": {
+                        "type": "boolean",
+                        "description": "Indicates if Flood coverage is opted for.",
+                        "long-description": "A boolean flag indicating whether specific coverage for losses caused by flood (inundation of normally dry land by water) is included."
+                    },
+                    "limit": {
+                        "type": "currency",
+                        "description": "Limit of insurance for Flood coverage.",
+                        "long-description": "The maximum monetary amount the insurer will pay for losses caused by flood."
+                    },
+                    "deductible": {
+                        "type": "currency",
+                        "description": "Deductible amount for flood claims.",
+                        "long-description": "The amount the insured must pay out-of-pocket for each flood claim before the insurance coverage applies."
+                    },
+                    "nfip_policy_no": {
+                        "type": "string",
+                        "description": "National Flood Insurance Program policy number if applicable",
+                        "long-description": "The policy number if the flood coverage is provided through the US National Flood Insurance Program (NFIP), which is government-backed."
+                    }
+                },
+                "wind_hail": {
+                    "opted": {
+                        "type": "boolean",
+                        "description": "Indicates if Windstorm and Hail coverage is opted for.",
+                        "long-description": "A boolean flag indicating whether specific coverage for losses caused by windstorms and hail is included."
+                    },
+                    "limit": {
+                        "type": "currency",
+                        "description": "Limit of insurance for Windstorm and Hail coverage.",
+                        "long-description": "The maximum monetary amount the insurer will pay for losses caused by windstorm and hail."
+                    },
+                    "deductible_pct": {
+                        "type": "number",
+                        "description": "Deductible percentage for windstorm and hail claims.",
+                        "long-description": "The deductible for windstorm and hail claims expressed as a percentage of the total insured value or loss, rather than a fixed monetary amount."
+                    }
+                },
+                "special_risk_features": {
+                    "hazardous_goods_stored": {
+                        "opted": {
+                            "type": "YN",
+                            "description": "(IN) Are hazardous/flammable goods stored?",
+                            "long-description": "(IN) A Y/N indicator whether hazardous or flammable goods are stored at the premises."
+                        },
+                        "description": {
+                            "type": "string",
+                            "description": "(IN) nature of hazardous/flammable goods stored",
+                            "long-description": "(IN) A detailed description of the type, quantity, and storage methods for any hazardous or flammable goods kept at the premises."
+                        },
+                        "petroleum_class_@": {
+                            "class_a": {
+                                "type": "boolean",
+                                "description": "(IN) flash point below 23°C e.g. petrol",
+                                "long-description": "(IN) A boolean flag indicating that petroleum products with a flash point below 23°C (e.g., petrol) are stored, representing the highest fire risk."
+                            },
+                            "class_b": {
+                                "type": "boolean",
+                                "description": "(IN) flash point 23°C-65°C e.g. kerosene",
+                                "long-description": "(IN) A boolean flag indicating that petroleum products with a flash point between 23°C and 65°C (e.g., kerosene) are stored."
+                            },
+                            "class_c": {
+                                "type": "boolean",
+                                "description": "(IN) flash point above 65°C e.g. diesel",
+                                "long-description": "(IN) A boolean flag indicating that petroleum products with a flash point above 65°C (e.g., diesel) are stored, representing a lower fire risk compared to Class A and B."
+                            }
+                        },
+                        "quantity_litres": {
+                            "type": "number",
+                            "description": "(IN) Quantity of hazardous/flammable liquids in litres.",
+                            "long-description": "(IN) The total quantity of hazardous or flammable liquids stored at the premises, measured in litres."
+                        }
+                    },
+                    "lpg_cng_installed": {
+                        "opted": {
+                            "type": "YN",
+                            "description": "(IN) Are LPG/CNG cylinders/installations present?",
+                            "long-description": "(IN) A Y/N indicator whether LPG (Liquefied Petroleum Gas) or CNG (Compressed Natural Gas) cylinders or installations are present at the premises."
+                        },
+                        "cylinder_count": {
+                            "type": "number",
+                            "description": "(IN) Number of LPG/CNG cylinders.",
+                            "long-description": "(IN) The total number of LPG or CNG cylinders installed or stored at the premises."
+                        }
+                    },
+                    "basement_used_for_storage": {
+                        "type": "boolean",
+                        "description": "(IN) Is the basement used for storage?",
+                        "long-description": "(IN) A boolean flag indicating whether the basement of the building is utilized for storage purposes, which can impact fire risk."
+                    },
+                    "night_watchman": {
+                        "type": "boolean",
+                        "description": "(IN) Is a night watchman employed?",
+                        "long-description": "(IN) A boolean flag indicating whether a night watchman is employed to provide security and fire vigilance during non-business hours."
+                    },
+                    "past_fire_incidents": {
+                        "opted": {
+                            "type": "YN",
+                            "description": "(IN) Any past fire incidents?",
+                            "long-description": "(IN) A Y/N indicator whether the premises has experienced any fire incidents in the past."
+                        },
+                        "description": {
+                            "type": "string",
+                            "description": "(IN) Description of the past fire incidents",
+                            "long-description": "(IN) A detailed description of any past fire incidents, including dates, causes, and extent of damage."
+                        }
+                    }
+                },
+                "other_coverages_description": {
+                    "type": "string",
+                    "description": "Description of any other property coverages not explicitly listed.",
+                    "long-description": "An open text field to specify any additional or unique property coverages that are not categorized by the predefined options."
+                }
+            },
+            "full_time_emp_count": {
+                "type": "number",
+                "description": "Number of full-time employees at this location.",
+                "long-description": "The total count of full-time employees regularly working at this specific premises."
+            },
+            "part_time_emp_count": {
+                "type": "number",
+                "description": "Number of part-time employees at this location.",
+                "long-description": "The total count of part-time employees regularly working at this specific premises."
+            },
+            "annual_revenue": {
+                "type": "currency",
+                "description": "Annual revenue generated at this location.",
+                "long-description": "The total monetary income generated by the business operations at this specific premises within a year."
+            },
+            "area_sqft": {
+                "type": "number",
+                "description": "Occupied area",
+                "long-description": "The total square footage of the area at the premises that is actively occupied or utilized by the insured."
+            },
+            "public_area_sqft": {
+                "type": "number",
+                "description": "Square footage of areas accessible to the public.",
+                "long-description": "The total square footage of the premises that is regularly accessible to customers, clients, or the general public."
+            },
+            "total_area_sqft": {
+                "type": "number",
+                "description": "Total square footage of the premises.",
+                "long-description": "The overall total square footage of the entire property premises, including occupied and unoccupied areas."
+            },
+            "desc": {
+                "type": "string",
+                "description": "General description of the premises and its operations.",
+                "long-description": "A comprehensive textual description detailing the physical characteristics, type of operations, and overall usage of the insured premises."
+            },
+            "sub_leased": {
+                "type": "YN",
+                "description": "Indicates if any part of the premises is sub-leased (Y/N).",
+                "long-description": "A Y/N indicator whether any portion of the insured premises is currently sub-leased to another entity or individual."
+            },
+            "occupancy": {
+                "type": "string",
+                "description": "(US, IN) described use/occupancy of the building",
+                "long-description": "A description of the primary use or occupancy of the building, such as 'Retail Store', 'Office Building', 'Manufacturing Plant', 'Residential Dwelling', etc. (US, IN)."
+            },
+            "tariff_occupancy_code": {
+                "type": "string",
+                "description": "(IN) AIFT 2001 occupancy code e.g. II(a), III(b)",
+                "long-description": "(IN) The specific occupancy code from the All India Fire Tariff (AIFT) 2001, used to classify the building's use for fire insurance rating purposes, e.g., 'II(a)' for certain commercial risks or 'III(b)' for industrial risks."
+            },
+            "historical_landmark": {
+                "type": "boolean",
+                "description": "(US) Is the building a historical landmark?",
+                "long-description": "(US) A boolean flag indicating whether the building is designated as a historical landmark, which may affect repair or replacement options after a loss."
+            },
+            "open_sides_count": {
+                "type": "number",
+                "description": "(US) number of open/exposed sides on structure",
+                "long-description": "(US) The number of sides of the building structure that are open or exposed to external elements or adjacent properties, influencing windstorm and fire exposure ratings."
+            },
+            "construction": {
+                "construction_type_@": {
+                    "frame": {
+                        "type": "boolean",
+                        "description": "(US) 1 - Frame",
+                        "long-description": "(US) A boolean flag indicating Type 1 construction where the exterior walls are wood or other combustible materials."
+                    },
+                    "joisted_masonry": {
+                        "type": "boolean",
+                        "description": "(US) 2 - Joisted Masonry",
+                        "long-description": "(US) A boolean flag indicating Type 2 construction where exterior walls are masonry, but floors and roof are combustible (joisted wood or other similar materials)."
+                    },
+                    "non_combustible": {
+                        "type": "boolean",
+                        "description": "(US) 3 - Non-Combustible",
+                        "long-description": "(US) A boolean flag indicating Type 3 construction where exterior walls, floor, and roof are all non-combustible materials, but the roof and floor assembly are not fire-resistive."
+                    },
+                    "masonry_non_combustible": {
+                        "type": "boolean",
+                        "description": "(US) 4 - Masonry Non-Combustible",
+                        "long-description": "(US) A boolean flag indicating Type 4 construction where exterior walls are masonry, and the interior structural members (floors/roof) are non-combustible."
+                    },
+                    "modified_fire_resistive": {
+                        "type": "boolean",
+                        "description": "(US) 5 - Modified Fire Resistive",
+                        "long-description": "(US) A boolean flag indicating Type 5 construction where structural components have a fire-resistive rating of 1 to 2 hours."
+                    },
+                    "fire_resistive": {
+                        "type": "boolean",
+                        "description": "(US) 6 - Fire Resistive",
+                        "long-description": "(US) A boolean flag indicating Type 6 construction where structural components have a fire-resistive rating of 2 hours or more, providing the highest level of fire protection."
+                    },
+                    "pucca_rcc": {
+                        "type": "boolean",
+                        "description": "(IN) RCC / fire-resistive - AIFT Class 1",
+                        "long-description": "(IN) A boolean flag indicating 'Pucca' construction with Reinforced Cement Concrete (RCC) structure, considered fire-resistive and classified as AIFT Class 1, offering the lowest fire risk."
+                    },
+                    "pucca_non_rcc": {
+                        "type": "boolean",
+                        "description": "(IN) brick/stone masonry with RCC/AC/GI roof - AIFT Class 2",
+                        "long-description": "(IN) A boolean flag indicating 'Pucca' construction with brick or stone masonry walls and a roof made of RCC, Asbestos Cement (AC) sheets, or Galvanized Iron (GI) sheets, classified as AIFT Class 2."
+                    },
+                    "semi_pucca": {
+                        "type": "boolean",
+                        "description": "(IN) kutcha walls or kutcha roof - AIFT Class 3",
+                        "long-description": "(IN) A boolean flag indicating 'Semi-Pucca' construction where either the walls or the roof are made of temporary or easily combustible 'kutcha' materials, classified as AIFT Class 3."
+                    },
+                    "kutcha": {
+                        "type": "boolean",
+                        "description": "(IN) all kutcha - AIFT Class 4 (highest tariff)",
+                        "long-description": "(IN) A boolean flag indicating 'Kutcha' construction where all structural components (walls and roof) are made of temporary or easily combustible materials (e.g., thatch, mud), classified as AIFT Class 4, representing the highest fire tariff."
+                    },
+                    "prefabricated_steel": {
+                        "type": "boolean",
+                        "description": "(IN) Building uses prefabricated steel construction.",
+                        "long-description": "(IN) A boolean flag indicating that the building is constructed using prefabricated steel components."
+                    },
+                    "other": {
+                        "type": "boolean",
+                        "description": "(IN) Other construction type, not listed.",
+                        "long-description": "(IN) A boolean flag indicating that the building's construction type is not among the specified options."
+                    }
+                },
+                "aift_construction_class": {
+                    "type": "string",
+                    "description": "(IN) AIFT 2001 construction class 1-4",
+                    "long-description": "(IN) The specific construction class (1 to 4) as per the All India Fire Tariff (AIFT) 2001, which categorizes buildings based on their fire-resisting properties and materials used."
+                },
+                "roof_material": {
+                    "type": "string",
+                    "description": "(IN) e.g. RCC, AC Sheet, GI Sheet, Thatch/Grass",
+                    "long-description": "(IN) The primary material used for the roof of the building, such as Reinforced Cement Concrete (RCC), Asbestos Cement (AC) sheets, Galvanized Iron (GI) sheets, or highly combustible materials like thatch or grass."
+                },
+                "wall_material": {
+                    "type": "string",
+                    "description": "(IN) e.g. Brick, Stone, Wood, Mud",
+                    "long-description": "(IN) The primary material used for the exterior walls of the building, such as brick, stone, wood, or mud."
+                },
+                "distance_to_hydrant": {
+                    "type": "number",
+                    "description": "(US) in feet",
+                    "long-description": "(US) The measured distance in feet from the insured building to the nearest fire hydrant, impacting the public fire protection grading."
+                },
+                "distance_to_fire_station": {
+                    "type": "number",
+                    "description": "(US) in miles",
+                    "long-description": "(US) The measured distance in miles from the insured building to the nearest fire station, impacting the public fire protection grading."
+                },
+                "distance_to_fire_station_km": {
+                    "type": "number",
+                    "description": "(IN) distance in kilometres",
+                    "long-description": "(IN) The measured distance in kilometres from the insured building to the nearest operational fire station, a factor in fire risk assessment."
+                },
+                "fire_brigade_type_@": {
+                    "municipal_professional": {
+                        "type": "boolean",
+                        "description": "(IN) Served by professional municipal fire brigade.",
+                        "long-description": "(IN) A boolean flag indicating that the location is served by a professional municipal fire brigade, offering generally good fire protection."
+                    },
+                    "industrial_brigade": {
+                        "type": "boolean",
+                        "description": "(IN) Has access to a dedicated industrial fire brigade.",
+                        "long-description": "(IN) A boolean flag indicating that the location has access to a dedicated industrial fire brigade, typically found in large industrial complexes."
+                    },
+                    "voluntary": {
+                        "type": "boolean",
+                        "description": "(IN) Served by a voluntary fire brigade.",
+                        "long-description": "(IN) A boolean flag indicating that the location is served by a voluntary fire brigade, which may have limited resources or response times."
+                    },
+                    "no_brigade": {
+                        "type": "boolean",
+                        "description": "(IN) No access to a formal fire brigade.",
+                        "long-description": "(IN) A boolean flag indicating that the location has no access to a formal fire brigade, implying higher fire risk."
+                    }
+                },
+                "fire_district": {
+                    "type": "string",
+                    "description": "(US) The specific fire district of the property.",
+                    "long-description": "(US) The specific fire district or protection area where the insured property is located, determined by local fire departments."
+                },
+                "fire_district_code": {
+                    "type": "string",
+                    "description": "(US) ISO or local authority fire district code number like 03A, NYC-7, Rural-2",
+                    "long-description": "(US) The alphanumeric code assigned by the ISO (Insurance Services Office) or local authority to identify a specific fire protection district, used for rating purposes."
+                },
+                "protection_class": {
+                    "type": "string",
+                    "description": "(US) ISO protection class 1-10",
+                    "long-description": "(US) The ISO Public Protection Classification (PPC) number (1-10) assigned to a community's fire protection capabilities, with Class 1 being the best and Class 10 having little or no fire protection."
+                },
+                "stories_count": {
+                    "type": "number",
+                    "description": "(US) Total number of above-ground stories.",
+                    "long-description": "(US) The total number of above-ground stories or floors in the insured building."
+                },
+                "basement_count": {
+                    "type": "number",
+                    "description": "(US) number of basement levels below ground",
+                    "long-description": "(US) The total number of subterranean levels or basements in the insured building."
+                },
+                "year_built": {
+                    "type": "number",
+                    "description": "(US) Year the building was originally constructed.",
+                    "long-description": "(US) The calendar year in which the insured building was originally constructed."
+                },
+                "occupied_area_sqft": {
+                    "type": "number",
+                    "description": "(US) Total occupied area in sqft.",
+                    "long-description": "(US) The total square footage of the building that is actively used or occupied by the insured's operations."
+                },
+                "roofing_type": {
+                    "type": "string",
+                    "description": "(US) Primary roof covering material type.",
+                    "long-description": "(US) The specific type of material used for the roof covering (e.g., asphalt shingles, metal, built-up, tile), which impacts wind and fire resistance."
+                },
+                "heating_type": {
+                    "type": "string",
+                    "description": "(US) Primary heating method or fuel type.",
+                    "long-description": "(US) The primary method or fuel used for heating the building (e.g., natural gas, electric, oil, forced air, radiant)."
+                },
+                "under_construction": {
+                    "type": "boolean",
+                    "description": "(IN) builders risk / project under construction",
+                    "long-description": "(IN) A boolean flag indicating whether the building is currently under construction, renovation, or erection, relevant for Builders' Risk policies."
+                },
+                "construction_completion_date": {
+                    "type": "date",
+                    "description": "(IN) expected completion date if under construction",
+                    "long-description": "(IN) The anticipated date when the construction or renovation project is expected to be finalized, if the building is currently under construction."
+                }
+            },
+            "building_improvements": {
+                "wiring_year_updated": {
+                    "type": "number",
+                    "description": "(US) Year electrical wiring was last updated.",
+                    "long-description": "(US) The most recent year when the building's electrical wiring system was updated or replaced."
+                },
+                "plumbing_year_updated": {
+                    "type": "number",
+                    "description": "(US) Year plumbing system was last updated.",
+                    "long-description": "(US) The most recent year when the building's plumbing system was updated or replaced."
+                },
+                "roof_year_updated": {
+                    "type": "number",
+                    "description": "(US) Year roof covering was last updated.",
+                    "long-description": "(US) The most recent year when the building's roof covering was updated or replaced."
+                },
+                "heating_year_updated": {
+                    "type": "number",
+                    "description": "(US) Year heating system was last updated.",
+                    "long-description": "(US) The most recent year when the building's heating system was updated or replaced."
+                }
+            },
+            "building_code_grade": {
+                "type": "string",
+                "description": "(US) ISO or local building code compliance grade",
+                "long-description": "(US) The grade or classification assigned by ISO (Building Code Effectiveness Grading Schedule - BCEGS) or a local authority, indicating the effectiveness of building codes and their enforcement, which impacts property risk."
+            },
+            "tax_code": {
+                "type": "string",
+                "description": "(US) local assessor tax parcel identifier",
+                "long-description": "(US) The unique identifier assigned by the local tax assessor's office to the property for taxation purposes."
+            },
+            "roof_type": {
+                "type": "string",
+                "description": "(US) roof material e.g. asphalt shingle, metal, built-up, tile",
+                "long-description": "(US) The specific type of material and construction method used for the roof, providing details beyond just the material, for example, 'flat built-up roof' or 'gable asphalt shingle'."
+            },
+            "wind_class_@": {
+                "resistive": {
+                    "type": "boolean",
+                    "description": "(US) Building has features to resist high winds.",
+                    "long-description": "(US) A boolean flag indicating that the building construction incorporates features designed to resist high winds, such as reinforced roofing or window protection."
+                },
+                "semi_resistive": {
+                    "type": "boolean",
+                    "description": "(US) Building has some wind resistance features.",
+                    "long-description": "(US) A boolean flag indicating that the building construction has some features for wind resistance, but not to the extent of a fully resistive structure."
+                }
+            },
+            "heat": {
+                "wood_burning": {
+                    "opted": {
+                        "type": "boolean",
+                        "description": "(US) includes wood stoves and fireplaces",
+                        "long-description": "(US) A boolean flag indicating whether the premises utilizes wood-burning heat sources, such as wood stoves or fireplaces."
+                    },
+                    "manufacturer": {
+                        "type": "string",
+                        "description": "(US) Manufacturer of the wood-burning appliance.",
+                        "long-description": "(US) The manufacturer of the wood-burning appliance installed at the premises."
+                    },
+                    "date_installed": {
+                        "type": "string",
+                        "description": "(US) Date wood-burning appliance was installed.",
+                        "long-description": "(US) The date when the wood-burning appliance was installed."
+                    }
+                },
+                "primary": {
+                    "boiler": {
+                        "opted": {
+                            "type": "boolean",
+                            "description": "(US) Boiler is the primary heating source.",
+                            "long-description": "(US) A boolean flag indicating that a boiler is the primary heating source."
+                        },
+                        "insured": {
+                            "type": "boolean",
+                            "description": "(US) Is the primary boiler specifically insured?",
+                            "long-description": "(US) A boolean flag indicating whether the primary boiler is specifically insured under the policy (e.g., via equipment breakdown coverage)."
+                        }
+                    },
+                    "solid_fuel": {
+                        "opted": {
+                            "type": "boolean",
+                            "description": "(US) Solid fuel system is the primary heating source.",
+                            "long-description": "(US) A boolean flag indicating that a solid fuel (e.g., coal, pellets) system is the primary heating source."
+                        }
+                    },
+                    "other": {
+                        "opted": {
+                            "type": "boolean",
+                            "description": "(US) Other unlisted primary heating system.",
+                            "long-description": "(US) A boolean flag indicating that an 'other' heating system, not explicitly listed, is the primary heating source."
+                        },
+                        "description": {
+                            "type": "string",
+                            "description": "(US) Description of the primary 'other' heating system.",
+                            "long-description": "(US) A description of the primary 'other' heating system in use."
+                        }
+                    }
+                },
+                "secondary": {
+                    "boiler": {
+                        "opted": {
+                            "type": "boolean",
+                            "description": "(US) Boiler is the secondary heating source.",
+                            "long-description": "(US) A boolean flag indicating that a boiler serves as a secondary heating source."
+                        },
+                        "insured": {
+                            "type": "boolean",
+                            "description": "(US) Is the secondary boiler specifically insured?",
+                            "long-description": "(US) A boolean flag indicating whether the secondary boiler is specifically insured under the policy."
+                        }
+                    },
+                    "solid_fuel": {
+                        "opted": {
+                            "type": "boolean",
+                            "description": "(US) Solid fuel system is the secondary heating source.",
+                            "long-description": "(US) A boolean flag indicating that a solid fuel system is a secondary heating source."
+                        }
+                    },
+                    "other": {
+                        "opted": {
+                            "type": "boolean",
+                            "description": "(US) Other unlisted secondary heating system.",
+                            "long-description": "(US) A boolean flag indicating that an 'other' heating system, not explicitly listed, is a secondary heating source."
+                        },
+                        "description": {
+                            "type": "string",
+                            "description": "(US) Description of the secondary 'other' heating system.",
+                            "long-description": "(US) A description of the secondary 'other' heating system in use."
+                        }
+                    }
+                }
+            },
+            "surrounding": {
+                "front": {
+                    "exposure": {
+                        "type": "string",
+                        "description": "(US) description of adjacent structure or open space e.g. masonry commercial, vacant lot, street",
+                        "long-description": "(US) A textual description of what is located directly in front of the insured building, such as an adjacent commercial building, an empty plot of land, or a street."
+                    },
+                    "distance": {
+                        "type": "string",
+                        "description": "(US) distance in feet to adjacent exposure e.g. 10 ft, attached, 50 ft",
+                        "long-description": "(US) The measured distance in feet from the front of the insured building to the nearest adjacent exposure, or 'attached' if it shares a wall."
+                    }
+                },
+                "rear": {
+                    "exposure": {
+                        "type": "string",
+                        "description": "(US) description of adjacent structure or open space",
+                        "long-description": "(US) A textual description of what is located directly behind the insured building, such as an adjacent commercial building, a parking lot, or an alley."
+                    },
+                    "distance": {
+                        "type": "string",
+                        "description": "(US) distance in feet to adjacent exposure",
+                        "long-description": "(US) The measured distance in feet from the rear of the insured building to the nearest adjacent exposure."
+                    }
+                },
+                "left": {
+                    "exposure": {
+                        "type": "string",
+                        "description": "(US) description of adjacent structure or open space",
+                        "long-description": "(US) A textual description of what is located directly to the left side of the insured building (when facing the front)."
+                    },
+                    "distance": {
+                        "type": "string",
+                        "description": "(US) distance in feet to adjacent exposure",
+                        "long-description": "(US) The measured distance in feet from the left side of the insured building to the nearest adjacent exposure."
+                    }
+                },
+                "right": {
+                    "exposure": {
+                        "type": "string",
+                        "description": "(US) description of adjacent structure or open space",
+                        "long-description": "(US) A textual description of what is located directly to the right side of the insured building (when facing the front)."
+                    },
+                    "distance": {
+                        "type": "string",
+                        "description": "(US) distance in feet to adjacent exposure",
+                        "long-description": "(US) The measured distance in feet from the right side of the insured building to the nearest adjacent exposure."
+                    }
+                }
+            },
+            "burglar_alarm": {
+                "alarm_type": {
+                    "type": "string",
+                    "description": "(US) type of burglar alarm e.g. motion sensor, door contact, dual tech",
+                    "long-description": "(US) The specific type of burglar alarm system installed, detailing the detection technology used, e.g., motion sensors, door/window contacts, or dual technology sensors."
+                },
+                "certificate_no": {
+                    "type": "string",
+                    "description": "(US) alarm monitoring certificate number",
+                    "long-description": "(US) The unique certificate number issued for the alarm system, usually by a central monitoring station or an accredited alarm installer."
+                },
+                "certificate_expiry": {
+                    "type": "date",
+                    "description": "(US) Expiration date of alarm monitoring certificate.",
+                    "long-description": "(US) The expiration date of the burglar alarm system's monitoring certificate."
+                },
+                "monitoring_type_@": {
+                    "central": {
+                        "type": "boolean",
+                        "description": "(US) monitored by UL listed central station",
+                        "long-description": "(US) A boolean flag indicating that the burglar alarm system is connected to and monitored by a UL (Underwriters Laboratories) listed central monitoring station, which provides higher security."
+                    },
+                    "local": {
+                        "type": "boolean",
+                        "description": "(US) local gong audible alarm only, no monitoring",
+                        "long-description": "(US) A boolean flag indicating that the burglar alarm system only produces an audible alarm on-site (local gong) and is not connected to a remote monitoring service."
+                    }
+                },
+                "central_station_has_keys": {
+                    "type": "boolean",
+                    "description": "(US) central station has keys to premises",
+                    "long-description": "(US) A boolean flag indicating whether the central alarm monitoring station holds keys or has access codes to the insured premises for emergency response."
+                },
+                "installed_serviced_by": {
+                    "type": "string",
+                    "description": "(US) company that installed and services the alarm",
+                    "long-description": "(US) The name of the company responsible for both the initial installation and ongoing maintenance and servicing of the burglar alarm system."
+                },
+                "extent": {
+                    "type": "string",
+                    "description": "(US) coverage extent e.g. full, partial, perimeter only",
+                    "long-description": "(US) The scope or reach of the burglar alarm system's protection, e.g., covering the 'full' interior, 'partial' areas, or only the 'perimeter' of the building."
+                },
+                "grade": {
+                    "type": "string",
+                    "description": "(US) alarm system grade/quality rating e.g. A, B, UL certified",
+                    "long-description": "(US) The official grade or quality rating assigned to the alarm system, indicating its reliability and compliance with industry standards (e.g., Grade A, UL Certified)."
+                },
+                "guards_watchmen_count": {
+                    "type": "number",
+                    "description": "(US) number of security guards or watchmen on premises",
+                    "long-description": "(US) The total number of security personnel or watchmen actively present and patrolling the premises."
+                },
+                "clock_hourly": {
+                    "type": "boolean",
+                    "description": "(US) guards make hourly clock rounds",
+                    "long-description": "(US) A boolean flag indicating whether security guards or watchmen conduct documented hourly rounds using a clocking system to ensure vigilance."
+                }
+            },
+            "fire_protection": {
+                "description": {
+                    "type": "string",
+                    "description": "(US) fire suppression systems installed e.g. sprinklers, standpipes, CO2, chemical systems",
+                    "long-description": "(US) A detailed description of the fire suppression systems installed in the building, such as automatic sprinklers, standpipe systems, CO2 systems, or various chemical suppression systems."
+                },
+                "sprinkler_percent": {
+                    "type": "number",
+                    "description": "(US) percentage of premises covered by sprinklers 0-100",
+                    "long-description": "(US) The percentage of the total floor area of the premises that is protected by an automatic fire sprinkler system (0-100%)."
+                },
+                "alarm_manufacturer": {
+                    "type": "string",
+                    "description": "(US) fire alarm system manufacturer e.g. Honeywell, Simplex, Notifier",
+                    "long-description": "(US) The brand or company that manufactured the installed fire alarm system (e.g., Honeywell, Simplex, Notifier)."
+                },
+                "monitoring_type_@": {
+                    "central": {
+                        "type": "boolean",
+                        "description": "(US) fire alarm monitored by UL listed central station",
+                        "long-description": "(US) A boolean flag indicating that the fire alarm system is connected to and monitored by a UL (Underwriters Laboratories) listed central monitoring station."
+                    },
+                    "local": {
+                        "type": "boolean",
+                        "description": "(US) local gong audible alarm only, no monitoring",
+                        "long-description": "(US) A boolean flag indicating that the fire alarm system only produces an audible alarm on-site (local gong) and is not connected to a remote monitoring service."
+                    }
+                }
+            },
+            "plant_machinery_details_^": {
+                "description": {
+                    "type": "string",
+                    "description": "(IN) Description of the plant/machinery item.",
+                    "long-description": "(IN) A textual description of the specific plant or machinery item, detailing its function or purpose."
+                },
+                "make_model": {
+                    "type": "string",
+                    "description": "(IN) Manufacturer and model of plant/machinery.",
+                    "long-description": "(IN) The manufacturer and model number of the plant or machinery item."
+                },
+                "year_of_manufacture": {
+                    "type": "number",
+                    "description": "(IN) Year of manufacture.",
+                    "long-description": "(IN) The calendar year in which the plant or machinery item was manufactured."
+                },
+                "condition_@": {
+                    "new": {
+                        "type": "boolean",
+                        "description": "(IN) Item is new.",
+                        "long-description": "(IN) A boolean flag indicating that the plant or machinery item is new and unused."
+                    },
+                    "second_hand": {
+                        "type": "boolean",
+                        "description": "(IN) Item is second-hand.",
+                        "long-description": "(IN) A boolean flag indicating that the plant or machinery item was purchased used or second-hand."
+                    },
+                    "obsolete": {
+                        "type": "boolean",
+                        "description": "(IN) Item is obsolete.",
+                        "long-description": "(IN) A boolean flag indicating that the plant or machinery item is considered obsolete or outdated."
+                    }
+                },
+                "purchase_cost": {
+                    "type": "currency",
+                    "description": "(IN) Original purchase cost.",
+                    "long-description": "(IN) The original monetary cost at which the plant or machinery item was purchased."
+                },
+                "current_market_value": {
+                    "type": "currency",
+                    "description": "(IN) Current market value.",
+                    "long-description": "(IN) The estimated monetary value of the plant or machinery item in the current market, considering its age, condition, and depreciation."
+                },
+                "reinstatement_value": {
+                    "type": "currency",
+                    "description": "(IN) Reinstatement value.",
+                    "long-description": "(IN) The cost to replace the plant or machinery item with a new one of similar kind and capacity, without deduction for depreciation."
+                },
+                "includes_installation_cost": {
+                    "type": "boolean",
+                    "description": "(IN) Includes installation cost.",
+                    "long-description": "(IN) A boolean flag indicating whether the provided purchase cost or reinstatement value for the machinery includes expenses for its installation."
+                }
+            },
+            "business_type_@": {
+                "appartments": {
+                    "type": "boolean",
+                    "description": "Indicates if the premises are primarily used as apartments.",
+                    "long-description": "A boolean flag indicating that the primary business conducted at the premises involves operating or managing apartment buildings."
+                },
+                "condos": {
+                    "type": "boolean",
+                    "description": "Indicates if the premises are primarily used as condos.",
+                    "long-description": "A boolean flag indicating that the primary business conducted at the premises involves operating or managing condominium units or associations."
+                },
+                "contractor": {
+                    "type": "boolean",
+                    "description": "Indicates if the business operating at the premises is a contractor.",
+                    "long-description": "A boolean flag indicating that the primary business conducted at the premises is that of a contractor (e.g., general, electrical, plumbing)."
+                },
+                "institutional": {
+                    "type": "boolean",
+                    "description": "Indicates if the business operating at the premises is institutional (e.g., school, hospital).",
+                    "long-description": "A boolean flag indicating that the primary business conducted at the premises is institutional, such as a school, university, or hospital."
+                },
+                "manufacturing": {
+                    "type": "boolean",
+                    "description": "Indicates if the business operating at the premises is manufacturing.",
+                    "long-description": "A boolean flag indicating that the primary business conducted at the premises involves the manufacturing or production of goods."
+                },
+                "office": {
+                    "type": "boolean",
+                    "description": "Indicates if the premises are primarily used as offices.",
+                    "long-description": "A boolean flag indicating that the primary business conducted at the premises is office-based services."
+                },
+                "restaurant": {
+                    "type": "boolean",
+                    "description": "Indicates if the business operating at the premises is a restaurant.",
+                    "long-description": "A boolean flag indicating that the primary business conducted at the premises is a restaurant or food service establishment."
+                },
+                "retail": {
+                    "type": "boolean",
+                    "description": "Indicates if the business operating at the premises is retail.",
+                    "long-description": "A boolean flag indicating that the primary business conducted at the premises involves the direct sale of goods to consumers."
+                },
+                "service": {
+                    "type": "boolean",
+                    "description": "Indicates if the business operating at the premises is a service provider.",
+                    "long-description": "A boolean flag indicating that the primary business conducted at the premises involves providing services rather than selling goods."
+                },
+                "wholesale": {
+                    "type": "boolean",
+                    "description": "Indicates if the business operating at the premises is wholesale.",
+                    "long-description": "A boolean flag indicating that the primary business conducted at the premises involves the sale of goods in large quantities to other businesses."
+                },
+                "others": {
+                    "type": "boolean",
+                    "description": "Indicates if the business type is other than those listed.",
+                    "long-description": "A boolean flag indicating that the primary business type at the premises is not explicitly covered by the other listed options."
+                },
+                "manufacturer": {
+                    "type": "boolean",
+                    "description": "(IN) Premises used for manufacturing.",
+                    "long-description": "(IN) A boolean flag indicating that the premises is used for manufacturing operations."
+                },
+                "trader_wholesale": {
+                    "type": "boolean",
+                    "description": "(IN) Premises used for wholesale trading.",
+                    "long-description": "(IN) A boolean flag indicating that the premises is used for wholesale trading activities."
+                },
+                "trader_retail": {
+                    "type": "boolean",
+                    "description": "(IN) Premises used for retail trading.",
+                    "long-description": "(IN) A boolean flag indicating that the premises is used for retail trading activities."
+                },
+                "hotel_hospitality": {
+                    "type": "boolean",
+                    "description": "(IN) Premises used for hotel/hospitality.",
+                    "long-description": "(IN) A boolean flag indicating that the premises is used for hotel or hospitality services."
+                },
+                "warehouse_cold_storage": {
+                    "type": "boolean",
+                    "description": "(IN) Premises used as warehouse/cold storage.",
+                    "long-description": "(IN) A boolean flag indicating that the premises is used as a warehouse or cold storage facility."
+                },
+                "educational": {
+                    "type": "boolean",
+                    "description": "(IN) Premises used for educational purposes.",
+                    "long-description": "(IN) A boolean flag indicating that the premises is used for educational purposes (e.g., school, college)."
+                },
+                "healthcare": {
+                    "type": "boolean",
+                    "description": "(IN) Premises used for healthcare services.",
+                    "long-description": "(IN) A boolean flag indicating that the premises is used for healthcare services (e.g., hospital, clinic)."
+                }
+            },
+            "business_start_date": {
+                "type": "date",
+                "description": "Date the business started operations at this location.",
+                "long-description": "The specific date when the insured's business began its operational activities at this particular premises."
+            },
+            "business_description": {
+                "type": "string",
+                "description": "Detailed description of the business operations at this location.",
+                "long-description": "A comprehensive narrative explaining the nature, scope, and specific activities of the business conducted at this premises."
+            },
+            "additional_interest_^": {
+                "interest_type_@": {
+                    "additional_insured": {
+                        "type": "boolean",
+                        "description": "The party is an additional insured on the policy.",
+                        "long-description": "A boolean flag indicating that the party has been added to the policy to protect their interest in relation to the insured property or operations."
+                    },
+                    "breach_of_warranty": {
+                        "type": "boolean",
+                        "description": "The party has Breach of Warranty coverage.",
+                        "long-description": "A boolean flag indicating that the party is protected against loss even if the insured breaches a policy condition or warranty."
+                    },
+                    "co_owner": {
+                        "type": "boolean",
+                        "description": "The party is a co-owner of the property.",
+                        "long-description": "A boolean flag indicating that the party shares ownership of the insured property with the primary insured."
+                    },
+                    "employee_as_lessor": {
+                        "type": "boolean",
+                        "description": "The party is an employee acting as a lessor.",
+                        "long-description": "A boolean flag indicating that the party is an employee of the insured who also leases property to the insured."
+                    },
+                    "leaseback_owner": {
+                        "type": "boolean",
+                        "description": "The party is an owner in a leaseback arrangement.",
+                        "long-description": "A boolean flag indicating that the party sold the property to the insured and then leased it back, maintaining an ownership interest."
+                    },
+                    "lenders_loss_payable": {
+                        "type": "boolean",
+                        "description": "The party is a lender with a loss payable interest.",
+                        "long-description": "A boolean flag indicating that the party is a lender whose financial interest in the insured property is protected in the event of a loss."
+                    },
+                    "lienholder": {
+                        "type": "boolean",
+                        "description": "The party holds a lien on the insured property.",
+                        "long-description": "A boolean flag indicating that the party has a legal claim against the insured property for a debt or obligation."
+                    },
+                    "loss_payee": {
+                        "type": "boolean",
+                        "description": "The party is a designated loss payee.",
+                        "long-description": "A boolean flag indicating that the party is designated to receive payment for a loss under the policy, usually for property in which they have a financial interest."
+                    },
+                    "mortgagee": {
+                        "type": "boolean",
+                        "description": "The party is a mortgagee with an interest in the property.",
+                        "long-description": "A boolean flag indicating that the party is a lender holding a mortgage on the insured property, protected for their financial interest."
+                    },
+                    "owner": {
+                        "type": "boolean",
+                        "description": "The party is an owner of the property (other than the primary insured).",
+                        "long-description": "A boolean flag indicating that the party is an owner of the insured property, distinct from the primary insured entity."
+                    },
+                    "registrant": {
+                        "type": "boolean",
+                        "description": "The party is the registrant of the insured item.",
+                        "long-description": "A boolean flag indicating that the party is the official registrant of the insured item (e.g., vehicle, watercraft)."
+                    },
+                    "trustee": {
+                        "type": "boolean",
+                        "description": "The party is a trustee related to the insured interest.",
+                        "long-description": "A boolean flag indicating that the party acts as a trustee, holding legal title to property for the benefit of another related to the insured interest."
+                    }
+                },
+                "rank": {
+                    "type": "string",
+                    "description": "Rank or priority of the additional interest (e.g., 1st, 2nd).",
+                    "long-description": "The sequential order or priority of the additional interest's claim or standing, often relevant for multiple lenders or lienholders."
+                },
+                "evidence_@": {
+                    "certificate": {
+                        "type": "boolean",
+                        "description": "Evidence of interest is provided by a certificate of insurance.",
+                        "long-description": "A boolean flag indicating that proof of the additional interest's coverage or status is documented through a certificate of insurance."
+                    },
+                    "policy": {
+                        "type": "boolean",
+                        "description": "Evidence of interest is provided by the full policy document.",
+                        "long-description": "A boolean flag indicating that proof of the additional interest's coverage or status is documented within the main insurance policy document itself."
+                    },
+                    "other": {
+                        "type": "boolean",
+                        "description": "Evidence of interest is provided by other means.",
+                        "long-description": "A boolean flag indicating that proof of the additional interest's coverage or status is provided through a method not explicitly listed."
+                    }
+                },
+                "name": {
+                    "type": "string",
+                    "description": "Name of the additional interested party.",
+                    "long-description": "The full legal name of the additional party holding an interest in the insured policy or property."
+                },
+                "address_1": {
+                    "type": "string",
+                    "description": "First line of the additional interest's address.",
+                    "long-description": "The primary street address line for the additional interested party's mailing or physical location."
+                },
+                "address_2": {
+                    "type": "string",
+                    "description": "Second line of the additional interest's address.",
+                    "long-description": "An optional secondary address line for the additional interested party's mailing or physical location."
+                },
+                "city": {
+                    "type": "string",
+                    "description": "City of the additional interest's address.",
+                    "long-description": "The city component of the additional interested party's mailing or physical address."
+                },
+                "state": {
+                    "type": "state",
+                    "description": "State of the additional interest's address.",
+                    "long-description": "The state, province, or region component of the additional interested party's mailing or physical address."
+                },
+                "zipcode": {
+                    "type": "zip",
+                    "description": "Postal code of the additional interest's address.",
+                    "long-description": "The postal code or ZIP code component of the additional interested party's mailing or physical address."
+                },
+                "reference_loan_no": {
+                    "type": "string",
+                    "description": "Loan or reference number associated with the additional interest.",
+                    "long-description": "A specific loan number, account number, or other reference identifier linking the additional interest to a financial agreement or asset."
+                },
+                "location": {
+                    "type": "string",
+                    "description": "Location associated with this additional interest.",
+                    "long-description": "The specific location (e.g., location ID or address) to which this additional interest pertains."
+                },
+                "building": {
+                    "type": "string",
+                    "description": "Building associated with this additional interest.",
+                    "long-description": "The specific building (e.g., building ID or description) at the location to which this additional interest pertains."
+                },
+                "item_class": {
+                    "type": "string",
+                    "description": "Class of item associated with this additional interest (e.g., vehicle, equipment).",
+                    "long-description": "The general category or class of the insured item (e.g., vehicle, machinery, inventory) to which this additional interest applies."
+                },
+                "item_no": {
+                    "type": "string",
+                    "description": "Item number associated with this additional interest.",
+                    "long-description": "A unique identifier or serial number for the specific insured item to which this additional interest applies."
+                },
+                "item_description": {
+                    "type": "string",
+                    "description": "Description of the item associated with this additional interest.",
+                    "long-description": "A brief description of the specific insured item that the additional interest is associated with."
+                },
+                "interest_end_date": {
+                    "type": "date",
+                    "description": "Date when the additional interest is no longer valid.",
+                    "long-description": "The date on which the additional interest's claim or protection under the policy is scheduled to terminate."
+                },
+                "interest_reason": {
+                    "type": "string",
+                    "description": "Reason for including this additional interest.",
+                    "long-description": "A textual explanation detailing why this additional party has a vested interest in the insured property or policy."
+                },
+                "lein_amount": {
+                    "type": "number",
+                    "description": "Amount of the lien held by the additional interest.",
+                    "long-description": "The specific monetary value of the lien or financial claim held by the additional interested party against the insured property."
+                }
+            }
+        },
+        "underwriting_questions": {}
+    }
+}

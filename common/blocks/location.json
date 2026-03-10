@@ -1,0 +1,91 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "$id": "https://example.com/components/location/location.json",
+    "title": "Location Details",
+    "description": "Detailed information for a specific physical location. (Properties omitted as requested)",
+    "type": "object",
+    "properties": {
+        "location_id": {
+            "type": "string",
+            "description": "Unique identifier for the location.",
+            "long-description": "A unique alphanumeric identifier assigned to differentiate individual physical locations where insured property or operations exist."
+        },
+        "building_id": {
+            "type": "string",
+            "description": "Unique identifier for the building at the location.",
+            "long-description": "A unique alphanumeric identifier assigned to a specific building within a given location, especially if multiple buildings are present."
+        },
+        "building_description": {
+            "type": "string",
+            "description": "Description of the building at this location.",
+            "long-description": "A brief textual description detailing the characteristics, purpose, or notable features of the building at the specified location."
+        },
+        "address_1": {
+            "type": "string",
+            "description": "First line of the location's address.",
+            "long-description": "The primary street address line for the physical location of the insured property or operations."
+        },
+        "address_2": {
+            "type": "string",
+            "description": "Second line of the location's address.",
+            "long-description": "An optional secondary address line for the location, often used for suite, apartment, or unit numbers."
+        },
+        "city": {
+            "type": "string",
+            "description": "City of the location.",
+            "long-description": "The city component of the physical address of the insured location."
+        },
+        "district": {
+            "type": "string",
+            "description": "(IN) revenue district, used for STFI/earthquake zone determination",
+            "long-description": "In India, the revenue district is an administrative division used for geographical classification, often crucial for determining Storm, Tempest, Flood, and Inundation (STFI) or earthquake zone ratings for insurance purposes."
+        },
+        "county": {
+            "type": "string",
+            "description": "County of the location.",
+            "long-description": "The county or administrative division of the physical address of the insured location, common in US contexts."
+        },
+        "state": {
+            "type": "string",
+            "description": "State of the location.",
+            "long-description": "The state, province, or region component of the physical address of the insured location."
+        },
+        "zipcode": {
+            "type": "string",
+            "description": "Postal code of the location.",
+            "long-description": "The postal code or ZIP code component of the physical address of the insured location."
+        },
+        "pincode": {
+            "type": "string",
+            "description": "(IN)",
+            "long-description": "In India, the Postal Index Number (PIN) code is a 6-digit number used by India Post to identify specific geographic regions, essential for mail delivery and location identification."
+        },
+        "latitude": {
+            "type": "number",
+            "description": "(IN) GPS latitude for catastrophe zone mapping",
+            "long-description": "In India, the GPS latitude coordinate (decimal degrees) of the location, used to precisely map its position for assessing catastrophe zone risks like earthquakes or cyclones."
+        },
+        "longitude": {
+            "type": "number",
+            "description": "(IN) GPS longitude for catastrophe zone mapping",
+            "long-description": "In India, the GPS longitude coordinate (decimal degrees) of the location, used to precisely map its position for assessing catastrophe zone risks like earthquakes or cyclones."
+        },
+        "city_limit_@": {
+            "inside": {
+                "type": "boolean",
+                "description": "Indicates if the location is inside city limits.",
+                "long-description": "A boolean flag indicating whether the physical location of the insured property or operations falls within the boundaries of an incorporated city or town."
+            },
+            "outside": {
+                "type": "boolean",
+                "description": "Indicates if the location is outside city limits.",
+                "long-description": "A boolean flag indicating whether the physical location of the insured property or operations is situated beyond the boundaries of an incorporated city or town."
+            },
+            "nowhere": {
+                "type": "boolean",
+                "description": "Indicates if city limits are not applicable or unknown for this location.",
+                "long-description": "A boolean flag indicating that the concept of 'city limits' does not apply to this location (e.g., rural area) or the information is unavailable."
+            }
+        }
+    }
+}

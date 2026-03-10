@@ -1,0 +1,134 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "$id": "https://insillion-schemas/common/blocks/attachments.json",
+    "title": "Application Attachments",
+    "description": "List of documents or schedules attached to the insurance application. (Properties omitted as requested)",
+    "type": "object",
+    "properties": {
+        "accounts_receivables": {
+            "type": "boolean",
+            "description": "Indicates if an Accounts Receivables schedule is attached.",
+            "long-description": "A boolean flag indicating whether a separate schedule detailing the insured's accounts receivables is included with the application."
+        },
+        "additional_interest_schedule": {
+            "type": "boolean",
+            "description": "Indicates if an Additional Interest schedule is attached.",
+            "long-description": "A boolean flag indicating whether a schedule listing all additional interested parties (e.g., mortgagees, loss payees) and their details is included with the application."
+        },
+        "location_information": {
+            "type": "boolean",
+            "description": "premise information schedule",
+            "long-description": "A boolean flag indicating whether a detailed schedule providing information about each insured premises or location is attached to the application."
+        },
+        "appartment_supplement": {
+            "type": "boolean",
+            "description": "Indicates if an Apartment Supplement is attached.",
+            "long-description": "A boolean flag indicating whether a supplementary form specifically for apartment buildings or complexes is included with the application."
+        },
+        "condo_bylaws": {
+            "type": "boolean",
+            "description": "condo association bylaws",
+            "long-description": "A boolean flag indicating whether the bylaws or governing documents of a condominium association are attached to the application, relevant for condo association policies."
+        },
+        "contractors_supplement": {
+            "type": "boolean",
+            "description": "Indicates if a Contractors Supplement is attached.",
+            "long-description": "A boolean flag indicating whether a supplementary form specifically for contractors' operations and exposures is included with the application."
+        },
+        "coverages_schedule": {
+            "type": "boolean",
+            "description": "Indicates if a Coverages Schedule is attached.",
+            "long-description": "A boolean flag indicating whether a detailed schedule outlining all selected coverages, limits, and deductibles is included with the application."
+        },
+        "dealers_section": {
+            "type": "boolean",
+            "description": "Indicates if a Dealers Section is attached.",
+            "long-description": "A boolean flag indicating whether a specific section or form related to vehicle or equipment dealers' exposures is included with the application."
+        },
+        "drivers_information": {
+            "type": "boolean",
+            "description": "Indicates if Drivers Information is attached.",
+            "long-description": "A boolean flag indicating whether a list of drivers and their details (e.g., license information, driving history) is included with the application, typically for auto or commercial vehicle policies."
+        },
+        "eds_section": {
+            "type": "boolean",
+            "description": "Indicates if an Equipment Dealers Supplement (EDS) is attached.",
+            "long-description": "A boolean flag indicating whether an Equipment Dealers Supplement, providing specific details for businesses that sell or service equipment, is included with the application."
+        },
+        "glass_signs": {
+            "type": "boolean",
+            "description": "Indicates if a Glass & Signs schedule is attached.",
+            "long-description": "A boolean flag indicating whether a separate schedule detailing insured glass and signs at the premises is included with the application."
+        },
+        "hotel_motel_supplement": {
+            "type": "boolean",
+            "description": "Indicates if a Hotel/Motel Supplement is attached.",
+            "long-description": "A boolean flag indicating whether a supplementary form specifically for hotel or motel operations and exposures is included with the application."
+        },
+        "inst_builders_risk": {
+            "type": "boolean",
+            "description": "installation/builders risk",
+            "long-description": "A boolean flag indicating whether an Installation/Builders Risk supplement, relevant for projects under construction or installation, is attached to the application."
+        },
+        "intnl_liability": {
+            "type": "boolean",
+            "description": "international liability exposure supplement",
+            "long-description": "A boolean flag indicating whether a supplement detailing international liability exposures of the insured is attached to the application."
+        },
+        "intnl_property": {
+            "type": "boolean",
+            "description": "international properties exposure supplement",
+            "long-description": "A boolean flag indicating whether a supplement detailing international property exposures of the insured is attached to the application."
+        },
+        "loss_summary": {
+            "type": "boolean",
+            "description": "Indicates if a Loss Summary is attached.",
+            "long-description": "A boolean flag indicating whether a summary document outlining the insured's past loss history is included with the application."
+        },
+        "open_cargo_section": {
+            "type": "boolean",
+            "description": "Indicates if an Open Cargo Section is attached.",
+            "long-description": "A boolean flag indicating whether a specific section or form related to open cargo insurance (for goods in transit) is included with the application."
+        },
+        "premium_payment": {
+            "type": "boolean",
+            "description": "Indicates if a Premium Payment schedule is attached.",
+            "long-description": "A boolean flag indicating whether a schedule outlining the agreed-upon premium payment plan or installments is included with the application."
+        },
+        "professional_liability": {
+            "type": "boolean",
+            "description": "Indicates if a Professional Liability supplement is attached.",
+            "long-description": "A boolean flag indicating whether a supplementary form specifically for professional liability exposures (Errors & Omissions) is included with the application."
+        },
+        "restaurant_tavern": {
+            "type": "boolean",
+            "description": "Indicates if a Restaurant/Tavern Supplement is attached.",
+            "long-description": "A boolean flag indicating whether a supplementary form specifically for restaurant or tavern operations and exposures is included with the application."
+        },
+        "statement_schedule": {
+            "type": "boolean",
+            "description": "statement/schedule of values (SOV)",
+            "long-description": "A boolean flag indicating whether a Statement/Schedule of Values (SOV) is attached, detailing the values of insured property at various locations."
+        },
+        "state_supplement": {
+            "type": "boolean",
+            "description": "Indicates if a State Specific Supplement is attached.",
+            "long-description": "A boolean flag indicating whether a supplementary form containing state-specific questions or requirements is included with the application."
+        },
+        "vacant_building_supp": {
+            "type": "boolean",
+            "description": "Indicates if a Vacant Building Supplement is attached.",
+            "long-description": "A boolean flag indicating whether a supplementary form for properties that are vacant or unoccupied is included with the application."
+        },
+        "vehicle_schedule": {
+            "type": "boolean",
+            "description": "Indicates if a Vehicle Schedule is attached.",
+            "long-description": "A boolean flag indicating whether a detailed schedule listing all insured vehicles is included with the application, typically for commercial auto policies."
+        },
+        "other_attachment": {
+            "type": "boolean",
+            "description": "user defined or undefined attachment",
+            "long-description": "A boolean flag indicating whether any other type of attachment, not specifically listed, is included with the application."
+        }
+    }
+}

@@ -1,0 +1,84 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "$id": "https://example.com//insillion-schemas/insillion_schemas.json",
+    "title": "Commercial Line Insurance Application Payload",
+    "description": "Schema for generating an output JSON payload from unstructured insurance application documents.",
+    "type": "object",
+    "properties": {
+        "application_date": {"type": "date", "description": "Date the insurance application was submitted.", "long-description": "The calendar date on which the application for insurance coverage was completed and submitted to the insurer or producer."},
+        "cust_ref_id": {"type": "string", "description": "agency/broker/customer reference id", "long-description": "A unique identifier or reference number assigned by the agency, broker, or customer for their internal tracking of this application or client."},
+        "policy_start_date": {"type": "date", "description": "proposed effective date", "long-description": "The desired or proposed date when the insurance policy is intended to become active and provide coverage."},
+        "policy_start_time": {"type": "string", "description": "Proposed effective time of the policy.", "long-description": "The specific time on the policy start date when the insurance coverage is intended to begin, usually in HH:MM format."},
+        "policy_end_date": {"type": "date", "description": "proposed expiry date", "long-description": "The desired or proposed date when the insurance policy is intended to expire and coverage will cease, unless renewed."},
+        "insured": {
+            "$ref": "common/blocks/insured.json",
+            "other_insured_^": {
+                "$ref": "common/blocks/insured.json"
+            }
+        },
+        "producer": {
+            "$ref": "common/blocks/producer.json"
+        },
+        "attachments": {
+            "$ref": "common/blocks/attachments.json"
+        },
+        "location_^": {
+            "$ref": "common/blocks/location.json"
+        },
+        "carrier": {
+            "$ref": "common/blocks/carrier.json"
+        },
+        "prior_carrier_^": {
+            "$ref": "common/blocks/prior_carrier.json"
+        },
+        "loss_run": {
+            "$ref": "common/blocks/loss_run.json"
+        },
+        "property": {
+            "$ref": "lob/property/property.json"
+        },
+        "workers_comp": {
+            "$ref": "lob/workers_comp/workers_comp.json"
+        },
+        "group_medical": {
+            "$ref": "lob/group_medical/group_medical.json"
+        },
+        "group_accident": {
+            "$ref": "lob/group_medical/group_medical.json"
+        },
+        "liability": {
+            "general_liability": {
+                "$ref": "lob/liability/general_liability.json"
+            },
+            "product_liability": {
+                "$ref": "lob/liability/product_liability.json"            
+            },
+            "errors_ommissions": {
+                "$ref": "lob/liability/errors_ommissions.json"
+            },
+            "directors_officers": {
+                "$ref": "lob/liability/directors_officers.json"
+            }
+        },
+        "engineering": {
+            "$ref": "lob/engineering/engineering.json"
+        },
+        "life": {
+            "$ref": "lob/life/life.json"
+        },
+        "underwriting_questions": {
+            "$ref": "common/blocks/underwriting_questions.json"
+        },
+        "signature": {
+            "$ref": "common/blocks/signature.json"
+        },
+        "blanket_^": {
+            "$ref": "common/blocks/blanket.json"
+        }
+    },
+    "required": [
+        "application_date",
+        "policy_start_date",
+        "insured"
+    ]
+}

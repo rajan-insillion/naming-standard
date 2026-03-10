@@ -46,15 +46,19 @@ Resolving all 8 dimensions produces a **Schema Constitution** — a single autho
 
 ### 2.1 Casing Rule
 
-All field names use **snake_case**. No camelCase. No kebab-case. No PascalCase.
+All field names use **snake_case**. 
+No camelCase. No kebab-case. No PascalCase.
+Avoid prepositions such as 'of', 'and', 'or'.
 
 ```
 ✅  policy_start_date
+✅  registration_date
 ✅  general_aggregate
 ✅  naic_code
 ❌  policyStartDate
 ❌  policy-start-date
 ❌  PolicyStartDate
+❌  date_of_registration
 ```
 
 ### 2.2 Approved Sigil Suffixes

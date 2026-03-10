@@ -1,0 +1,98 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "$id": "https://example.com/insillion-schemas/common/blocks/loss_run.json",
+    "title": "Loss Run History",
+    "description": "Summary of prior loss and claim history. (Properties omitted as requested)",
+    "type": "object",
+    "properties": {
+        "no_prior_losses": {
+            "type": "boolean",
+            "description": "Indicates if there were no prior losses reported.",
+            "long-description": "A boolean flag indicating that the insured has no record of prior insurance claims or losses for the specified period."
+        },
+        "year_count": {
+            "type": "number",
+            "description": "Number of prior years for which loss history is provided.",
+            "long-description": "The total number of historical years for which loss data and claim history are being submitted or requested."
+        },
+        "total_loss": {
+            "type": "currency",
+            "description": "Total amount of losses reported across all prior years.",
+            "long-description": "The cumulative monetary value of all reported claims and losses during the provided historical period."
+        },
+        "history_^": {
+            "year": {
+                "type": "number",
+                "description": "(IN)",
+                "long-description": "The calendar year in which the specific loss event occurred."
+            },
+            "lob": {
+                "type": "string",
+                "description": "(IN) fire, STFI, earthquake, burglary etc.",
+                "long-description": "In India, the specific type of loss (e.g., fire, storm, earthquake, burglary) for which the claim was made."
+            },
+            "line_of_business": {
+                "type": "string",
+                "description": "Line of business for the reported loss (e.g., Property, Liability). (ACORD-125)",
+                "long-description": "The general category of insurance (e.g., Property, General Liability, Auto) under which the reported loss falls."
+            },
+            "loss_details": {
+                "type": "string",
+                "description": "Description of the loss incident.",
+                "long-description": "A detailed explanation of the circumstances, cause, and impact of the reported loss event."
+            },
+            "claim_date": {
+                "type": "date",
+                "description": "Date the claim was reported.",
+                "long-description": "The date on which the insurance claim for this specific loss was formally submitted to the insurer."
+            },
+            "date_of_loss": {
+                "type": "date",
+                "description": "(IN)",
+                "long-description": "In India, the precise date when the actual loss or damage event occurred."
+            },
+            "claim_amount": {
+                "type": "currency",
+                "description": "(IN)",
+                "long-description": "In India, the total monetary amount of the claim as initially reported or estimated."
+            },
+            "amount_paid": {
+                "type": "currency",
+                "description": "(IN) settlement_amount",
+                "long-description": "In India, the final monetary amount disbursed by the insurer to settle the claim."
+            },
+            "amount_reserved": {
+                "type": "currency",
+                "description": "Amount reserved for the claim by the insurer.",
+                "long-description": "The monetary amount that the insurer has set aside or allocated to cover the potential payment of this claim."
+            },
+            "subrogation": {
+                "type": "YN",
+                "description": "Indicates if subrogation applies to this claim (Y/N).",
+                "long-description": "A Y/N indicator specifying whether the insurer has the right to pursue a third party responsible for the loss to recover the amount paid on the claim."
+            },
+            "claim_open": {
+                "type": "YN",
+                "description": "Indicates if the claim is still open (Y/N).",
+                "long-description": "A Y/N indicator specifying whether the claim is still actively being processed or investigated, or if it has been closed."
+            },
+            "claim_status_@": {
+                "settled": {
+                    "type": "boolean",
+                    "description": "(IN)",
+                    "long-description": "In India, a boolean flag indicating that the claim has been fully resolved and the payment has been made."
+                },
+                "pending": {
+                    "type": "boolean",
+                    "description": "(IN)",
+                    "long-description": "In India, a boolean flag indicating that the claim is currently under review, investigation, or awaiting resolution."
+                },
+                "repudiated": {
+                    "type": "boolean",
+                    "description": "(IN)",
+                    "long-description": "In India, a boolean flag indicating that the claim has been denied by the insurer, meaning no payment will be made."
+                }
+            }
+        }
+    }
+}

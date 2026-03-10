@@ -1,0 +1,151 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "$id": "https://example.com/insillion-schemas/common/blocks/insured.json",
+    "title": "Insured Information",
+    "description": "Details about the primary insured entity. (Properties omitted as requested)",
+    "type": "object",
+    "properties": {
+        "name": {
+            "type": "string",
+            "description": "first / primary insured name",
+            "long-description": "The full legal name of the primary individual, company, or entity applying for and covered by the insurance policy."
+        },
+        "address_1": {
+            "type": "string",
+            "description": "First line of the insured's address.",
+            "long-description": "The primary street address line for the insured's mailing or physical location."
+        },
+        "address_2": {
+            "type": "string",
+            "description": "Second line of the insured's address.",
+            "long-description": "An optional secondary address line for the insured's mailing or physical location, often used for suite, apartment, or floor numbers."
+        },
+        "city": {
+            "type": "string",
+            "description": "City of the insured's address.",
+            "long-description": "The city component of the insured's mailing or physical address."
+        },
+        "state": {
+            "type": "string",
+            "description": "State of the insured's address.",
+            "long-description": "The state, province, or region component of the insured's mailing or physical address."
+        },
+        "zipcode": {
+            "type": "string",
+            "description": "Postal code of the insured's address.",
+            "long-description": "The postal code or ZIP code component of the insured's mailing or physical address."
+        },
+        "pan_no": {
+            "type": "string",
+            "description": "(IN) Permanent Account Number (PAN), 10-char alphanumeric",
+            "long-description": "In India, the Permanent Account Number (PAN) is a ten-character alphanumeric identifier issued by the Indian Income Tax Department. It is mandatory for most financial transactions and tax purposes."
+        },
+        "gstin": {
+            "type": "string",
+            "description": "(IN) GST Identification Number, 15-char alphanumeric",
+            "long-description": "In India, the Goods and Services Tax Identification Number (GSTIN) is a 15-character alphanumeric unique identification number provided to every taxpayer registered under the Goods and Services Tax regime."
+        },
+        "udyam_reg_no": {
+            "type": "string",
+            "description": "(IN) Udyam Registration No. (IRDAI mandatory for BSUS/BLUS), format UDYAM-XX-00-0000000",
+            "long-description": "In India, the Udyam Registration Number is a government-issued registration for Micro, Small and Medium Enterprises (MSMEs). It's a unique identification and is often mandated by IRDAI for Business Small Underserved (BSUS) / Business Large Underserved (BLUS) segments in insurance."
+        },
+        "cin": {
+            "type": "string",
+            "description": "(IN) Corporate Identification Number - for companies",
+            "long-description": "In India, the Corporate Identification Number (CIN) is a unique 21-digit alphanumeric code issued by the Registrar of Companies (ROC) to companies incorporated in India. It's used for tracking company activities."
+        },
+        "llpin": {
+            "type": "string",
+            "description": "(IN) LLP Identification Number - for LLPs",
+            "long-description": "In India, the Limited Liability Partnership Identification Number (LLPIN) is a unique 7-digit alphanumeric identifier assigned by the Ministry of Corporate Affairs (MCA) to Limited Liability Partnerships."
+        },
+        "industry_description": {
+            "type": "string",
+            "description": "(IN) brief description of industry/trade/occupation",
+            "long-description": "A concise summary of the primary business activities, trade, or occupation that the insured is engaged in, providing context for underwriting."
+        },
+        "nic_code": {
+            "type": "string",
+            "description": "(IN) National Industrial Classification (NIC) code 2008",
+            "long-description": "In India, the National Industrial Classification (NIC) code, specifically from the 2008 revision, is a statistical standard used to classify economic activities. It helps in categorizing businesses based on their industry."
+        },
+        "general_liability_code": {
+            "type": "string",
+            "description": "GL code",
+            "long-description": "A classification code used by insurers to categorize the general liability exposure of a business based on its operations and industry, influencing premium rates."
+        },
+        "sic_code": {
+            "type": "string",
+            "description": "Standard Industrial Classification code.",
+            "long-description": "The Standard Industrial Classification (SIC) code is a four-digit numerical code used by government agencies to classify industry areas. It helps in categorizing businesses based on their primary activities."
+        },
+        "naic_code": {
+            "type": "string",
+            "description": "North American Industry Classification System code.",
+            "long-description": "The North American Industry Classification System (NAICS) code is a six-digit numerical code used by government agencies to classify business establishments. It is the standard used by Federal statistical agencies in classifying business establishments for the purpose of collecting, analyzing, and publishing statistical data related to the U.S. business economy."
+        },
+        "tax_code": {
+            "type": "string",
+            "description": "Tax code, FEIN or SOC section number",
+            "long-description": "The tax identification number for the insured, which could be a Federal Employer Identification Number (FEIN) for businesses in the US, or another relevant tax section number as applicable to the jurisdiction."
+        },
+        "phone_no": {
+            "type": "string",
+            "description": "Primary phone number for the insured.",
+            "long-description": "The main telephone contact number for the insured entity."
+        },
+        "website": {
+            "type": "string",
+            "description": "Website URL for the insured.",
+            "long-description": "The official website address (URL) of the insured's business or organization."
+        },
+        "legal_entity_@": {
+            "corporation": {
+                "type": "boolean",
+                "description": "Indicates if the insured is a Corporation.",
+                "long-description": "A boolean flag indicating whether the insured is legally structured as a corporation."
+            },
+            "individual": {
+                "type": "boolean",
+                "description": "Indicates if the insured is an Individual.",
+                "long-description": "A boolean flag indicating whether the insured is an individual person, typically a sole proprietor."
+            },
+            "joint_venture": {
+                "type": "boolean",
+                "description": "Indicates if the insured is a Joint Venture.",
+                "long-description": "A boolean flag indicating whether the insured is a joint venture, which is a business arrangement in which two or more parties agree to pool their resources for the purpose of accomplishing a specific task."
+            },
+            "llc": {
+                "type": "boolean",
+                "description": "Indicates if the insured is a Limited Liability Company (LLC).",
+                "long-description": "A boolean flag indicating whether the insured is legally structured as a Limited Liability Company (LLC)."
+            },
+            "not_for_profit": {
+                "type": "boolean",
+                "description": "Indicates if the insured is a Not-for-Profit organization.",
+                "long-description": "A boolean flag indicating whether the insured is legally recognized as a not-for-profit or non-profit organization."
+            },
+            "partnership": {
+                "type": "boolean",
+                "description": "Indicates if the insured is a Partnership.",
+                "long-description": "A boolean flag indicating whether the insured is legally structured as a partnership."
+            },
+            "subchapter_s_corp": {
+                "type": "boolean",
+                "description": "Indicates if the insured is a Subchapter S Corporation.",
+                "long-description": "A boolean flag indicating whether the insured is legally structured as a Subchapter S Corporation, a type of corporation that meets specific Internal Revenue Code requirements."
+            },
+            "trust": {
+                "type": "boolean",
+                "description": "Indicates if the insured is a Trust.",
+                "long-description": "A boolean flag indicating whether the insured is a trust, a legal arrangement where a trustee holds assets for the benefit of beneficiaries."
+            },
+            "other": {
+                "type": "boolean",
+                "description": "Indicates if the insured's legal entity type is Other.",
+                "long-description": "A boolean flag indicating whether the insured's legal entity structure is not explicitly listed among the predefined options."
+            }
+        }
+    }
+}

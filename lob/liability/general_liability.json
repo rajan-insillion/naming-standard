@@ -1,0 +1,221 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "$id": "https://example.com/components/liability/general_liability.json",
+    "title": "General Liability Coverage",
+    "description": "Details for Commercial General Liability (CGL) coverage. (Properties omitted as requested)",
+    "type": "object",
+    "properties": {
+        "coverage_form_@": {
+            "occurrence": {
+                "type": "bool",
+                "description": "(US) Coverage is provided on an Occurrence basis.",
+                "long-description": "(US) A boolean flag indicating that the Commercial General Liability (CGL) coverage is provided on an 'occurrence' basis, meaning it covers incidents that occur during the policy period, regardless of when the claim is reported."
+            },
+            "claims_made": {
+                "type": "bool",
+                "description": "(US) Coverage is provided on a Claims-Made basis.",
+                "long-description": "(US) A boolean flag indicating that the Commercial General Liability (CGL) coverage is provided on a 'claims-made' basis, meaning it covers claims reported during the policy period, provided the incident occurred on or after the retroactive date."
+            },
+            "extended_reporting_period_opted": {
+                "type": "bool",
+                "description": "(US) Has Extended Reporting Period (ERP) been purchased/offered for Claims-Made policy?",
+                "long-description": "(US) A boolean flag indicating whether an Extended Reporting Period (ERP), or 'tail' coverage, has been purchased or is being offered for a claims-made policy, allowing claims to be reported after the policy expires for incidents that occurred during the policy period."
+            },
+            "retro_active_date": {
+                "type": "date",
+                "description": "(US) Retroactive Date for Claims-Made policy.",
+                "long-description": "(US) The date on or after which an occurrence must take place for coverage to apply under a claims-made Commercial General Liability (CGL) policy."
+            },
+            "extended_reporting_period_duration_months": {
+                "type": "number",
+                "description": "(US) Duration of the Extended Reporting Period in months.",
+                "long-description": "(US) The number of months for which an Extended Reporting Period (ERP) provides coverage after a claims-made policy expires, if opted."
+            }
+        },
+        "general_aggregate_limit": {
+            "type": "currency",
+            "description": "(US) Maximum amount payable for all claims during the policy period, except for Products-Completed Operations.",
+            "long-description": "(US) The maximum dollar amount the insurer will pay for all covered losses during the policy period, excluding losses under the Products-Completed Operations Hazard."
+        },
+        "products_completed_ops_aggregate_limit": {
+            "type": "currency",
+            "description": "(US) Maximum amount payable for all Products-Completed Operations claims during the policy period.",
+            "long-description": "(US) The maximum dollar amount the insurer will pay for all damages arising out of the Products-Completed Operations Hazard during the policy period."
+        },
+        "personal_advertising_injury_limit": {
+            "type": "currency",
+            "description": "(US) Maximum amount payable for Personal and Advertising Injury per person/organization.",
+            "long-description": "(US) The maximum dollar amount the insurer will pay for the sum of all damages arising out of personal and advertising injury sustained by any one person or organization."
+        },
+        "each_occurrence_limit": {
+            "type": "currency",
+            "description": "(US) Maximum amount payable per occurrence.",
+            "long-description": "(US) The maximum dollar amount the insurer will pay for damages arising out of any one occurrence, regardless of the number of claimants."
+        },
+        "medical_expense_limit": {
+            "type": "currency",
+            "description": "(US) Maximum amount payable for Medical Expenses per person.",
+            "long-description": "(US) The maximum dollar amount the insurer will pay for medical expenses incurred by any one person due to bodily injury caused by an accident on the insured's premises or due to the insured's operations."
+        },
+        "damage_to_rented_premises_limit": {
+            "type": "currency",
+            "description": "(US) Maximum amount payable for Damage to Premises Rented to You (Fire Legal Liability).",
+            "long-description": "(US) The maximum dollar amount the insurer will pay for damages to premises rented to the insured, specifically for fire damage or other covered perils, often referred to as Fire Legal Liability."
+        },
+        "deductible_per_occurrence": {
+            "type": "currency",
+            "description": "(US) Deductible amount per occurrence.",
+            "long-description": "(US) The amount the insured must pay out-of-pocket for each covered occurrence before the Commercial General Liability (CGL) policy begins to pay."
+        },
+        "self_insured_retention_per_occurrence": {
+            "type": "currency",
+            "description": "(US) Self-Insured Retention (SIR) amount per occurrence.",
+            "long-description": "(US) The amount the insured must pay out-of-pocket for each covered occurrence, including defense costs, before the Commercial General Liability (CGL) policy begins to respond. This is typically higher than a deductible."
+        },
+        "deductible_aggregate": {
+            "type": "currency",
+            "description": "(US) Aggregate deductible amount.",
+            "long-description": "(US) The total amount of deductibles the insured must pay for all covered losses during the policy period before the insurer covers 100% of subsequent losses, up to the policy limits."
+        },
+        "self_insured_retention_aggregate": {
+            "type": "currency",
+            "description": "(US) Aggregate Self-Insured Retention (SIR) amount.",
+            "long-description": "(US) The total amount of Self-Insured Retention (SIR) the insured must pay for all covered losses during the policy period before the insurer's liability begins, typically including defense costs."
+        },
+        "exposure_basis_^": {
+            "location_id": {
+                "type": "string",
+                "description": "(US) Reference to Location ID for this exposure.",
+                "long-description": "(US) A reference to the unique identifier of the specific location associated with this general liability exposure."
+            },
+            "classification_code": {
+                "type": "string",
+                "description": "(US) ISO Commercial General Liability classification code.",
+                "long-description": "(US) The specific ISO (Insurance Services Office) classification code assigned to the insured's operations, used for rating general liability exposures."
+            },
+            "exposure_desc": {
+                "type": "string",
+                "description": "(US) Description of operations for this classification.",
+                "long-description": "(US) A detailed textual description of the specific business operations or activities that correspond to the given CGL classification code."
+            },
+            "exposure_basis_type_@": {
+                "sales": {
+                    "type": "bool",
+                    "description": "(US) Exposure basis is Sales.",
+                    "long-description": "(US) A boolean flag indicating that the general liability premium is calculated based on the insured's gross sales revenue."
+                },
+                "payroll": {
+                    "type": "bool",
+                    "description": "(US) Exposure basis is Payroll.",
+                    "long-description": "(US) A boolean flag indicating that the general liability premium is calculated based on the insured's total payroll."
+                },
+                "area_sq_ft": {
+                    "type": "bool",
+                    "description": "(US) Exposure basis is Area (square footage).",
+                    "long-description": "(US) A boolean flag indicating that the general liability premium is calculated based on the square footage of the insured premises."
+                },
+                "units": {
+                    "type": "bool",
+                    "description": "(US) Exposure basis is Units (per unit produced/sold).",
+                    "long-description": "(US) A boolean flag indicating that the general liability premium is calculated based on the number of units produced, sold, or serviced."
+                },
+                "other": {
+                    "type": "bool",
+                    "description": "(US) Other exposure basis.",
+                    "long-description": "(US) A boolean flag indicating that the general liability premium is calculated based on an exposure basis not explicitly listed."
+                }
+            },
+            "exposure_amount": {
+                "type": "number",
+                "description": "(US) Amount of exposure (e.g., total sales, payroll, sq ft).",
+                "long-description": "(US) The numerical value corresponding to the chosen exposure basis, such as total annual sales in currency, total annual payroll in currency, or total square footage."
+            },
+            "rate": {
+                "type": "number",
+                "description": "(US) Rate applied per unit of exposure.",
+                "long-description": "(US) The per-unit rate applied to the exposure amount to calculate the general liability premium (e.g., per $1,000 of sales or payroll, per 100 sq ft)."
+            }
+        },
+        "products_completed_operations_sales": {
+            "type": "currency",
+            "description": "(US) Total annual sales for Products-Completed Operations exposure.",
+            "long-description": "(US) The total annual gross sales revenue specifically related to products manufactured, sold, handled, or distributed by the insured, or operations completed by or for the insured, used as an exposure basis for Products-Completed Operations Liability."
+        },
+        "contractual_liability_incl": {
+            "type": "bool",
+            "description": "(US) Does coverage include Contractual Liability?",
+            "long-description": "(US) A boolean flag indicating whether the Commercial General Liability (CGL) policy includes coverage for liability assumed by the insured under a contract or agreement."
+        },
+        "xcu_exposure": {
+            "type": "bool",
+            "description": "(US) Is there Explosion, Collapse, or Underground (XCU) exposure?",
+            "long-description": "(US) A boolean flag indicating whether the insured has exposures related to explosion, collapse, or underground hazards, which are often specifically excluded or require special handling under CGL policies."
+        },
+        "liquor_liability_exposure": {
+            "type": "bool",
+            "description": "(US) Does the insured have Liquor Liability exposure?",
+            "long-description": "(US) A boolean flag indicating whether the insured's operations involve the manufacturing, distributing, selling, serving, or furnishing of alcoholic beverages, which can create Liquor Liability exposure."
+        },
+        "employee_benefits_liability": {
+            "type": "bool",
+            "description": "(US) Is Employee Benefits Liability coverage included?",
+            "long-description": "(US) A boolean flag indicating whether coverage for errors or omissions in the administration of the insured's employee benefits programs (e.g., health, life, pension plans) is included."
+        },
+        "mobile_equipment_coverage": {
+            "type": "bool",
+            "description": "(US) Is coverage provided for mobile equipment?",
+            "long-description": "(US) A boolean flag indicating whether the Commercial General Liability (CGL) policy extends coverage to liability arising from the ownership, maintenance, or use of mobile equipment."
+        },
+        "pollution_exclusion_applicable": {
+            "type": "bool",
+            "description": "(US) Is a total pollution exclusion applicable?",
+            "long-description": "(US) A boolean flag indicating whether a total pollution exclusion endorsement is attached to the policy, significantly limiting or removing coverage for pollution-related liability."
+        },
+        "subcontractors_used": {
+            "opted": {
+                "type": "YN",
+                "description": "(US) Does the applicant use subcontractors (Y/N)?",
+                "long-description": "(US) A Y/N indicator whether the insured utilizes independent contractors (subcontractors) for any part of their operations."
+            },
+            "cost_of_subcontractors": {
+                "type": "currency",
+                "description": "(US) Total annual cost of subcontractors.",
+                "long-description": "(US) The total monetary amount paid annually to all subcontractors by the insured."
+            },
+            "certificates_obtained_from_subcontractors": {
+                "type": "bool",
+                "description": "(US) Are Certificates of Insurance obtained from all subcontractors?",
+                "long-description": "(US) A boolean flag indicating whether the insured consistently obtains Certificates of Insurance from all subcontractors, verifying their own liability coverage."
+            }
+        },
+        "prior_pending_litigation": {
+            "opted": {
+                "type": "YN",
+                "description": "(US) Is there any prior or pending litigation against the applicant (Y/N)?",
+                "long-description": "(US) A Y/N indicator whether the applicant has any lawsuits or legal actions that were initiated before the current policy period or are still ongoing."
+            },
+            "litigation_desc": {
+                "type": "string",
+                "description": "(US) Description of prior or pending litigation.",
+                "long-description": "(US) A detailed explanation of any prior or pending litigation, including the nature of the claim, parties involved, and current status."
+            }
+        },
+        "any_unusual_operations": {
+            "opted": {
+                "type": "YN",
+                "description": "(US) Does the applicant engage in any unusual operations not typical for their business (Y/N)?",
+                "long-description": "(US) A Y/N indicator whether the insured performs any activities or operations that are outside the normal scope of their declared business type and could present unique liability risks."
+            },
+            "unusual_operations_desc": {
+                "type": "string",
+                "description": "(US) Description of unusual operations.",
+                "long-description": "(US) A detailed explanation of any unusual operations, providing context for underwriting assessment."
+            }
+        },
+        "other_liability_coverages_description": {
+            "type": "string",
+            "description": "(US) Description of any other General Liability coverages not explicitly listed.",
+            "long-description": "(US) An open text field to specify any additional or unique general liability coverages or endorsements that are not categorized by the predefined options."
+        }
+    }
+}

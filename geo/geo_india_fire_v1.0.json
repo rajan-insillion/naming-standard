@@ -1,0 +1,468 @@
+{
+    "_schema_name": "India Fire Insurance Application",
+    "_schema_version": "1.0",
+    "_base_form": "ACORD 140 (2016/03) extended for India IRDAI fire insurance",
+    "_irdai_products_covered": [
+        "Standard Fire and Special Perils Policy (SFSP) - Sum Insured above ₹50 Crore",
+        "Bharat Laghu Udyam Suraksha (BLUS) - Sum Insured ₹5 Crore to ₹50 Crore",
+        "Bharat Sookshma Udyam Suraksha (BSUS) - Sum Insured up to ₹5 Crore"
+    ],
+
+    "application_date": {"type": "date"},
+    "cust_ref_id": {"type": "string", "description": "agency/broker/customer reference id"},
+    "policy_start_date": {"type": "date"},
+    "policy_start_time": {"type": "string"},
+
+    "product_type_@": {
+        "sfsp":  {"type": "bool", "description": "Standard Fire and Special Perils - SI above ₹50 Cr"},
+        "blus":  {"type": "bool", "description": "Bharat Laghu Udyam Suraksha - SI ₹5 Cr to ₹50 Cr"},
+        "bsus":  {"type": "bool", "description": "Bharat Sookshma Udyam Suraksha - SI up to ₹5 Cr"}
+    },
+
+    "agency": {
+        "name":      {"type": "agency"},
+        "address_1": {"type": "string"},
+        "address_2": {"type": "string"},
+        "city":      {"type": "string"},
+        "state":     {"type": "state"},
+        "zipcode":   {"type": "zip"},
+        "country":   {"type": "country"}
+    },
+    "carrier": {
+        "name":        {"type": "carrier"},
+        "license_no":  {"type": "string", "description": "IRDAI registration number of the insurer"},
+        "policy_no":   {"type": "policy_no"}
+    },
+    "insured": {
+        "name":        {"type": "company", "description": "first/primary named insured"},
+        "pan_no":      {"type": "string", "description": "Permanent Account Number (PAN), 10-char alphanumeric"},
+        "gstin":       {"type": "string", "description": "GST Identification Number, 15-char alphanumeric"},
+        "udyam_reg_no": {"type": "string", "description": "Udyam Registration No. (IRDAI mandatory for BSUS/BLUS), format UDYAM-XX-00-0000000"},
+        "cin":         {"type": "string", "description": "Corporate Identification Number - for companies"},
+        "llpin":       {"type": "string", "description": "LLP Identification Number - for LLPs"},
+        "business_type_@": {
+            "manufacturer":     {"type": "bool"},
+            "trader_wholesale": {"type": "bool"},
+            "trader_retail":    {"type": "bool"},
+            "service":          {"type": "bool"},
+            "office":           {"type": "bool"},
+            "hotel_hospitality":{"type": "bool"},
+            "warehouse_cold_storage": {"type": "bool"},
+            "educational":      {"type": "bool"},
+            "healthcare":       {"type": "bool"},
+            "other":            {"type": "bool"}
+        },
+        "industry_description": {"type": "string", "description": "brief description of industry/trade/occupation"},
+        "nic_code": {"type": "string", "description": "National Industrial Classification (NIC) code 2008"}
+    },
+
+    "location_^": {
+        "location_id":          {"type": "string"},
+        "building_id":          {"type": "string"},
+        "building_description": {"type": "string"},
+        "address_1":  {"type": "string"},
+        "address_2":  {"type": "string"},
+        "city":       {"type": "string"},
+        "district":   {"type": "string", "description": "revenue district, used for STFI/earthquake zone determination"},
+        "state":      {"type": "string"},
+        "pincode":    {"type": "string"},
+        "latitude":   {"type": "number", "description": "GPS latitude for catastrophe zone mapping"},
+        "longitude":  {"type": "number", "description": "GPS longitude for catastrophe zone mapping"},
+        "occupancy":  {"type": "string", "description": "described use/occupancy of building per AIFT tariff"},
+        "tariff_occupancy_code": {"type": "string", "description": "AIFT 2001 occupancy code e.g. II(a), III(b)"},
+        "risk_location_type_@": {
+            "industrial":   {"type": "bool"},
+            "non_industrial": {"type": "bool"},
+            "mixed":        {"type": "bool"}
+        },
+
+        "subjects_of_insurance_^": {
+            "description": {"type": "string", "description": "e.g. Building, Plant & Machinery, Stock-Raw Material, Finished Goods, Furniture & Fixtures"},
+            "limit_amount": {"type": "currency", "description": "Sum Insured in INR for this subject"},
+            "co_insurance_percent": {"type": "number", "description": "average clause percentage; underinsurance waiver up to 15% applies for BSUS/BLUS"},
+            "deductible":           {"type": "currency", "description": "compulsory excess in INR; BSUS/BLUS: higher of ₹10,000 or 5% of claim"},
+            "blanket_no":           {"type": "string"},
+            "forms":                {"type": "string", "description": "forms and clauses to apply"},
+            "valuation_basis_@": {
+                "market_value":         {"type": "bool", "description": "MV - new replacement cost minus depreciation"},
+                "reinstatement_value":  {"type": "bool", "description": "RIV / RRC - new replacement cost, no depreciation deduction"},
+                "book_value":           {"type": "bool"},
+                "agreed_value":         {"type": "bool"},
+                "selling_price":        {"type": "bool", "description": "for finished goods sold but undelivered"},
+                "landed_cost":          {"type": "bool", "description": "for raw material - landed cost at premises"}
+            },
+            "asset_category_@": {
+                "building_structure":        {"type": "bool", "description": "incl. plinth, foundation, compound wall"},
+                "plant_machinery":           {"type": "bool", "description": "incl. installation cost"},
+                "stock_raw_material":        {"type": "bool"},
+                "stock_in_process":          {"type": "bool"},
+                "stock_finished_goods":      {"type": "bool"},
+                "stock_packing_material":    {"type": "bool"},
+                "furniture_fixtures_fittings": {"type": "bool"},
+                "electronic_data_processing": {"type": "bool"},
+                "specific_contents":         {"type": "bool", "description": "bullion, manuscripts, securities, explosives - must be separately declared"},
+                "other_contents":            {"type": "bool"}
+            },
+            "stock_policy_type_@": {
+                "specific":    {"type": "bool", "description": "fixed sum insured"},
+                "declaration": {"type": "bool", "description": "monthly declaration policy for fluctuating stocks"},
+                "floater":     {"type": "bool", "description": "floater across multiple locations"}
+            },
+            "declaration_policy_minimum_si": {"type": "currency", "description": "minimum/deposit SI for declaration policy"}
+        },
+
+        "perils_covered": {
+            "inbuilt_perils_@": {
+                "fire":                 {"type": "bool", "description": "FLEXA - Fire incl. fermentation/spontaneous combustion"},
+                "lightning":            {"type": "bool", "description": "FLEXA"},
+                "explosion_implosion":  {"type": "bool", "description": "FLEXA - boilers, gas cylinders etc."},
+                "aircraft_damage":      {"type": "bool", "description": "FLEXA - impact from aircraft/aerial devices"},
+                "riot_strike_malicious_damage": {"type": "bool", "description": "RSMD"},
+                "storm_tempest_flood_inundation": {"type": "bool", "description": "STFI"},
+                "impact_damage":        {"type": "bool", "description": "by road/rail vehicle or animal - third party"},
+                "subsidence_landslide": {"type": "bool", "description": "includes rockslide"},
+                "bursting_overflowing_water_tanks": {"type": "bool"},
+                "missile_testing":      {"type": "bool"},
+                "leakage_sprinkler":    {"type": "bool", "description": "automatic sprinkler leakage"},
+                "bush_fire":            {"type": "bool"},
+                "earthquake":           {"type": "bool", "description": "inbuilt under BSUS/BLUS; optional add-on under SFSP"},
+                "terrorism":            {"type": "bool", "description": "covered via India Market Terrorism Risk Insurance Pool (IMTRIP)"}
+            },
+            "stfi_deleted": {"type": "bool", "description": "STFI perils deleted at inception for premium discount (SFSP only)"},
+            "rsmtd_deleted": {"type": "bool", "description": "RSMD/RSMTD deleted at inception for premium discount (SFSP only)"}
+        },
+
+        "add_on_covers": {
+            "spontaneous_combustion": {
+                "opted": {"type": "bool"}
+            },
+            "forest_fire": {
+                "opted": {"type": "bool"}
+            },
+            "impact_damage_own_vehicles": {
+                "opted": {"type": "bool", "description": "impact by insured's own vehicles, forklifts etc."}
+            },
+            "cold_storage_deterioration": {
+                "opted":  {"type": "bool"},
+                "limit":  {"type": "currency"},
+                "refrigeration_agreement": {"type": "bool", "description": "maintenance agreement in place?"},
+                "power_outage_covered":    {"type": "bool"}
+            },
+            "earthquake_sfsp": {
+                "opted": {"type": "bool", "description": "earthquake fire and shock - add-on for SFSP only"},
+                "limit": {"type": "currency"},
+                "deductible_pct": {"type": "number", "description": "percentage deductible; typically 5% of SI, minimum ₹10,000"}
+            },
+            "omission_to_insure_extensions": {
+                "opted": {"type": "bool", "description": "auto-cover additions/alterations up to 15% of SI during policy year"}
+            },
+            "temporary_removal_of_stocks": {
+                "opted": {"type": "bool"},
+                "limit": {"type": "currency"}
+            },
+            "debris_removal_excess": {
+                "opted":  {"type": "bool", "description": "debris removal beyond standard 1% of claim"},
+                "limit":  {"type": "currency"}
+            },
+            "architects_fees_excess": {
+                "opted":  {"type": "bool", "description": "architects/surveyors fees beyond standard 3% of claim"},
+                "limit":  {"type": "currency"}
+            },
+            "loss_of_rent": {
+                "opted":  {"type": "bool"},
+                "limit":  {"type": "currency"},
+                "indemnity_period_months": {"type": "number"}
+            },
+            "alternative_accommodation": {
+                "opted": {"type": "bool", "description": "additional rent for alternative premises"},
+                "limit": {"type": "currency"},
+                "indemnity_period_months": {"type": "number"}
+            },
+            "start_up_expenses": {
+                "opted": {"type": "bool"},
+                "limit": {"type": "currency"}
+            },
+            "contamination_leakage": {
+                "opted": {"type": "bool"},
+                "limit": {"type": "currency"}
+            },
+            "political_violence": {
+                "opted": {"type": "bool", "description": "SBI General SFSP form field"},
+                "limit": {"type": "currency"}
+            },
+            "third_party_liability": {
+                "opted": {"type": "bool", "description": "legal liability to third parties arising from insured peril"},
+                "limit": {"type": "currency"}
+            },
+            "theft_post_peril": {
+                "opted": {"type": "bool", "description": "theft within 7 days of insured peril - inbuilt in BSUS/BLUS"},
+                "limit": {"type": "currency"}
+            },
+            "declaration_policy_stocks": {
+                "opted": {"type": "bool", "description": "BLUS/BSUS add-on for fluctuating stocks"},
+                "minimum_deposit_si": {"type": "currency"}
+            },
+            "floater_cover_stocks": {
+                "opted": {"type": "bool", "description": "BLUS optional / BSUS inbuilt - stocks across multiple locations"},
+                "locations_covered": {"type": "string", "description": "list of location IDs covered under floater"}
+            },
+            "business_interruption_mlop": {
+                "opted":     {"type": "bool", "description": "Material Loss of Profits / FLOP / MLOP"},
+                "indemnity_period_months": {"type": "number", "description": "max 12 months standard; up to 36 months with endorsement"},
+                "basis_@": {
+                    "gross_profit": {"type": "bool"},
+                    "gross_revenue": {"type": "bool"},
+                    "increased_cost_of_working_only": {"type": "bool"}
+                },
+                "sum_insured": {"type": "currency", "description": "estimated gross profit or gross revenue"},
+                "annual_turnover": {"type": "currency"},
+                "gross_profit_rate_pct": {"type": "number"},
+                "extended_to_customers_suppliers": {"type": "bool"}
+            },
+            "other_add_ons_description": {"type": "string"}
+        },
+
+        "construction": {
+            "construction_type_@": {
+                "pucca_rcc":            {"type": "bool", "description": "RCC / fire-resistive - AIFT Class 1"},
+                "pucca_non_rcc":        {"type": "bool", "description": "brick/stone masonry with RCC/AC/GI roof - AIFT Class 2"},
+                "semi_pucca":           {"type": "bool", "description": "kutcha walls or kutcha roof - AIFT Class 3"},
+                "kutcha":               {"type": "bool", "description": "all kutcha - AIFT Class 4 (highest tariff)"},
+                "prefabricated_steel":  {"type": "bool"},
+                "other":                {"type": "bool"}
+            },
+            "aift_construction_class": {"type": "string", "description": "AIFT 2001 construction class 1-4"},
+            "roof_material":       {"type": "string", "description": "e.g. RCC, AC Sheet, GI Sheet, Thatch/Grass"},
+            "wall_material":       {"type": "string", "description": "e.g. Brick, Stone, Wood, Mud"},
+            "stories_count":       {"type": "number"},
+            "basement_count":      {"type": "number"},
+            "year_built":          {"type": "number"},
+            "total_area_sqft":     {"type": "number"},
+            "occupied_area_sqft":  {"type": "number"},
+            "distance_to_fire_station_km": {"type": "number", "description": "distance in kilometres"},
+            "fire_brigade_type_@": {
+                "municipal_professional": {"type": "bool"},
+                "industrial_brigade":     {"type": "bool"},
+                "voluntary":              {"type": "bool"},
+                "no_brigade":             {"type": "bool"}
+            },
+            "under_construction": {"type": "bool", "description": "builders risk / project under construction"},
+            "construction_completion_date": {"type": "date", "description": "expected completion date if under construction"}
+        },
+
+        "building_improvements": {
+            "wiring_year_updated":   {"type": "number"},
+            "plumbing_year_updated": {"type": "number"},
+            "roof_year_updated":     {"type": "number"},
+            "heating_year_updated":  {"type": "number"}
+        },
+
+        "fire_protection": {
+            "fire_extinguishers":      {"type": "bool"},
+            "fire_extinguisher_count": {"type": "number"},
+            "sprinkler_system":        {"type": "bool"},
+            "sprinkler_percent":       {"type": "number", "description": "percentage of premises covered 0-100"},
+            "hydrant_system":          {"type": "bool"},
+            "hose_reel":               {"type": "bool"},
+            "co2_flooding":            {"type": "bool"},
+            "foam_system":             {"type": "bool"},
+            "fire_alarm_system":       {"type": "bool"},
+            "alarm_manufacturer":      {"type": "string"},
+            "monitoring_type_@": {
+                "central_station": {"type": "bool"},
+                "local_gong":      {"type": "bool"}
+            },
+            "fire_noc_obtained":  {"type": "bool", "description": "NOC from local fire department obtained"},
+            "fire_noc_number":    {"type": "string"},
+            "fire_noc_expiry":    {"type": "date"},
+            "discount_for_fire_appliances_pct": {"type": "number", "description": "tariff discount % for installed fire fighting equipment"}
+        },
+
+        "burglar_alarm": {
+            "alarm_type":               {"type": "string"},
+            "monitoring_type_@": {
+                "central": {"type": "bool"},
+                "local":   {"type": "bool"}
+            },
+            "guards_watchmen_count":    {"type": "number"},
+            "clock_hourly":             {"type": "bool"}
+        },
+
+        "catastrophe_zones": {
+            "earthquake_zone_@": {
+                "zone_ii":   {"type": "bool", "description": "BIS IS:1893 seismic zone II - low damage risk"},
+                "zone_iii":  {"type": "bool", "description": "moderate damage risk"},
+                "zone_iv":   {"type": "bool", "description": "high damage risk"},
+                "zone_v":    {"type": "bool", "description": "very high damage risk e.g. parts of J&K, NE states, Gujarat, Uttarakhand"}
+            },
+            "cyclone_prone_coast": {"type": "bool", "description": "Bay of Bengal or Arabian Sea coastal belt"},
+            "flood_zone":          {"type": "bool", "description": "located in designated flood plain or flood-prone district"},
+            "stfi_zone_@": {
+                "zone_a": {"type": "bool", "description": "highest STFI rating zone"},
+                "zone_b": {"type": "bool"},
+                "zone_c": {"type": "bool"}
+            }
+        },
+
+        "surrounding": {
+            "front": {"exposure": {"type": "string"}, "distance": {"type": "string"}},
+            "rear":  {"exposure": {"type": "string"}, "distance": {"type": "string"}},
+            "left":  {"exposure": {"type": "string"}, "distance": {"type": "string"}},
+            "right": {"exposure": {"type": "string"}, "distance": {"type": "string"}}
+        },
+
+        "special_risk_features": {
+            "hazardous_goods_stored": {
+                "opted": {"type": "YN"},
+                "description": {"type": "string", "description": "nature of hazardous/flammable goods stored"},
+                "petroleum_class_@": {
+                    "class_a": {"type": "bool", "description": "flash point below 23°C e.g. petrol"},
+                    "class_b": {"type": "bool", "description": "flash point 23°C-65°C e.g. kerosene"},
+                    "class_c": {"type": "bool", "description": "flash point above 65°C e.g. diesel"}
+                },
+                "quantity_litres": {"type": "number"}
+            },
+            "lpg_cng_installed": {
+                "opted": {"type": "YN"},
+                "cylinder_count": {"type": "number"}
+            },
+            "basement_used_for_storage": {"type": "bool"},
+            "night_watchman":             {"type": "bool"},
+            "past_fire_incidents": {
+                "opted": {"type": "YN"},
+                "description": {"type": "string"}
+            }
+        },
+
+        "additional_interest_^": {
+            "interest_type_@": {
+                "mortgagee":            {"type": "bool"},
+                "loss_payee":           {"type": "bool"},
+                "lenders_loss_payable": {"type": "bool"},
+                "hypothecation":        {"type": "bool", "description": "bank hypothecation - common in India for working capital"},
+                "other":                {"type": "bool"}
+            },
+            "rank":              {"type": "string"},
+            "name":              {"type": "string"},
+            "address_1":         {"type": "string"},
+            "address_2":         {"type": "string"},
+            "city":              {"type": "string"},
+            "state":             {"type": "string"},
+            "pincode":           {"type": "string"},
+            "reference_loan_no": {"type": "string"},
+            "bank_branch":       {"type": "string", "description": "bank branch for hypothecation endorsements"},
+            "location":          {"type": "string"},
+            "building":          {"type": "string"}
+        },
+
+        "rating": {
+            "tariff_rate_pct":       {"type": "number", "description": "base tariff rate per AIFT 2001 in percentage"},
+            "stfi_rate_pct":         {"type": "number"},
+            "earthquake_rate_pct":   {"type": "number"},
+            "terrorism_rate_pct":    {"type": "number", "description": "IMTRIP pool rate"},
+            "loading_pct":           {"type": "number", "description": "loading for special risk features"},
+            "discount_pct":          {"type": "number", "description": "discount for fire appliances / claims experience"},
+            "final_rate_pct":        {"type": "number"},
+            "building_si":           {"type": "currency"},
+            "contents_si":           {"type": "currency"},
+            "stock_si":              {"type": "currency"},
+            "total_si":              {"type": "currency"},
+            "building_premium":      {"type": "currency"},
+            "contents_premium":      {"type": "currency"},
+            "stock_premium":         {"type": "currency"},
+            "bi_premium":            {"type": "currency"},
+            "add_on_premium":        {"type": "currency"},
+            "terrorism_premium":     {"type": "currency"},
+            "gross_premium":         {"type": "currency"},
+            "gst_rate_pct":          {"type": "number", "description": "GST on insurance premium; currently 18%"},
+            "gst_amount":            {"type": "currency"},
+            "total_premium_with_gst":{"type": "currency"}
+        }
+    },
+
+    "plant_machinery_details_^": {
+        "description":       {"type": "string"},
+        "make_model":        {"type": "string"},
+        "year_of_manufacture": {"type": "number"},
+        "condition_@": {
+            "new":         {"type": "bool"},
+            "second_hand": {"type": "bool"},
+            "obsolete":    {"type": "bool"}
+        },
+        "purchase_cost":     {"type": "currency"},
+        "current_market_value": {"type": "currency"},
+        "reinstatement_value":  {"type": "currency"},
+        "includes_installation_cost": {"type": "bool"}
+    },
+
+    "claims_history_^": {
+        "year":         {"type": "number"},
+        "lob":          {"type": "string", "description": "fire, STFI, earthquake, burglary etc."},
+        "date_of_loss": {"type": "date"},
+        "description":  {"type": "string"},
+        "claim_amount": {"type": "currency"},
+        "settlement_amount": {"type": "currency"},
+        "claim_status_@": {
+            "settled":  {"type": "bool"},
+            "pending":  {"type": "bool"},
+            "repudiated": {"type": "bool"}
+        }
+    },
+
+    "prior_insurer_^": {
+        "insurer_name":   {"type": "carrier"},
+        "policy_no":      {"type": "policy_no"},
+        "uin":            {"type": "string", "description": "prior policy UIN"},
+        "expiry_date":    {"type": "date"},
+        "total_si":       {"type": "currency"},
+        "annual_premium": {"type": "currency"}
+    },
+
+    "blanket_^": {
+        "blanket_no":      {"type": "string"},
+        "description":     {"type": "string"},
+        "limit_amount":    {"type": "currency"},
+        "loc_nos_covered": {"type": "string"}
+    },
+
+    "additional_interest_^": {
+        "interest_type_@": {
+            "additional_insured": {"type": "bool"},
+            "mortgagee":          {"type": "bool"},
+            "loss_payee":         {"type": "bool"},
+            "hypothecation":      {"type": "bool"},
+            "lenders_loss_payable": {"type": "bool"},
+            "lienholder":         {"type": "bool"},
+            "other":              {"type": "bool"}
+        },
+        "rank":    {"type": "string"},
+        "name":    {"type": "string"},
+        "address_1": {"type": "string"},
+        "address_2": {"type": "string"},
+        "city":    {"type": "string"},
+        "state":   {"type": "string"},
+        "pincode": {"type": "string"},
+        "reference_loan_no": {"type": "string"}
+    },
+
+    "remarks": {"type": "string", "description": "additional remarks"},
+
+    "declarations": {
+        "utmost_good_faith_confirmed": {"type": "bool", "description": "proposer confirms all material facts disclosed - principle of Uberrima Fides"},
+        "insurable_interest_confirmed": {"type": "bool", "description": "proposer confirms insurable interest in all described property"},
+        "proposal_accuracy_confirmed":  {"type": "bool"}
+    },
+
+    "signature": {
+        "applicant_signature_date":  {"type": "date"},
+        "producer_name":             {"type": "string"},
+        "irdai_license_no":          {"type": "string", "description": "IRDAI broker/agent license number"},
+        "irda_reg_type_@": {
+            "individual_agent":      {"type": "bool"},
+            "corporate_agent":       {"type": "bool"},
+            "broker_direct":         {"type": "bool"},
+            "broker_reinsurance":    {"type": "bool"},
+            "web_aggregator":        {"type": "bool"}
+        }
+    }
+}

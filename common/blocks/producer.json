@@ -1,0 +1,66 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "$id": "https://example.com/insillion-schemas/common/blocks/producer.json",
+    "title": "Producer Information",
+    "description": "Details about the insurance producer (agent or broker). (Properties omitted as requested)",
+    "type": "object",
+    "properties": {
+        "name": {
+            "type": "string",
+            "description": "Name of the insurance producer (agent or broker).",
+            "long-description": "The full name of the insurance agent or broker responsible for submitting this application."
+        },
+        "phone_no": {
+            "type": "phone_no",
+            "description": "Phone number of the producer.",
+            "long-description": "The primary telephone contact number for the insurance producer."
+        },
+        "fax_no": {
+            "type": "phone_no",
+            "description": "Fax number of the producer.",
+            "long-description": "The facsimile contact number for the insurance producer."
+        },
+        "email": {
+            "type": "email",
+            "description": "Email address of the producer.",
+            "long-description": "The primary email address for communication with the insurance producer."
+        },
+        "code": {
+            "type": "string",
+            "description": "insurer assigned producer code",
+            "long-description": "A unique alphanumeric code assigned by the insurance carrier to identify the specific producer or agency."
+        },
+        "sub_code": {
+            "type": "string",
+            "description": "Sub-producer code, if applicable.",
+            "long-description": "An optional secondary code used to identify a sub-agent or specific department within a larger producer agency."
+        },
+        "license_^": {
+            "license_no": {
+                "type": "string",
+                "description": "Broker/agent license number assied by regulator",
+                "long-description": "The unique license number issued to the insurance broker or agent by the relevant regulatory authority, allowing them to legally sell insurance."
+            },
+            "line": {
+                "type": "string",
+                "description": "Line of business for this license - property, liability, engineering, workers comp, life",
+                "long-description": "Specifies the particular line of insurance business (e.g., property, casualty, life, health) that the producer's license is valid for."
+            },
+            "jurisdiction": {
+                "type": "string",
+                "description": "country (or state if USA) where is this valid",
+                "long-description": "The geographical area (country or US state) where the producer's license is legally recognized and valid for conducting insurance business."
+            },
+            "valid_from": {
+                "type": "string",
+                "description": "Start date of the license validity.",
+                "long-description": "The date from which the producer's insurance license became effective and legally valid."
+            },
+            "valid_to": {
+                "type": "string",
+                "description": "End date of the license validity.",
+                "long-description": "The date on which the producer's insurance license is set to expire, requiring renewal to remain valid."
+            }
+        }
+    }
+}

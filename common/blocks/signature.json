@@ -1,0 +1,30 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "$id": "https://example.com/insillion-schemas/common/blocks/signature.json",
+    "title": "Signature Details",
+    "description": "Information related to the application's signatures.",
+    "type": "object",
+    "properties": {
+        "applicant_signature_date": {
+            "type": "string",
+            "format": "date",
+            "description": "Date the applicant signed the application. 'YYYY-MM-DD' format.",
+            "long-description": "The date on which the primary insured or their authorized representative affixed their signature to the insurance application."
+        },
+        "producer_name": {
+            "type": "string",
+            "description": "Name of the producer who signed the application.",
+            "long-description": "The full name of the insurance agent or broker who signed the application, confirming its submission."
+        },
+        "producer_state_license_no": {
+            "type": "string",
+            "description": "State license number of the producer.",
+            "long-description": "The license number of the producer within the specific state or jurisdiction where they are authorized to conduct insurance business."
+        },
+        "national_producer_number": {
+            "type": "string",
+            "description": "NPN, required in Florida",
+            "long-description": "The National Producer Number (NPN) is a unique identification number assigned to licensed insurance producers in the United States by the National Association of Insurance Commissioners (NAIC). It is a mandatory requirement in certain states like Florida."
+        }
+    }
+}

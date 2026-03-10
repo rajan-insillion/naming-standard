@@ -1,0 +1,49 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "$id": "https://insillion-schemas/common/blocks/carrier.json",
+    "title": "Insurance Carrier Information",
+    "description": "Details about the insurance company providing coverage. (Properties omitted as requested)",
+    "type": "object",
+    "properties": {
+        "name": {
+            "type": "string",
+            "description": "Name of the insurance carrier.",
+            "long-description": "The full legal name of the insurance company providing the coverage."
+        },
+        "naic_code": {
+            "type": "string",
+            "description": "NAIC Company Code for the insurance carrier.",
+            "long-description": "The unique five-digit company code assigned by the National Association of Insurance Commissioners (NAIC) to identify the specific insurance carrier in the United States."
+        },
+        "license_no": {
+            "type": "string",
+            "description": "Registration number of the insurer",
+            "long-description": "The official registration or license number issued to the insurance company by the relevant regulatory authority, permitting them to operate as an insurer."
+        },
+        "product": {
+            "type": "string",
+            "description": "program/product description",
+            "long-description": "A descriptive name or explanation of the specific insurance program or product being offered by the carrier (e.g., 'Commercial Package Policy', 'Small Business Fire Insurance')."
+        },
+        "product_code": {
+            "type": "string",
+            "description": "program/product code",
+            "long-description": "An internal alphanumeric code used by the carrier to identify the specific insurance program or product being offered."
+        },
+        "policy_no": {
+            "type": "string",
+            "description": "Policy number assigned by the carrier.",
+            "long-description": "The unique identification number assigned by the insurance carrier to the specific policy issued to the insured."
+        },
+        "underwriter": {
+            "type": "string",
+            "description": "Name or ID of the underwriter at the carrier.",
+            "long-description": "The name or unique identifier of the underwriter at the insurance carrier responsible for evaluating and approving the risk."
+        },
+        "branch_office": {
+            "type": "string",
+            "description": "carrier branch office",
+            "long-description": "The specific branch office of the insurance carrier responsible for administering or issuing the policy."
+        }
+    }
+}

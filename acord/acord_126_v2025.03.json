@@ -1,0 +1,345 @@
+{
+    "_app_form_name": "ACORD 126",
+    "_app_form_version": "2025/03",
+    "application_date": {"type": "date"},
+    "cust_ref_id": {"type": "string", "description": "agency/broker/customer reference id"},
+    "policy_start_date": {"type": "date"},
+    "policy_start_time": {"type": "string"},
+
+    "agency": {
+        "name":      {"type": "agency"},
+        "address_1": {"type": "string"},
+        "address_2": {"type": "string"},
+        "city":      {"type": "string"},
+        "state":     {"type": "state"},
+        "zipcode":   {"type": "zip"}
+    },
+    "carrier": {
+        "name":      {"type": "carrier"},
+        "naic_code": {"type": "naic"},
+        "policy_no": {"type": "policy_no"}
+    },
+    "insured": {
+        "name": {"type": "company", "description": "first/primary named insured, must match ACORD 125"}
+    },
+    "coverage": {
+        "policy_type_@": {
+            "occurrence":                  {"type": "bool"},
+            "claims_made":                 {"type": "bool"},
+            "owners_contractors_protective": {"type": "bool", "description": "The upstream owner or GC"}
+        },
+        "aggregate_limit_applies_per_@": {
+            "policy":   {"type": "bool"},
+            "project":  {"type": "bool"},
+            "location": {"type": "bool"},
+            "other": {"type": "bool"}
+        },
+        "limits": {
+            "general_aggregate":                    {"type": "currency"},
+            "products_completed_ops_aggregate":     {"type": "currency"},
+            "personal_advertising_injury":          {"type": "currency"},
+            "each_occurrence":                      {"type": "currency"},
+            "damage_to_rented_premises":            {"type": "currency", "description": "per occurrence"},
+            "medical_expense":                      {"type": "currency", "description": "any one person"},
+            "employee_benefits":                    {"type": "currency"}
+        },
+        "deductibles": {
+            "bodily_injury":     {"type": "currency"},
+            "property_damage":   {"type": "currency"},
+            "deductible_per_@": {
+                "per_claim":      {"type": "bool"},
+                "per_occurrence": {"type": "bool"}
+            }
+        },
+        "premiums": {
+            "premises_operations": {"type": "currency"},
+            "products":            {"type": "currency"},
+            "other":               {"type": "currency"},
+            "total":               {"type": "currency"}
+        },
+        "other_coverages_endorsements": {"type": "string", "description": "hired/non-owned auto, restrictions, other endorsements narrative"},
+        "wisconsin_auto": {
+            "um_uim_coverage_available":    {"type": "bool"},
+            "medical_payments_available":   {"type": "bool"}
+        }
+    },
+    "schedule_of_hazards_^": {
+        "loc_no":                   {"type": "string"},
+        "haz_no":                   {"type": "string"},
+        "class_code":               {"type": "string"},
+        "classification_description": {"type": "string"},
+        "premium_basis_@": {
+            "gross_sales":   {"type": "bool", "description": "S - per $1,000/sales"},
+            "payroll":       {"type": "bool", "description": "P - per $1,000/pay"},
+            "area":          {"type": "bool", "description": "A - per 1,000/sq ft"},
+            "total_cost":    {"type": "bool", "description": "C - per $1,000/cost"},
+            "admissions":    {"type": "bool", "description": "M - per 1,000/admissions"},
+            "unit":          {"type": "bool", "description": "U - per unit"},
+            "other":         {"type": "bool", "description": "T - other"}
+        },
+        "territory":                {"type": "string"},
+        "exposure":                 {"type": "number"},
+        "prem_ops_rate":            {"type": "number"},
+        "products_rate":            {"type": "number"},
+        "prem_ops_premium":         {"type": "currency"},
+        "products_premium":         {"type": "currency"}
+    },
+
+    "claims_made": {
+        "proposed_retroactive_date":                      {"type": "date"},
+        "entry_date_uninterrupted_claims_made_coverage":  {"type": "date"},
+        "prior_coverage_exclusion": {
+            "opted": {"type": "YN"},
+            "description": {"type": "string", "description": "products, work, accidents, or locations excluded/uninsured/self-insured from any previous coverage"}
+        },
+        "tail_coverage_purchased": {"type": "YN"}
+    },
+    "employee_benefits_liability": {
+        "deductible_per_claim":               {"type": "currency"},
+        "employee_count":                     {"type": "number"},
+        "employees_covered_by_benefits_count": {"type": "number"},
+        "retroactive_date":                   {"type": "date"}
+    },
+
+    "contractors": {
+        "qa": {
+            "draws_plans_designs_specs": {
+                "opted": {"type": "YN"},
+                "description": {"type": "string"}
+            },
+            "blasting_or_explosives": {
+                "opted": {"type": "YN"},
+                "description": {"type": "string"}
+            },
+            "excavation_tunneling_underground": {
+                "opted": {"type": "YN"},
+                "description": {"type": "string"}
+            },
+            "subcontractors_lower_limits": {
+                "opted": {"type": "YN"},
+                "description": {"type": "string"}
+            },
+            "subcontractors_without_coi": {
+                "opted": {"type": "YN"},
+                "description": {"type": "string"}
+            },
+            "leases_equipment_to_others": {
+                "opted": {"type": "YN"},
+                "description": {"type": "string"}
+            },
+            "full_time_staff_count":  {"type": "number"},
+            "part_time_staff_count":  {"type": "number"},
+            "subcontracted_work_percent": {"type": "number", "description": "percentage of work subcontracted"},
+            "subcontracted_work_description": {"type": "string"},
+            "subcontracted_work_amount": {"type": "currency", "description": "paid to subcontractors"}
+        }
+    },
+
+    "products_completed_operations": {
+        "product_^": {
+            "name":               {"type": "string"},
+            "annual_gross_sales": {"type": "currency"},
+            "unit_count":         {"type": "number"},
+            "time_in_market":     {"type": "string", "description": "number of years a product has been commercially used"},
+            "expected_life":    {"type": "string", "description": "future number of years the product expected to be in use"},
+            "intended_use":       {"type": "string"},
+            "principal_components": {"type": "string"}
+        },
+        "qa": {
+            "installs_services_demonstrates": {
+                "opted": {"type": "YN"},
+                "description": {"type": "string"}
+            },
+            "foreign_products": {
+                "opted": {"type": "YN"},
+                "description": {"type": "string", "description": "if YES attach ACORD 815"}
+            },
+            "research_development_new_products": {
+                "opted": {"type": "YN"},
+                "description": {"type": "string"}
+            },
+            "guarantees_warranties_hold_harmless": {
+                "opted": {"type": "YN"},
+                "description": {"type": "string"}
+            },
+            "aircraft_space_related": {
+                "opted": {"type": "YN"},
+                "description": {"type": "string"}
+            },
+            "recalled_discontinued_changed": {
+                "opted": {"type": "YN"},
+                "description": {"type": "string"}
+            },
+            "sold_repackaged_under_applicant_label": {
+                "opted": {"type": "YN"},
+                "description": {"type": "string"}
+            },
+            "sold_under_label_of_others": {
+                "opted": {"type": "YN"},
+                "description": {"type": "string"}
+            },
+            "vendors_coverage_required": {
+                "opted": {"type": "YN"},
+                "description": {"type": "string"}
+            },
+            "named_insured_sells_to_other_named_insured": {
+                "opted": {"type": "YN"},
+                "description": {"type": "string"}
+            }
+        }
+    },
+    "additional_interest_^": {
+        "interest_type_@": {
+            "additional_insured":   {"type": "bool"},
+            "employee_as_lessor":   {"type": "bool"},
+            "lenders_loss_payable": {"type": "bool"},
+            "lienholder":           {"type": "bool"},
+            "loss_payee":           {"type": "bool"},
+            "mortgagee":            {"type": "bool"}
+        },
+        "rank":              {"type": "string"},
+        "evidence_@": {
+            "certificate": {"type": "bool"},
+            "other":       {"type": "bool"}
+        },
+        "name":              {"type": "string"},
+        "address_1":         {"type": "string"},
+        "address_2":         {"type": "string"},
+        "city":              {"type": "string"},
+        "state":             {"type": "state"},
+        "zipcode":           {"type": "zip"},
+        "reference_loan_no": {"type": "string"},
+        "location":          {"type": "string"},
+        "building":          {"type": "string"},
+        "item_class":        {"type": "string"},
+        "item_no":           {"type": "string"},
+        "item_description":  {"type": "string"}
+    },
+
+    "general_information": {
+        "medical_facilities_or_professionals": {
+            "opted": {"type": "YN"},
+            "description": {"type": "string"}
+        },
+        "radioactive_nuclear_exposure": {
+            "opted": {"type": "YN"},
+            "description": {"type": "string"}
+        },
+        "hazardous_material_operations": {
+            "opted": {"type": "YN"},
+            "description": {"type": "string", "description": "storing, treating, discharging, applying, disposing, or transporting hazardous material"}
+        },
+        "operations_sold_acquired_discontinued": {
+            "opted": {"type": "YN"},
+            "description": {"type": "string", "description": "operations sold, acquired, or discontinued in last 5 years"}
+        },
+        "equipment_rented_loaned_to_others": {
+            "opted": {"type": "YN"},
+            "equipments_^": {
+                "description":       {"type": "string"},
+                "equipment_type_@": {
+                    "small_tools":    {"type": "bool"},
+                    "large_equipment": {"type": "bool"}
+                },
+                "instruction_given": {"type": "YN"}
+            }
+        },
+        "watercraft_docks_floats": {
+            "opted": {"type": "YN"},
+            "description": {"type": "string"}
+        },
+        "parking_facilities": {
+            "opted": {"type": "YN"},
+            "fee_charged": {"type": "YN"}
+        },
+        "recreation_facilities": {
+            "opted": {"type": "YN"},
+            "description": {"type": "string"}
+        },
+        "lodging_operations": {
+            "opted": {"type": "YN"},
+            "apartment_count":     {"type": "number"},
+            "total_apt_area": {"type": "number", "description": "in sq ft" },
+            "other_lodging_description": {"type": "string"}
+        },
+        "swimming_pool": {
+            "opted": {"type": "YN"},
+            "pool_type_@": {
+                "approved_fence":   {"type": "bool"},
+                "limited_access":   {"type": "bool"},
+                "diving_board":     {"type": "bool"},
+                "slide":            {"type": "bool"},
+                "above_ground":     {"type": "bool"},
+                "in_ground":        {"type": "bool"},
+                "life_guard":       {"type": "bool"}
+            }
+        },
+        "social_events_sponsored": {
+            "opted": {"type": "YN"},
+            "description": {"type": "string"}
+        },        
+        "athletic_teams_sponsored_^": {
+            "opted": {"type": "YN"},
+            "sports_^" : {
+                "type_of_sport": {"type": "string"},
+                "age_group_@": {
+                    "under_12":  {"type": "bool"},
+                    "age_13_18": {"type": "bool"},
+                    "over_18":   {"type": "bool"}
+                },
+                "extent_of_sponsorship": {"type": "string"}
+            }
+        },
+        "structural_alterations_contemplated": {
+            "opted": {"type": "YN"},
+            "description": {"type": "string"}
+        },
+        "demolition_exposure": {
+            "opted": {"type": "YN"},
+            "description": {"type": "string"}
+        },
+        "joint_ventures": {
+            "opted": {"type": "YN"},
+            "description": {"type": "string"}
+        },
+        "leased_employees": {
+            "opted": {"type": "YN"},
+            "lease_to": {
+                "description":           {"type": "string"},
+                "workers_comp_carried":  {"type": "YN"}
+            },
+            "lease_from": {
+                "description":           {"type": "string"},
+                "workers_comp_carried":  {"type": "YN"}
+            }
+        },
+        "labor_interchange": {
+            "opted": {"type": "YN"},
+            "description": {"type": "string", "description": "labor interchange with any other business or subsidiaries"}
+        },
+        "day_care_facilities": {
+            "opted": {"type": "YN"},
+            "description": {"type": "string"}
+        },
+        "crimes_on_premises": {
+            "opted": {"type": "YN"},
+            "description": {"type": "string", "description": "crimes occurred or attempted on premises within last 3 years"}
+        },
+        "formal_safety_security_policy": {
+            "opted": {"type": "YN"},
+            "description": {"type": "string"}
+        },
+        "promotional_safety_security_representations": {
+            "opted": {"type": "YN"},
+            "description": {"type": "string", "description": "promotional literature makes representations about safety or security of premises"}
+        }
+    },
+    "remarks": {"type": "string", "description": "additional remarks; ACORD 101 may be attached if more space required"},
+
+    "signature": {
+        "applicant_signature_date":    {"type": "date"},
+        "producer_name":               {"type": "string"},
+        "producer_state_license_no":   {"type": "string"},
+        "national_producer_number":    {"type": "string", "description": "NPN, required in Florida"}
+    }
+}
