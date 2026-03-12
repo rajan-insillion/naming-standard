@@ -15,6 +15,21 @@
             "description": "A monetary value, typically with 2 decimal places.",
             "minimum": 0
         },
+        "phone_no": {
+            "type": "string",
+            "pattern": "^\\+?[0-9\\s\\-()]{7,25}$",
+            "description": "A phone number, optionally starting with a '+' for international codes."
+        },
+        "email": {
+            "type": "string",
+            "format": "email",
+            "description": "A standard email address."
+        },
+        "website": {
+            "type": "string",
+            "format": "uri",
+            "description": "A valid URL for a website."
+        },
         "country": {
             "type": "string",
             "format": "string",
@@ -26,6 +41,22 @@
             "format": "string",
             "description": "E.164 international format, ensuring all non-numeric characters except the leading '+' are removed.",
             "minimum": 0
+        },
+        "naic": {
+            "type": "string",
+            "pattern": "^[0-9]{5}$",
+            "description": "Five-digit NAIC company code for US insurance carriers."
+        },
+        "pan": {
+            "type": "string",
+            "pattern": "^[A-Z]{5}[0-9]{4}[A-Z]$",
+            "description": "10-digit PAN number; India specific."
+        },
+        "year": {
+            "type": "number",
+            "description": "A calendar year in YYYY format.",
+            "minimum": 1900,
+            "maximum": 2100
         }
     }
 }

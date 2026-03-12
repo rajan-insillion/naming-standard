@@ -668,7 +668,7 @@
                 "special_risk_features": {
                     "hazardous_goods_stored": {
                         "opted": {
-                            "type": "YN",
+                            "type": "boolean",
                             "description": "(IN) Are hazardous/flammable goods stored?",
                             "long-description": "(IN) A Y/N indicator whether hazardous or flammable goods are stored at the premises."
                         },
@@ -702,7 +702,7 @@
                     },
                     "lpg_cng_installed": {
                         "opted": {
-                            "type": "YN",
+                            "type": "boolean",
                             "description": "(IN) Are LPG/CNG cylinders/installations present?",
                             "long-description": "(IN) A Y/N indicator whether LPG (Liquefied Petroleum Gas) or CNG (Compressed Natural Gas) cylinders or installations are present at the premises."
                         },
@@ -724,7 +724,7 @@
                     },
                     "past_fire_incidents": {
                         "opted": {
-                            "type": "YN",
+                            "type": "boolean",
                             "description": "(IN) Any past fire incidents?",
                             "long-description": "(IN) A Y/N indicator whether the premises has experienced any fire incidents in the past."
                         },
@@ -777,7 +777,7 @@
                 "long-description": "A comprehensive textual description detailing the physical characteristics, type of operations, and overall usage of the insured premises."
             },
             "sub_leased": {
-                "type": "YN",
+                "type": "boolean",
                 "description": "Indicates if any part of the premises is sub-leased (Y/N).",
                 "long-description": "A Y/N indicator whether any portion of the insured premises is currently sub-leased to another entity or individual."
             },
@@ -942,7 +942,7 @@
                     "long-description": "(US) The total number of subterranean levels or basements in the insured building."
                 },
                 "year_built": {
-                    "type": "number",
+                    "type": "year",
                     "description": "(US) Year the building was originally constructed.",
                     "long-description": "(US) The calendar year in which the insured building was originally constructed."
                 },
@@ -1256,7 +1256,7 @@
                     "long-description": "(IN) The manufacturer and model number of the plant or machinery item."
                 },
                 "year_of_manufacture": {
-                    "type": "number",
+                    "type": "year",
                     "description": "(IN) Year of manufacture.",
                     "long-description": "(IN) The calendar year in which the plant or machinery item was manufactured."
                 },

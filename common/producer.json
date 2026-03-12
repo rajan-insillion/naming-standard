@@ -41,7 +41,7 @@
                 "description": "Broker/agent license number assied by regulator",
                 "long-description": "The unique license number issued to the insurance broker or agent by the relevant regulatory authority, allowing them to legally sell insurance."
             },
-            "line": {
+            "lob": {
                 "type": "string",
                 "description": "Line of business for this license - property, liability, engineering, workers comp, life",
                 "long-description": "Specifies the particular line of insurance business (e.g., property, casualty, life, health) that the producer's license is valid for."
@@ -52,12 +52,12 @@
                 "long-description": "The geographical area (country or US state) where the producer's license is legally recognized and valid for conducting insurance business."
             },
             "valid_from": {
-                "type": "string",
+                "type": "date",
                 "description": "Start date of the license validity.",
                 "long-description": "The date from which the producer's insurance license became effective and legally valid."
             },
             "valid_to": {
-                "type": "string",
+                "type": "date",
                 "description": "End date of the license validity.",
                 "long-description": "The date on which the producer's insurance license is set to expire, requiring renewal to remain valid."
             }

@@ -22,19 +22,14 @@
         },
         "history_^": {
             "year": {
-                "type": "number",
+                "type": "year",
                 "description": "(IN)",
                 "long-description": "The calendar year in which the specific loss event occurred."
             },
-            "lob": {
-                "type": "string",
-                "description": "(IN) fire, STFI, earthquake, burglary etc.",
-                "long-description": "In India, the specific type of loss (e.g., fire, storm, earthquake, burglary) for which the claim was made."
-            },
             "line_of_business": {
                 "type": "string",
-                "description": "Line of business for the reported loss (e.g., Property, Liability). (ACORD-125)",
-                "long-description": "The general category of insurance (e.g., Property, General Liability, Auto) under which the reported loss falls."
+                "description": "Line of business for the reported loss.",
+                "long-description": "The general category of insurance (e.g., Property, Liability, fire, STFI, earthquake, burglary, auto etc.) under which the reported loss falls."
             },
             "loss_details": {
                 "type": "string",

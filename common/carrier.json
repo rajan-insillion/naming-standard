@@ -11,7 +11,7 @@
             "long-description": "The full legal name of the insurance company providing the coverage."
         },
         "naic_code": {
-            "type": "string",
+            "type": "naic",
             "description": "NAIC Company Code for the insurance carrier.",
             "long-description": "The unique five-digit company code assigned by the National Association of Insurance Commissioners (NAIC) to identify the specific insurance carrier in the United States."
         },

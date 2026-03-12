@@ -56,7 +56,7 @@
             "long-description": "The postal code or ZIP code component of the insured's mailing or physical address."
         },
         "pan_no": {
-            "type": "pan",
+            "type": "string",
             "description": "(IN) Permanent Account Number (PAN), 10-char alphanumeric",
             "long-description": "In India, the Permanent Account Number (PAN) is a ten-character alphanumeric identifier issued by the Indian Income Tax Department. It is mandatory for most financial transactions and tax purposes."
         },
@@ -101,7 +101,7 @@
             "long-description": "The Standard Industrial Classification (SIC) code is a four-digit numerical code used by government agencies to classify industry areas. It helps in categorizing businesses based on their primary activities."
         },
         "naic_code": {
-            "type": "naic",
+            "type": "string",
             "description": "North American Industry Classification System code.",
             "long-description": "The North American Industry Classification System (NAICS) code is a six-digit numerical code used by government agencies to classify business establishments. It is the standard used by Federal statistical agencies in classifying business establishments for the purpose of collecting, analyzing, and publishing statistical data related to the U.S. business economy."
         },
@@ -122,47 +122,47 @@
         },
         "legal_entity_@": {
             "corporation": {
-                "type": "boolean",
+                "type": "bool",
                 "description": "Indicates if the insured is a Corporation.",
                 "long-description": "A boolean flag indicating whether the insured is legally structured as a corporation."
             },
             "individual": {
-                "type": "boolean",
+                "type": "bool",
                 "description": "Indicates if the insured is an Individual.",
                 "long-description": "A boolean flag indicating whether the insured is an individual person, typically a sole proprietor."
             },
             "joint_venture": {
-                "type": "boolean",
+                "type": "bool",
                 "description": "Indicates if the insured is a Joint Venture.",
                 "long-description": "A boolean flag indicating whether the insured is a joint venture, which is a business arrangement in which two or more parties agree to pool their resources for the purpose of accomplishing a specific task."
             },
             "llc": {
-                "type": "boolean",
+                "type": "bool",
                 "description": "Indicates if the insured is a Limited Liability Company (LLC).",
                 "long-description": "A boolean flag indicating whether the insured is legally structured as a Limited Liability Company (LLC)."
             },
             "not_for_profit": {
-                "type": "boolean",
+                "type": "bool",
                 "description": "Indicates if the insured is a Not-for-Profit organization.",
                 "long-description": "A boolean flag indicating whether the insured is legally recognized as a not-for-profit or non-profit organization."
             },
             "partnership": {
-                "type": "boolean",
+                "type": "bool",
                 "description": "Indicates if the insured is a Partnership.",
                 "long-description": "A boolean flag indicating whether the insured is legally structured as a partnership."
             },
             "subchapter_s_corp": {
-                "type": "boolean",
+                "type": "bool",
                 "description": "Indicates if the insured is a Subchapter S Corporation.",
                 "long-description": "A boolean flag indicating whether the insured is legally structured as a Subchapter S Corporation, a type of corporation that meets specific Internal Revenue Code requirements."
             },
             "trust": {
-                "type": "boolean",
+                "type": "bool",
                 "description": "Indicates if the insured is a Trust.",
                 "long-description": "A boolean flag indicating whether the insured is a trust, a legal arrangement where a trustee holds assets for the benefit of beneficiaries."
             },
             "other": {
-                "type": "boolean",
+                "type": "bool",
                 "description": "Indicates if the insured's legal entity type is Other.",
                 "long-description": "A boolean flag indicating whether the insured's legal entity structure is not explicitly listed among the predefined options."
             }
@@ -194,7 +194,7 @@
                 "long-description": "The state, province, or region component of the additional insured's mailing or physical address."
             },
             "zipcode": {
-                "type": "string",
+                "type": "zip",
                 "description": "Postal code of the other insured's address.",
                 "long-description": "The postal code or ZIP code component of the additional insured's mailing or physical address."
             },
@@ -209,7 +209,7 @@
                 "long-description": "The Standard Industrial Classification (SIC) code for the additional insured, categorizing their industry area."
             },
             "naic_code": {
-                "type": "naic",
+                "type": "string",
                 "description": "North American Industry Classification System code for the other insured.",
                 "long-description": "The North American Industry Classification System (NAICS) code for the additional insured, classifying their business establishment."
             },
@@ -230,47 +230,47 @@
             },
             "legal_entity_@": {
                 "corporation": {
-                    "type": "boolean",
+                    "type": "bool",
                     "description": "Indicates if the other insured is a Corporation.",
                     "long-description": "A boolean flag indicating whether this additional insured is legally structured as a corporation."
                 },
                 "individual": {
-                    "type": "boolean",
+                    "type": "bool",
                     "description": "Indicates if the other insured is an Individual.",
                     "long-description": "A boolean flag indicating whether this additional insured is an individual person, typically a sole proprietor."
                 },
                 "joint_venture": {
-                    "type": "boolean",
+                    "type": "bool",
                     "description": "Indicates if the other insured is a Joint Venture.",
                     "long-description": "A boolean flag indicating whether this additional insured is a joint venture."
                 },
                 "llc": {
-                    "type": "boolean",
+                    "type": "bool",
                     "description": "Indicates if the other insured is a Limited Liability Company (LLC).",
                     "long-description": "A boolean flag indicating whether this additional insured is legally structured as a Limited Liability Company (LLC)."
                 },
                 "not_for_profit": {
-                    "type": "boolean",
+                    "type": "bool",
                     "description": "Indicates if the other insured is a Not-for-Profit organization.",
                     "long-description": "A boolean flag indicating whether this additional insured is legally recognized as a not-for-profit organization."
                 },
                 "partnership": {
-                    "type": "boolean",
+                    "type": "bool",
                     "description": "Indicates if the other insured is a Partnership.",
                     "long-description": "A boolean flag indicating whether this additional insured is legally structured as a partnership."
                 },
                 "subchapter_s_corp": {
-                    "type": "boolean",
+                    "type": "bool",
                     "description": "Indicates if the other insured is a Subchapter S Corporation.",
                     "long-description": "A boolean flag indicating whether this additional insured is legally structured as a Subchapter S Corporation."
                 },
                 "trust": {
-                    "type": "boolean",
+                    "type": "bool",
                     "description": "Indicates if the other insured is a Trust.",
                     "long-description": "A boolean flag indicating whether this additional insured is a trust."
                 },
                 "other": {
-                    "type": "boolean",
+                    "type": "bool",
                     "description": "Indicates if the other insured's legal entity type is Other.",
                     "long-description": "A boolean flag indicating whether this additional insured's legal entity structure is not explicitly listed among the predefined options."
                 }
@@ -314,7 +314,7 @@
                 "description": "Broker/agent license number assied by regulator",
                 "long-description": "The unique license number issued to the insurance broker or agent by the relevant regulatory authority, allowing them to legally sell insurance."
             },
-            "lob": {
+            "line": {
                 "type": "string",
                 "description": "Line of business for this license - property, liability, engineering, workers comp, life",
                 "long-description": "Specifies the particular line of insurance business (e.g., property, casualty, life, health) that the producer's license is valid for."
@@ -325,12 +325,12 @@
                 "long-description": "The geographical area (country or US state) where the producer's license is legally recognized and valid for conducting insurance business."
             },
             "valid_from": {
-                "type": "date",
+                "type": "string",
                 "description": "Start date of the license validity.",
                 "long-description": "The date from which the producer's insurance license became effective and legally valid."
             },
             "valid_to": {
-                "type": "date",
+                "type": "string",
                 "description": "End date of the license validity.",
                 "long-description": "The date on which the producer's insurance license is set to expire, requiring renewal to remain valid."
             }
@@ -338,127 +338,127 @@
     },
     "attachments": {
         "accounts_receivables": {
-            "type": "boolean",
+            "type": "bool",
             "description": "Indicates if an Accounts Receivables schedule is attached.",
             "long-description": "A boolean flag indicating whether a separate schedule detailing the insured's accounts receivables is included with the application."
         },
         "additional_interest_schedule": {
-            "type": "boolean",
+            "type": "bool",
             "description": "Indicates if an Additional Interest schedule is attached.",
             "long-description": "A boolean flag indicating whether a schedule listing all additional interested parties (e.g., mortgagees, loss payees) and their details is included with the application."
         },
         "location_information": {
-            "type": "boolean",
+            "type": "bool",
             "description": "premise information schedule",
             "long-description": "A boolean flag indicating whether a detailed schedule providing information about each insured premises or location is attached to the application."
         },
         "appartment_supplement": {
-            "type": "boolean",
+            "type": "bool",
             "description": "Indicates if an Apartment Supplement is attached.",
             "long-description": "A boolean flag indicating whether a supplementary form specifically for apartment buildings or complexes is included with the application."
         },
         "condo_bylaws": {
-            "type": "boolean",
+            "type": "bool",
             "description": "condo association bylaws",
             "long-description": "A boolean flag indicating whether the bylaws or governing documents of a condominium association are attached to the application, relevant for condo association policies."
         },
         "contractors_supplement": {
-            "type": "boolean",
+            "type": "bool",
             "description": "Indicates if a Contractors Supplement is attached.",
             "long-description": "A boolean flag indicating whether a supplementary form specifically for contractors' operations and exposures is included with the application."
         },
         "coverages_schedule": {
-            "type": "boolean",
+            "type": "bool",
             "description": "Indicates if a Coverages Schedule is attached.",
             "long-description": "A boolean flag indicating whether a detailed schedule outlining all selected coverages, limits, and deductibles is included with the application."
         },
         "dealers_section": {
-            "type": "boolean",
+            "type": "bool",
             "description": "Indicates if a Dealers Section is attached.",
             "long-description": "A boolean flag indicating whether a specific section or form related to vehicle or equipment dealers' exposures is included with the application."
         },
         "drivers_information": {
-            "type": "boolean",
+            "type": "bool",
             "description": "Indicates if Drivers Information is attached.",
             "long-description": "A boolean flag indicating whether a list of drivers and their details (e.g., license information, driving history) is included with the application, typically for auto or commercial vehicle policies."
         },
         "eds_section": {
-            "type": "boolean",
+            "type": "bool",
             "description": "Indicates if an Equipment Dealers Supplement (EDS) is attached.",
             "long-description": "A boolean flag indicating whether an Equipment Dealers Supplement, providing specific details for businesses that sell or service equipment, is included with the application."
         },
         "glass_signs": {
-            "type": "boolean",
+            "type": "bool",
             "description": "Indicates if a Glass & Signs schedule is attached.",
             "long-description": "A boolean flag indicating whether a separate schedule detailing insured glass and signs at the premises is included with the application."
         },
         "hotel_motel_supplement": {
-            "type": "boolean",
+            "type": "bool",
             "description": "Indicates if a Hotel/Motel Supplement is attached.",
             "long-description": "A boolean flag indicating whether a supplementary form specifically for hotel or motel operations and exposures is included with the application."
         },
         "inst_builders_risk": {
-            "type": "boolean",
+            "type": "bool",
             "description": "installation/builders risk",
             "long-description": "A boolean flag indicating whether an Installation/Builders Risk supplement, relevant for projects under construction or installation, is attached to the application."
         },
         "intnl_liability": {
-            "type": "boolean",
+            "type": "bool",
             "description": "international liability exposure supplement",
             "long-description": "A boolean flag indicating whether a supplement detailing international liability exposures of the insured is attached to the application."
         },
         "intnl_property": {
-            "type": "boolean",
+            "type": "bool",
             "description": "international properties exposure supplement",
             "long-description": "A boolean flag indicating whether a supplement detailing international property exposures of the insured is attached to the application."
         },
         "loss_summary": {
-            "type": "boolean",
+            "type": "bool",
             "description": "Indicates if a Loss Summary is attached.",
             "long-description": "A boolean flag indicating whether a summary document outlining the insured's past loss history is included with the application."
         },
         "open_cargo_section": {
-            "type": "boolean",
+            "type": "bool",
             "description": "Indicates if an Open Cargo Section is attached.",
             "long-description": "A boolean flag indicating whether a specific section or form related to open cargo insurance (for goods in transit) is included with the application."
         },
         "premium_payment": {
-            "type": "boolean",
+            "type": "bool",
             "description": "Indicates if a Premium Payment schedule is attached.",
             "long-description": "A boolean flag indicating whether a schedule outlining the agreed-upon premium payment plan or installments is included with the application."
         },
         "professional_liability": {
-            "type": "boolean",
+            "type": "bool",
             "description": "Indicates if a Professional Liability supplement is attached.",
             "long-description": "A boolean flag indicating whether a supplementary form specifically for professional liability exposures (Errors & Omissions) is included with the application."
         },
         "restaurant_tavern": {
-            "type": "boolean",
+            "type": "bool",
             "description": "Indicates if a Restaurant/Tavern Supplement is attached.",
             "long-description": "A boolean flag indicating whether a supplementary form specifically for restaurant or tavern operations and exposures is included with the application."
         },
         "statement_schedule": {
-            "type": "boolean",
+            "type": "bool",
             "description": "statement/schedule of values (SOV)",
             "long-description": "A boolean flag indicating whether a Statement/Schedule of Values (SOV) is attached, detailing the values of insured property at various locations."
         },
         "state_supplement": {
-            "type": "boolean",
+            "type": "bool",
             "description": "Indicates if a State Specific Supplement is attached.",
             "long-description": "A boolean flag indicating whether a supplementary form containing state-specific questions or requirements is included with the application."
         },
         "vacant_building_supp": {
-            "type": "boolean",
+            "type": "bool",
             "description": "Indicates if a Vacant Building Supplement is attached.",
             "long-description": "A boolean flag indicating whether a supplementary form for properties that are vacant or unoccupied is included with the application."
         },
         "vehicle_schedule": {
-            "type": "boolean",
+            "type": "bool",
             "description": "Indicates if a Vehicle Schedule is attached.",
             "long-description": "A boolean flag indicating whether a detailed schedule listing all insured vehicles is included with the application, typically for commercial auto policies."
         },
         "other_attachment": {
-            "type": "boolean",
+            "type": "bool",
             "description": "user defined or undefined attachment",
             "long-description": "A boolean flag indicating whether any other type of attachment, not specifically listed, is included with the application."
         }
@@ -531,17 +531,17 @@
         },
         "city_limit_@": {
             "inside": {
-                "type": "boolean",
+                "type": "bool",
                 "description": "Indicates if the location is inside city limits.",
                 "long-description": "A boolean flag indicating whether the physical location of the insured property or operations falls within the boundaries of an incorporated city or town."
             },
             "outside": {
-                "type": "boolean",
+                "type": "bool",
                 "description": "Indicates if the location is outside city limits.",
                 "long-description": "A boolean flag indicating whether the physical location of the insured property or operations is situated beyond the boundaries of an incorporated city or town."
             },
             "nowhere": {
-                "type": "boolean",
+                "type": "bool",
                 "description": "Indicates if city limits are not applicable or unknown for this location.",
                 "long-description": "A boolean flag indicating that the concept of 'city limits' does not apply to this location (e.g., rural area) or the information is unavailable."
             }
@@ -554,7 +554,7 @@
             "long-description": "The full legal name of the insurance company providing the coverage."
         },
         "naic_code": {
-            "type": "naic",
+            "type": "string",
             "description": "NAIC Company Code for the insurance carrier.",
             "long-description": "The unique five-digit company code assigned by the National Association of Insurance Commissioners (NAIC) to identify the specific insurance carrier in the United States."
         },
@@ -600,7 +600,7 @@
             "description": "Name of the prior insurance carrier.",
             "long-description": "The full legal name of the insurance company that provided coverage to the insured in the prior policy period."
         },
-        "lob": {
+        "line": {
             "type": "string",
             "description": "Line of business for this license - property, liability, engineering, workers comp, life",
             "long-description": "The specific line of business (e.g., property, liability) covered by the prior insurance policy."
@@ -633,7 +633,7 @@
     },
     "loss_run": {
         "no_prior_losses": {
-            "type": "boolean",
+            "type": "bool",
             "description": "Indicates if there were no prior losses reported.",
             "long-description": "A boolean flag indicating that the insured has no record of prior insurance claims or losses for the specified period."
         },
@@ -649,14 +649,19 @@
         },
         "history_^": {
             "year": {
-                "type": "year",
+                "type": "number",
                 "description": "(IN) Year of the specific loss",
                 "long-description": "The calendar year in which the specific loss event occurred."
             },
+            "lob": {
+                "type": "string",
+                "description": "(IN) fire, STFI, earthquake, burglary etc.",
+                "long-description": "In India, the specific type of loss (e.g., fire, storm, earthquake, burglary) for which the claim was made."
+            },
             "line_of_business": {
                 "type": "string",
-                "description": "Line of business for the reported loss.",
-                "long-description": "The general category of insurance (e.g., Property, Liability, fire, STFI, earthquake, burglary, auto etc.) under which the reported loss falls."
+                "description": "Line of business for the reported loss (e.g., Property, Liability). (US)",
+                "long-description": "The general category of insurance (e.g., Property, General Liability, Auto) under which the reported loss falls."
             },
             "loss_details": {
                 "type": "string",
@@ -689,28 +694,28 @@
                 "long-description": "The monetary amount that the insurer has set aside or allocated to cover the potential payment of this claim."
             },
             "subrogation": {
-                "type": "boolean",
+                "type": "bool",
                 "description": "Indicates if subrogation applies to this claim (Y/N).",
                 "long-description": "A Y/N indicator specifying whether the insurer has the right to pursue a third party responsible for the loss to recover the amount paid on the claim."
             },
             "claim_open": {
-                "type": "boolean",
+                "type": "bool",
                 "description": "Indicates if the claim is still open (Y/N).",
                 "long-description": "A Y/N indicator specifying whether the claim is still actively being processed or investigated, or if it has been closed."
             },
             "claim_status_@": {
                 "settled": {
-                    "type": "boolean",
+                    "type": "bool",
                     "description": "(IN) Is claim ststus settled?",
                     "long-description": "In India, a boolean flag indicating that the claim has been fully resolved and the payment has been made."
                 },
                 "pending": {
-                    "type": "boolean",
+                    "type": "bool",
                     "description": "(IN) Is claim ststus pending?",
                     "long-description": "In India, a boolean flag indicating that the claim is currently under review, investigation, or awaiting resolution."
                 },
                 "repudiated": {
-                    "type": "boolean",
+                    "type": "bool",
                     "description": "(IN) Is claim ststus denied?",
                     "long-description": "In India, a boolean flag indicating that the claim has been denied by the insurer, meaning no payment will be made."
                 }
@@ -719,12 +724,12 @@
     },
     "property": {
         "income_expenses_form_attached": {
-            "type": "boolean",
+            "type": "bool",
             "description": "(US) ACORD 810 attached?",
             "long-description": "(US) A boolean flag indicating whether the ACORD 810 form, which details income and expenses for business interruption coverage, is attached to the application."
         },
         "value_report_form_attached": {
-            "type": "boolean",
+            "type": "bool",
             "description": "(US) ACORD 811 attached?",
             "long-description": "(US) A boolean flag indicating whether the ACORD 811 form, used for reporting fluctuating values of inventory or other property, is attached to the application."
         },
@@ -737,34 +742,34 @@
             },
             "interest_@": {
                 "owner": {
-                    "type": "boolean",
+                    "type": "bool",
                     "description": "Indicates if the insured is the owner of the premises.",
                     "long-description": "A boolean flag indicating that the insured holds the legal title and ownership of the property premises."
                 },
                 "tenant": {
-                    "type": "boolean",
+                    "type": "bool",
                     "description": "Indicates if the insured is a tenant of the premises.",
                     "long-description": "A boolean flag indicating that the insured occupies the property premises under a lease agreement, without holding ownership."
                 },
                 "other": {
-                    "type": "boolean",
+                    "type": "bool",
                     "description": "Indicates if the insured has another interest in the premises.",
                     "long-description": "A boolean flag indicating that the insured has a legal or financial interest in the property premises that is neither full ownership nor a tenancy."
                 }
             },
             "risk_location_type_@": {
                 "industrial": {
-                    "type": "boolean",
+                    "type": "bool",
                     "description": "(IN) Primarily used for industrial activities.",
                     "long-description": "In India, a boolean flag indicating that the risk location is primarily used for industrial activities such as manufacturing or heavy processing."
                 },
                 "non_industrial": {
-                    "type": "boolean",
+                    "type": "bool",
                     "description": "(IN) Primarily used for non-industrial purposes (e.g., commercial, retail).",
                     "long-description": "In India, a boolean flag indicating that the risk location is used for non-industrial purposes, such as commercial offices, retail, or residential."
                 },
                 "mixed": {
-                    "type": "boolean",
+                    "type": "bool",
                     "description": "(IN) Has a combination of industrial and non-industrial uses.",
                     "long-description": "In India, a boolean flag indicating that the risk location has a combination of industrial and non-industrial uses."
                 }
@@ -787,121 +792,121 @@
                 },
                 "valuation_@": {
                     "actual_cash_value": {
-                        "type": "boolean",
+                        "type": "bool",
                         "description": "(US) ACV",
                         "long-description": "(US) A boolean flag indicating that loss settlement will be based on the replacement cost less depreciation, considering age and wear and tear."
                     },
                     "replacement_cost": {
-                        "type": "boolean",
+                        "type": "bool",
                         "description": "(US) RC",
                         "long-description": "(US) A boolean flag indicating that loss settlement will be based on the cost to replace the damaged property with new property of similar kind and quality, without deduction for depreciation."
                     },
                     "functional_rc": {
-                        "type": "boolean",
+                        "type": "bool",
                         "description": "(US) Loss settlement based on functionally equivalent replacement cost.",
                         "long-description": "(US) A boolean flag indicating that loss settlement will be based on the cost to repair or replace the damaged property with less costly, but functionally equivalent, materials or property."
                     },
                     "selling_price": {
-                        "type": "boolean",
+                        "type": "bool",
                         "description": "(US) Loss settlement for finished goods at selling price.",
                         "long-description": "(US) A boolean flag indicating that loss settlement for finished goods will be based on their selling price, including any profit that would have been earned."
                     },
                     "agreed_value": {
-                        "type": "boolean",
+                        "type": "bool",
                         "description": "(US) Loss settlement based on a pre-agreed property value.",
                         "long-description": "(US) A boolean flag indicating that the insurer and insured have agreed upon a specific value for the property prior to any loss, which will be the basis for settlement."
                     },
                     "market_value": {
-                        "type": "boolean",
+                        "type": "bool",
                         "description": "(IN) MV - new replacement cost minus depreciation",
                         "long-description": "(IN) A boolean flag indicating that loss settlement will be based on the current market value of the property, which is typically its new replacement cost minus depreciation."
                     },
                     "reinstatement_value": {
-                        "type": "boolean",
+                        "type": "bool",
                         "description": "(IN) RIV / RRC - new replacement cost, no depreciation deduction",
                         "long-description": "(IN) A boolean flag indicating that loss settlement will be based on the Reinstatement Value (RIV) or Replacement Cost (RRC), covering the cost of new replacement without any deduction for depreciation."
                     },
                     "book_value": {
-                        "type": "boolean",
+                        "type": "bool",
                         "description": "(IN) Loss settlement based on asset's book value.",
                         "long-description": "(IN) A boolean flag indicating that loss settlement will be based on the value of the asset as recorded in the insured's accounting books (original cost minus accumulated depreciation)."
                     },
                     "landed_cost": {
-                        "type": "boolean",
+                        "type": "bool",
                         "description": "(IN) for raw material - landed cost at premises",
                         "long-description": "(IN) A boolean flag indicating that for raw materials, loss settlement will be based on the total cost of materials delivered to the premises, including purchase price, freight, and duties."
                     },
                     "other": {
-                        "type": "boolean",
+                        "type": "bool",
                         "description": "(US) Indicates another non-listed valuation method.",
                         "long-description": "(US) A boolean flag indicating that another valuation method, not specifically listed, will be used for loss settlement."
                     }
                 },
                 "asset_category_@": {
                     "building_structure": {
-                        "type": "boolean",
+                        "type": "bool",
                         "description": "(IN) incl. plinth, foundation, compound wall",
                         "long-description": "(IN) A boolean flag indicating that the insured asset is the physical building structure itself, including its plinth, foundation, and surrounding compound walls."
                     },
                     "plant_machinery": {
-                        "type": "boolean",
+                        "type": "bool",
                         "description": "(IN) incl. installation cost",
                         "long-description": "(IN) A boolean flag indicating that the insured assets are the plant and machinery, including their purchase cost, freight, and installation expenses."
                     },
                     "stock_raw_material": {
-                        "type": "boolean",
+                        "type": "bool",
                         "description": "(IN) Is the stock a raw material",
                         "long-description": "(IN) A boolean flag indicating that the insured asset is stock in the form of raw materials used in production."
                     },
                     "stock_in_process": {
-                        "type": "boolean",
+                        "type": "bool",
                         "description": "(IN) Is the stock in process",
                         "long-description": "(IN) A boolean flag indicating that the insured asset is stock that is currently undergoing manufacturing or processing."
                     },
                     "stock_finished_goods": {
-                        "type": "boolean",
+                        "type": "bool",
                         "description": "(IN) Is stock in the form of finished goods",
                         "long-description": "(IN) A boolean flag indicating that the insured asset is stock in the form of finished products ready for sale."
                     },
                     "stock_packing_material": {
-                        "type": "boolean",
+                        "type": "bool",
                         "description": "(IN) Is the stock packing material",
                         "long-description": "(IN) A boolean flag indicating that the insured asset is stock consisting of materials used for packaging finished goods."
                     },
                     "furniture_fixtures_fittings": {
-                        "type": "boolean",
+                        "type": "bool",
                         "description": "(IN) Insured asset includes furniture, fixtures, and fittings.",
                         "long-description": "(IN) A boolean flag indicating that the insured assets include furniture, fixtures (e.g., lighting), and fittings (e.g., plumbing) within the premises."
                     },
                     "electronic_data_processing": {
-                        "type": "boolean",
+                        "type": "bool",
                         "description": "(IN) Insured asset includes electronic data processing equipment.",
                         "long-description": "(IN) A boolean flag indicating that the insured assets include electronic data processing equipment, such as computers, servers, and related peripherals."
                     },
                     "specific_contents": {
-                        "type": "boolean",
+                        "type": "bool",
                         "description": "(IN) bullion, manuscripts, securities, explosives - must be separately declared",
                         "long-description": "(IN) A boolean flag indicating that highly valuable or hazardous contents (e.g., bullion, manuscripts, securities, explosives) are being insured, which typically require separate and specific declaration."
                     },
                     "other_contents": {
-                        "type": "boolean",
+                        "type": "bool",
                         "description": "(IN) Insured asset includes other general contents.",
                         "long-description": "(IN) A boolean flag indicating that other general contents not falling into specific categories are being insured."
                     }
                 },
                 "stock_policy_type_@": {
                     "specific": {
-                        "type": "boolean",
+                        "type": "bool",
                         "description": "(IN) fixed sum insured",
                         "long-description": "(IN) A boolean flag indicating that the stock is insured for a fixed sum, regardless of fluctuations in its value or quantity."
                     },
                     "declaration": {
-                        "type": "boolean",
+                        "type": "bool",
                         "description": "(IN) monthly declaration policy for fluctuating stocks",
                         "long-description": "(IN) A boolean flag indicating that the stock is insured under a declaration policy, where the insured reports stock values periodically (e.g., monthly), and premium is adjusted based on average values."
                     },
                     "floater": {
-                        "type": "boolean",
+                        "type": "bool",
                         "description": "(IN) floater across multiple locations",
                         "long-description": "(IN) A boolean flag indicating that the stock is covered under a floater policy, which provides coverage for property that is moved between multiple specified locations, with a single Sum Insured."
                     }
@@ -913,47 +918,47 @@
                 },
                 "loss_cause_@": {
                     "basic": {
-                        "type": "boolean",
+                        "type": "bool",
                         "description": "(US) Coverage for a defined list of basic perils.",
                         "long-description": "(US) A boolean flag indicating that coverage is provided for a defined list of perils, typically including fire, lightning, explosion, windstorm, hail, smoke, aircraft/vehicle damage, riot, civil commotion, and vandalism."
                     },
                     "broad": {
-                        "type": "boolean",
+                        "type": "bool",
                         "description": "(US) Coverage for basic perils plus additional causes (e.g., falling objects, water damage).",
                         "long-description": "(US) A boolean flag indicating that coverage extends beyond basic perils to include additional causes of loss like falling objects, weight of snow/ice/sleet, water damage (from accidental discharge/overflow)."
                     },
                     "special": {
-                        "type": "boolean",
+                        "type": "bool",
                         "description": "(US) All-risk coverage, excluding specific perils.",
                         "long-description": "(US) A boolean flag indicating that coverage is provided for all causes of direct physical loss or damage, except for those specifically excluded by the policy."
                     },
                     "special_incl_theft": {
-                        "type": "boolean",
+                        "type": "bool",
                         "description": "(US) All-risk coverage, explicitly including theft.",
                         "long-description": "(US) A boolean flag indicating that 'special' cause of loss coverage is chosen and explicitly includes coverage for losses due to theft."
                     },
                     "special_excl_theft": {
-                        "type": "boolean",
+                        "type": "bool",
                         "description": "(US) All-risk coverage, explicitly excluding theft.",
                         "long-description": "(US) A boolean flag indicating that 'special' cause of loss coverage is chosen but explicitly excludes coverage for losses due to theft."
                     },
                     "earthquake": {
-                        "type": "boolean",
+                        "type": "bool",
                         "description": "(US) Specific coverage for earthquake losses.",
                         "long-description": "(US) A boolean flag indicating specific coverage for losses caused by earthquake, typically added as an endorsement or separate policy."
                     },
                     "flood": {
-                        "type": "boolean",
+                        "type": "bool",
                         "description": "(US) Specific coverage for flood losses.",
                         "long-description": "(US) A boolean flag indicating specific coverage for losses caused by flood, typically added as an endorsement or separate policy."
                     },
                     "windstorm_hail": {
-                        "type": "boolean",
+                        "type": "bool",
                         "description": "(US) Specific coverage for windstorm and hail losses.",
                         "long-description": "(US) A boolean flag indicating specific coverage for losses caused by windstorm and hail, often subject to a separate deductible."
                     },
                     "other": {
-                        "type": "boolean",
+                        "type": "bool",
                         "description": "(US) Indicates other non-listed causes of loss are covered.",
                         "long-description": "(US) A boolean flag indicating that other specific causes of loss, not listed, are covered."
                     }
@@ -987,49 +992,49 @@
             "catastrophe_zones": {
                 "earthquake_zone_@": {
                     "zone_ii": {
-                        "type": "boolean",
+                        "type": "bool",
                         "description": "(IN) BIS IS:1893 seismic zone II - low damage risk",
                         "long-description": "(IN) A boolean flag indicating that the location falls under BIS IS:1893 seismic zone II, signifying a low damage risk from earthquakes."
                     },
                     "zone_iii": {
-                        "type": "boolean",
+                        "type": "bool",
                         "description": "(IN) moderate damage risk",
                         "long-description": "(IN) A boolean flag indicating that the location falls under BIS IS:1893 seismic zone III, signifying a moderate damage risk from earthquakes."
                     },
                     "zone_iv": {
-                        "type": "boolean",
+                        "type": "bool",
                         "description": "(IN) high damage risk",
                         "long-description": "(IN) A boolean flag indicating that the location falls under BIS IS:1893 seismic zone IV, signifying a high damage risk from earthquakes."
                     },
                     "zone_v": {
-                        "type": "boolean",
+                        "type": "bool",
                         "description": "(IN) very high damage risk e.g. parts of J&K, NE states, Gujarat, Uttarakhand",
                         "long-description": "(IN) A boolean flag indicating that the location falls under BIS IS:1893 seismic zone V, signifying a very high damage risk from earthquakes, common in regions like Jammu & Kashmir, Northeastern states, Gujarat, and Uttarakhand."
                     }
                 },
                 "cyclone_prone_coast": {
-                    "type": "boolean",
+                    "type": "bool",
                     "description": "(IN) Bay of Bengal or Arabian Sea coastal belt",
                     "long-description": "(IN) A boolean flag indicating whether the location is situated within a coastal belt that is susceptible to cyclones originating from the Bay of Bengal or Arabian Sea."
                 },
                 "flood_zone": {
-                    "type": "boolean",
+                    "type": "bool",
                     "description": "(IN) located in designated flood plain or flood-prone district",
                     "long-description": "(IN) A boolean flag indicating whether the location is situated within a designated flood plain or a district officially identified as prone to flooding."
                 },
                 "stfi_zone_@": {
                     "zone_a": {
-                        "type": "boolean",
+                        "type": "bool",
                         "description": "(IN) highest STFI rating zone",
                         "long-description": "(IN) A boolean flag indicating that the location is in Zone A, which carries the highest rating for Storm, Tempest, Flood, and Inundation (STFI) perils."
                     },
                     "zone_b": {
-                        "type": "boolean",
+                        "type": "bool",
                         "description": "(IN) STFI Zone B (moderate rating).",
                         "long-description": "(IN) A boolean flag indicating that the location is in Zone B for STFI perils, representing a moderate rating."
                     },
                     "zone_c": {
-                        "type": "boolean",
+                        "type": "bool",
                         "description": "(IN) STFI Zone C (lowest rating).",
                         "long-description": "(IN) A boolean flag indicating that the location is in Zone C for STFI perils, representing the lowest rating."
                     }
@@ -1038,83 +1043,83 @@
             "perils_covered": {
                 "inbuilt_perils_@": {
                     "fire": {
-                        "type": "boolean",
+                        "type": "bool",
                         "description": "(IN) FLEXA - Fire incl. fermentation/spontaneous combustion",
                         "long-description": "(IN) A boolean flag indicating coverage for loss or damage caused by fire, including fire resulting from fermentation or spontaneous combustion, as part of the Fire and Allied Perils (FLEXA) coverage."
                     },
                     "lightning": {
-                        "type": "boolean",
+                        "type": "bool",
                         "description": "(IN) Coverage for lightning (FLEXA).",
                         "long-description": "(IN) A boolean flag indicating coverage for loss or damage caused by lightning, as part of the Fire and Allied Perils (FLEXA) coverage."
                     },
                     "explosion_implosion": {
-                        "type": "boolean",
+                        "type": "bool",
                         "description": "(IN) FLEXA - boilers, gas cylinders etc.",
                         "long-description": "(IN) A boolean flag indicating coverage for loss or damage caused by explosion or implosion, specifically from items like boilers, gas cylinders, etc., as part of the Fire and Allied Perils (FLEXA) coverage."
                     },
                     "aircraft_damage": {
-                        "type": "boolean",
+                        "type": "bool",
                         "description": "(IN) FLEXA - impact from aircraft/aerial devices",
                         "long-description": "(IN) A boolean flag indicating coverage for loss or damage caused by impact from aircraft or other aerial devices, as part of the Fire and Allied Perils (FLEXA) coverage."
                     },
                     "riot_strike_malicious_damage": {
-                        "type": "boolean",
+                        "type": "bool",
                         "description": "(IN) RSMD",
                         "long-description": "(IN) A boolean flag indicating coverage for loss or damage caused by riot, strike, and malicious damage (RSMD)."
                     },
                     "storm_tempest_flood_inundation": {
-                        "type": "boolean",
+                        "type": "bool",
                         "description": "(IN) STFI",
                         "long-description": "(IN) A boolean flag indicating coverage for loss or damage caused by storm, tempest, flood, and inundation (STFI)."
                     },
                     "impact_damage": {
-                        "type": "boolean",
+                        "type": "bool",
                         "description": "(IN) by road/rail vehicle or animal - third party",
                         "long-description": "(IN) A boolean flag indicating coverage for loss or damage caused by impact from external third-party road or rail vehicles or animals."
                     },
                     "subsidence_landslide": {
-                        "type": "boolean",
+                        "type": "bool",
                         "description": "(IN) includes rockslide",
                         "long-description": "(IN) A boolean flag indicating coverage for loss or damage caused by subsidence (sinking of ground) or landslide, including rockslides."
                     },
                     "bursting_overflowing_water_tanks": {
-                        "type": "boolean",
+                        "type": "bool",
                         "description": "(IN) Coverage for bursting/overflowing water tanks/pipes.",
                         "long-description": "(IN) A boolean flag indicating coverage for loss or damage caused by the bursting or overflowing of water tanks, apparatus, or pipes."
                     },
                     "missile_testing": {
-                        "type": "boolean",
+                        "type": "bool",
                         "description": "(IN) Coverage for missile testing operations.",
                         "long-description": "(IN) A boolean flag indicating coverage for loss or damage caused by missile testing operations."
                     },
                     "leakage_sprinkler": {
-                        "type": "boolean",
+                        "type": "bool",
                         "description": "(IN) automatic sprinkler leakage",
                         "long-description": "(IN) A boolean flag indicating coverage for loss or damage caused by accidental leakage from automatic sprinkler systems."
                     },
                     "bush_fire": {
-                        "type": "boolean",
+                        "type": "bool",
                         "description": "(IN) Coverage for bush/forest/jungle fire.",
                         "long-description": "(IN) A boolean flag indicating coverage for loss or damage caused by bush fire, forest fire, or jungle fire."
                     },
                     "earthquake": {
-                        "type": "boolean",
+                        "type": "bool",
                         "description": "(IN) inbuilt under BSUS/BLUS; optional add-on under SFSP",
                         "long-description": "(IN) A boolean flag indicating coverage for loss or damage caused by earthquake. This is an inbuilt peril for Business Small Underserved (BSUS) and Business Large Underserved (BLUS) policies, but an optional add-on for Standard Fire and Special Perils (SFSP) policies."
                     },
                     "terrorism": {
-                        "type": "boolean",
+                        "type": "bool",
                         "description": "(IN) covered via India Market Terrorism Risk Insurance Pool (IMTRIP)",
                         "long-description": "(IN) A boolean flag indicating coverage for loss or damage caused by acts of terrorism, which is typically provided through the India Market Terrorism Risk Insurance Pool (IMTRIP)."
                     }
                 },
                 "stfi_deleted": {
-                    "type": "boolean",
+                    "type": "bool",
                     "description": "(IN) STFI perils deleted at inception for premium discount (SFSP only)",
                     "long-description": "(IN) A boolean flag indicating whether the Storm, Tempest, Flood, and Inundation (STFI) perils have been explicitly removed from coverage at the policy's inception, usually resulting in a premium discount (applicable only for Standard Fire and Special Perils policies)."
                 },
                 "rsmtd_deleted": {
-                    "type": "boolean",
+                    "type": "bool",
                     "description": "(IN) RSMD/RSMTD deleted at inception for premium discount (SFSP only)",
                     "long-description": "(IN) A boolean flag indicating whether the Riot, Strike, Malicious Damage (RSMD) or Riot, Strike, Malicious Damage, Terrorism, Sabotage (RSMTD) perils have been explicitly removed from coverage at the policy's inception, usually resulting in a premium discount (applicable only for Standard Fire and Special Perils policies)."
                 }
@@ -1122,7 +1127,7 @@
             "coverages": {
                 "spoilage": {
                     "opted": {
-                        "type": "boolean",
+                        "type": "bool",
                         "description": "Indicates if spoilage coverage is opted for.",
                         "long-description": "A boolean flag indicating whether coverage for loss due to spoilage of perishable goods is included in the policy."
                     },
@@ -1142,29 +1147,29 @@
                         "long-description": "The amount the insured must pay out-of-pocket for each spoilage claim before the insurance coverage applies."
                     },
                     "refrigeration_agreement": {
-                        "type": "boolean",
+                        "type": "bool",
                         "description": "refrigeration maintenance agreement in place?",
                         "long-description": "A boolean flag indicating whether a formal maintenance agreement is in place for all refrigeration equipment, which can be a condition for spoilage coverage."
                     },
                     "breakdown": {
-                        "type": "boolean",
+                        "type": "bool",
                         "description": "Breakdown or contamination",
                         "long-description": "A boolean flag indicating whether spoilage coverage includes losses resulting from mechanical breakdown of refrigeration equipment or contamination."
                     },
                     "power_outage": {
-                        "type": "boolean",
+                        "type": "bool",
                         "description": "spoilage due to outage covered?",
                         "long-description": "A boolean flag indicating whether spoilage losses caused by an interruption of electrical power are covered under the policy."
                     },
                     "selling_price": {
-                        "type": "boolean",
+                        "type": "bool",
                         "description": "loss settlement at sale price or cost price?",
                         "long-description": "A boolean flag indicating whether the loss settlement for spoilage will be based on the selling price (including anticipated profit) or the cost price of the spoiled goods."
                     }
                 },
                 "sinkhole": {
                     "opted": {
-                        "type": "boolean",
+                        "type": "bool",
                         "description": "Indicates if sinkhole coverage is opted for.",
                         "long-description": "A boolean flag indicating whether coverage for loss or damage caused by sinkholes is included in the policy."
                     },
@@ -1176,7 +1181,7 @@
                 },
                 "mine_subsidence": {
                     "opted": {
-                        "type": "boolean",
+                        "type": "bool",
                         "description": "Indicates if mine subsidence coverage is opted for.",
                         "long-description": "A boolean flag indicating whether coverage for loss or damage caused by subsidence of land due to underground mining operations is included."
                     },
@@ -1188,7 +1193,7 @@
                 },
                 "business_income": {
                     "opted": {
-                        "type": "boolean",
+                        "type": "bool",
                         "description": "Indicates if Business Income coverage is opted for.",
                         "long-description": "A boolean flag indicating whether coverage for loss of income due to suspension of operations caused by covered perils is included in the policy."
                     },
@@ -1203,7 +1208,7 @@
                         "long-description": "The percentage of the insured's annual business income that must be carried as coverage; failure to meet this can result in a penalty at the time of loss."
                     },
                     "agreed_value": {
-                        "type": "boolean",
+                        "type": "bool",
                         "description": "Indicates if agreed value option is selected for business income.",
                         "long-description": "A boolean flag indicating whether the insurer and insured have agreed upon a specific business income value in advance, waiving the coinsurance clause."
                     },
@@ -1214,7 +1219,7 @@
                     },
                     "extra_expense": {
                         "opted": {
-                            "type": "boolean",
+                            "type": "bool",
                             "description": "Indicates if Extra Expense coverage is opted for.",
                             "long-description": "A boolean flag indicating whether coverage for necessary expenses incurred to minimize business interruption or continue operations after a loss is included."
                         },
@@ -1227,7 +1232,7 @@
                 },
                 "ordinance_or_law": {
                     "opted": {
-                        "type": "boolean",
+                        "type": "bool",
                         "description": "Indicates if Ordinance or Law coverage is opted for.",
                         "long-description": "A boolean flag indicating whether coverage for additional costs incurred due to enforcement of building codes or ordinances after a covered loss is included."
                     },
@@ -1249,7 +1254,7 @@
                 },
                 "inland_marine": {
                     "opted": {
-                        "type": "boolean",
+                        "type": "bool",
                         "description": "Indicates if Inland Marine coverage is opted for.",
                         "long-description": "A boolean flag indicating whether coverage for property in transit, property of others in the insured's care, or specialized property (e.g., fine art, contractor's equipment) is included."
                     },
@@ -1266,7 +1271,7 @@
                 },
                 "equipment_breakdown": {
                     "opted": {
-                        "type": "boolean",
+                        "type": "bool",
                         "description": "Indicates if Equipment Breakdown coverage is opted for.",
                         "long-description": "A boolean flag indicating whether coverage for sudden and accidental breakdown of machinery and equipment (e.g., boilers, electrical systems, air conditioning) is included."
                     },
@@ -1278,7 +1283,7 @@
                 },
                 "accounts_receivable": {
                     "opted": {
-                        "type": "boolean",
+                        "type": "bool",
                         "description": "Indicates if Accounts Receivable coverage is opted for.",
                         "long-description": "A boolean flag indicating whether coverage for losses incurred when accounts receivable records are damaged or destroyed by a covered peril, making them uncollectible, is included."
                     },
@@ -1290,7 +1295,7 @@
                 },
                 "valuable_papers": {
                     "opted": {
-                        "type": "boolean",
+                        "type": "bool",
                         "description": "Indicates if Valuable Papers and Records coverage is opted for.",
                         "long-description": "A boolean flag indicating whether coverage for the cost to replace or restore valuable papers and records (e.g., maps, blueprints, financial records) damaged by a covered peril is included."
                     },
@@ -1302,7 +1307,7 @@
                 },
                 "electronic_data_processing": {
                     "opted": {
-                        "type": "boolean",
+                        "type": "bool",
                         "description": "Indicates if Electronic Data Processing (EDP) coverage is opted for.",
                         "long-description": "A boolean flag indicating whether specialized coverage for computer hardware, software, and data, including risks like power surges, mechanical breakdown, and virus attacks, is included."
                     },
@@ -1324,7 +1329,7 @@
                 },
                 "earthquake": {
                     "opted": {
-                        "type": "boolean",
+                        "type": "bool",
                         "description": "Indicates if Earthquake coverage is opted for.",
                         "long-description": "A boolean flag indicating whether specific coverage for losses caused by earthquake and related perils (e.g., volcanic eruption, landslide) is included."
                     },
@@ -1341,7 +1346,7 @@
                 },
                 "flood": {
                     "opted": {
-                        "type": "boolean",
+                        "type": "bool",
                         "description": "Indicates if Flood coverage is opted for.",
                         "long-description": "A boolean flag indicating whether specific coverage for losses caused by flood (inundation of normally dry land by water) is included."
                     },
@@ -1363,7 +1368,7 @@
                 },
                 "wind_hail": {
                     "opted": {
-                        "type": "boolean",
+                        "type": "bool",
                         "description": "Indicates if Windstorm and Hail coverage is opted for.",
                         "long-description": "A boolean flag indicating whether specific coverage for losses caused by windstorms and hail is included."
                     },
@@ -1381,7 +1386,7 @@
                 "special_risk_features": {
                     "hazardous_goods_stored": {
                         "opted": {
-                            "type": "boolean",
+                            "type": "YN",
                             "description": "(IN) Are hazardous/flammable goods stored?",
                             "long-description": "(IN) A Y/N indicator whether hazardous or flammable goods are stored at the premises."
                         },
@@ -1392,17 +1397,17 @@
                         },
                         "petroleum_class_@": {
                             "class_a": {
-                                "type": "boolean",
+                                "type": "bool",
                                 "description": "(IN) flash point below 23°C e.g. petrol",
                                 "long-description": "(IN) A boolean flag indicating that petroleum products with a flash point below 23°C (e.g., petrol) are stored, representing the highest fire risk."
                             },
                             "class_b": {
-                                "type": "boolean",
+                                "type": "bool",
                                 "description": "(IN) flash point 23°C-65°C e.g. kerosene",
                                 "long-description": "(IN) A boolean flag indicating that petroleum products with a flash point between 23°C and 65°C (e.g., kerosene) are stored."
                             },
                             "class_c": {
-                                "type": "boolean",
+                                "type": "bool",
                                 "description": "(IN) flash point above 65°C e.g. diesel",
                                 "long-description": "(IN) A boolean flag indicating that petroleum products with a flash point above 65°C (e.g., diesel) are stored, representing a lower fire risk compared to Class A and B."
                             }
@@ -1415,7 +1420,7 @@
                     },
                     "lpg_cng_installed": {
                         "opted": {
-                            "type": "boolean",
+                            "type": "YN",
                             "description": "(IN) Are LPG/CNG cylinders/installations present?",
                             "long-description": "(IN) A Y/N indicator whether LPG (Liquefied Petroleum Gas) or CNG (Compressed Natural Gas) cylinders or installations are present at the premises."
                         },
@@ -1426,18 +1431,18 @@
                         }
                     },
                     "basement_used_for_storage": {
-                        "type": "boolean",
+                        "type": "bool",
                         "description": "(IN) Is the basement used for storage?",
                         "long-description": "(IN) A boolean flag indicating whether the basement of the building is utilized for storage purposes, which can impact fire risk."
                     },
                     "night_watchman": {
-                        "type": "boolean",
+                        "type": "bool",
                         "description": "(IN) Is a night watchman employed?",
                         "long-description": "(IN) A boolean flag indicating whether a night watchman is employed to provide security and fire vigilance during non-business hours."
                     },
                     "past_fire_incidents": {
                         "opted": {
-                            "type": "boolean",
+                            "type": "YN",
                             "description": "(IN) Any past fire incidents?",
                             "long-description": "(IN) A Y/N indicator whether the premises has experienced any fire incidents in the past."
                         },
@@ -1490,7 +1495,7 @@
                 "long-description": "A comprehensive textual description detailing the physical characteristics, type of operations, and overall usage of the insured premises."
             },
             "sub_leased": {
-                "type": "boolean",
+                "type": "YN",
                 "description": "Indicates if any part of the premises is sub-leased (Y/N).",
                 "long-description": "A Y/N indicator whether any portion of the insured premises is currently sub-leased to another entity or individual."
             },
@@ -1505,7 +1510,7 @@
                 "long-description": "(IN) The specific occupancy code from the All India Fire Tariff (AIFT) 2001, used to classify the building's use for fire insurance rating purposes, e.g., 'II(a)' for certain commercial risks or 'III(b)' for industrial risks."
             },
             "historical_landmark": {
-                "type": "boolean",
+                "type": "bool",
                 "description": "(US) Is the building a historical landmark?",
                 "long-description": "(US) A boolean flag indicating whether the building is designated as a historical landmark, which may affect repair or replacement options after a loss."
             },
@@ -1517,62 +1522,62 @@
             "construction": {
                 "construction_type_@": {
                     "frame": {
-                        "type": "boolean",
+                        "type": "bool",
                         "description": "(US) 1 - Frame",
                         "long-description": "(US) A boolean flag indicating Type 1 construction where the exterior walls are wood or other combustible materials."
                     },
                     "joisted_masonry": {
-                        "type": "boolean",
+                        "type": "bool",
                         "description": "(US) 2 - Joisted Masonry",
                         "long-description": "(US) A boolean flag indicating Type 2 construction where exterior walls are masonry, but floors and roof are combustible (joisted wood or other similar materials)."
                     },
                     "non_combustible": {
-                        "type": "boolean",
+                        "type": "bool",
                         "description": "(US) 3 - Non-Combustible",
                         "long-description": "(US) A boolean flag indicating Type 3 construction where exterior walls, floor, and roof are all non-combustible materials, but the roof and floor assembly are not fire-resistive."
                     },
                     "masonry_non_combustible": {
-                        "type": "boolean",
+                        "type": "bool",
                         "description": "(US) 4 - Masonry Non-Combustible",
                         "long-description": "(US) A boolean flag indicating Type 4 construction where exterior walls are masonry, and the interior structural members (floors/roof) are non-combustible."
                     },
                     "modified_fire_resistive": {
-                        "type": "boolean",
+                        "type": "bool",
                         "description": "(US) 5 - Modified Fire Resistive",
                         "long-description": "(US) A boolean flag indicating Type 5 construction where structural components have a fire-resistive rating of 1 to 2 hours."
                     },
                     "fire_resistive": {
-                        "type": "boolean",
+                        "type": "bool",
                         "description": "(US) 6 - Fire Resistive",
                         "long-description": "(US) A boolean flag indicating Type 6 construction where structural components have a fire-resistive rating of 2 hours or more, providing the highest level of fire protection."
                     },
                     "pucca_rcc": {
-                        "type": "boolean",
+                        "type": "bool",
                         "description": "(IN) RCC / fire-resistive - AIFT Class 1",
                         "long-description": "(IN) A boolean flag indicating 'Pucca' construction with Reinforced Cement Concrete (RCC) structure, considered fire-resistive and classified as AIFT Class 1, offering the lowest fire risk."
                     },
                     "pucca_non_rcc": {
-                        "type": "boolean",
+                        "type": "bool",
                         "description": "(IN) brick/stone masonry with RCC/AC/GI roof - AIFT Class 2",
                         "long-description": "(IN) A boolean flag indicating 'Pucca' construction with brick or stone masonry walls and a roof made of RCC, Asbestos Cement (AC) sheets, or Galvanized Iron (GI) sheets, classified as AIFT Class 2."
                     },
                     "semi_pucca": {
-                        "type": "boolean",
+                        "type": "bool",
                         "description": "(IN) kutcha walls or kutcha roof - AIFT Class 3",
                         "long-description": "(IN) A boolean flag indicating 'Semi-Pucca' construction where either the walls or the roof are made of temporary or easily combustible 'kutcha' materials, classified as AIFT Class 3."
                     },
                     "kutcha": {
-                        "type": "boolean",
+                        "type": "bool",
                         "description": "(IN) all kutcha - AIFT Class 4 (highest tariff)",
                         "long-description": "(IN) A boolean flag indicating 'Kutcha' construction where all structural components (walls and roof) are made of temporary or easily combustible materials (e.g., thatch, mud), classified as AIFT Class 4, representing the highest fire tariff."
                     },
                     "prefabricated_steel": {
-                        "type": "boolean",
+                        "type": "bool",
                         "description": "(IN) Building uses prefabricated steel construction.",
                         "long-description": "(IN) A boolean flag indicating that the building is constructed using prefabricated steel components."
                     },
                     "other": {
-                        "type": "boolean",
+                        "type": "bool",
                         "description": "(IN) Other construction type, not listed.",
                         "long-description": "(IN) A boolean flag indicating that the building's construction type is not among the specified options."
                     }
@@ -1609,22 +1614,22 @@
                 },
                 "fire_brigade_type_@": {
                     "municipal_professional": {
-                        "type": "boolean",
+                        "type": "bool",
                         "description": "(IN) Served by professional municipal fire brigade.",
                         "long-description": "(IN) A boolean flag indicating that the location is served by a professional municipal fire brigade, offering generally good fire protection."
                     },
                     "industrial_brigade": {
-                        "type": "boolean",
+                        "type": "bool",
                         "description": "(IN) Has access to a dedicated industrial fire brigade.",
                         "long-description": "(IN) A boolean flag indicating that the location has access to a dedicated industrial fire brigade, typically found in large industrial complexes."
                     },
                     "voluntary": {
-                        "type": "boolean",
+                        "type": "bool",
                         "description": "(IN) Served by a voluntary fire brigade.",
                         "long-description": "(IN) A boolean flag indicating that the location is served by a voluntary fire brigade, which may have limited resources or response times."
                     },
                     "no_brigade": {
-                        "type": "boolean",
+                        "type": "bool",
                         "description": "(IN) No access to a formal fire brigade.",
                         "long-description": "(IN) A boolean flag indicating that the location has no access to a formal fire brigade, implying higher fire risk."
                     }
@@ -1655,7 +1660,7 @@
                     "long-description": "(US) The total number of subterranean levels or basements in the insured building."
                 },
                 "year_built": {
-                    "type": "year",
+                    "type": "number",
                     "description": "(US) Year the building was originally constructed.",
                     "long-description": "(US) The calendar year in which the insured building was originally constructed."
                 },
@@ -1675,7 +1680,7 @@
                     "long-description": "(US) The primary method or fuel used for heating the building (e.g., natural gas, electric, oil, forced air, radiant)."
                 },
                 "under_construction": {
-                    "type": "boolean",
+                    "type": "bool",
                     "description": "(IN) builders risk / project under construction",
                     "long-description": "(IN) A boolean flag indicating whether the building is currently under construction, renovation, or erection, relevant for Builders' Risk policies."
                 },
@@ -1724,12 +1729,12 @@
             },
             "wind_class_@": {
                 "resistive": {
-                    "type": "boolean",
+                    "type": "bool",
                     "description": "(US) Building has features to resist high winds.",
                     "long-description": "(US) A boolean flag indicating that the building construction incorporates features designed to resist high winds, such as reinforced roofing or window protection."
                 },
                 "semi_resistive": {
-                    "type": "boolean",
+                    "type": "bool",
                     "description": "(US) Building has some wind resistance features.",
                     "long-description": "(US) A boolean flag indicating that the building construction has some features for wind resistance, but not to the extent of a fully resistive structure."
                 }
@@ -1737,7 +1742,7 @@
             "heat": {
                 "wood_burning": {
                     "opted": {
-                        "type": "boolean",
+                        "type": "bool",
                         "description": "(US) includes wood stoves and fireplaces",
                         "long-description": "(US) A boolean flag indicating whether the premises utilizes wood-burning heat sources, such as wood stoves or fireplaces."
                     },
@@ -1755,26 +1760,26 @@
                 "primary": {
                     "boiler": {
                         "opted": {
-                            "type": "boolean",
+                            "type": "bool",
                             "description": "(US) Boiler is the primary heating source.",
                             "long-description": "(US) A boolean flag indicating that a boiler is the primary heating source."
                         },
                         "insured": {
-                            "type": "boolean",
+                            "type": "bool",
                             "description": "(US) Is the primary boiler specifically insured?",
                             "long-description": "(US) A boolean flag indicating whether the primary boiler is specifically insured under the policy (e.g., via equipment breakdown coverage)."
                         }
                     },
                     "solid_fuel": {
                         "opted": {
-                            "type": "boolean",
+                            "type": "bool",
                             "description": "(US) Solid fuel system is the primary heating source.",
                             "long-description": "(US) A boolean flag indicating that a solid fuel (e.g., coal, pellets) system is the primary heating source."
                         }
                     },
                     "other": {
                         "opted": {
-                            "type": "boolean",
+                            "type": "bool",
                             "description": "(US) Other unlisted primary heating system.",
                             "long-description": "(US) A boolean flag indicating that an 'other' heating system, not explicitly listed, is the primary heating source."
                         },
@@ -1788,26 +1793,26 @@
                 "secondary": {
                     "boiler": {
                         "opted": {
-                            "type": "boolean",
+                            "type": "bool",
                             "description": "(US) Boiler is the secondary heating source.",
                             "long-description": "(US) A boolean flag indicating that a boiler serves as a secondary heating source."
                         },
                         "insured": {
-                            "type": "boolean",
+                            "type": "bool",
                             "description": "(US) Is the secondary boiler specifically insured?",
                             "long-description": "(US) A boolean flag indicating whether the secondary boiler is specifically insured under the policy."
                         }
                     },
                     "solid_fuel": {
                         "opted": {
-                            "type": "boolean",
+                            "type": "bool",
                             "description": "(US) Solid fuel system is the secondary heating source.",
                             "long-description": "(US) A boolean flag indicating that a solid fuel system is a secondary heating source."
                         }
                     },
                     "other": {
                         "opted": {
-                            "type": "boolean",
+                            "type": "bool",
                             "description": "(US) Other unlisted secondary heating system.",
                             "long-description": "(US) A boolean flag indicating that an 'other' heating system, not explicitly listed, is a secondary heating source."
                         },
@@ -1887,18 +1892,18 @@
                 },
                 "monitoring_type_@": {
                     "central": {
-                        "type": "boolean",
+                        "type": "bool",
                         "description": "(US) monitored by UL listed central station",
                         "long-description": "(US) A boolean flag indicating that the burglar alarm system is connected to and monitored by a UL (Underwriters Laboratories) listed central monitoring station, which provides higher security."
                     },
                     "local": {
-                        "type": "boolean",
+                        "type": "bool",
                         "description": "(US) local gong audible alarm only, no monitoring",
                         "long-description": "(US) A boolean flag indicating that the burglar alarm system only produces an audible alarm on-site (local gong) and is not connected to a remote monitoring service."
                     }
                 },
                 "central_station_has_keys": {
-                    "type": "boolean",
+                    "type": "bool",
                     "description": "(US) central station has keys to premises",
                     "long-description": "(US) A boolean flag indicating whether the central alarm monitoring station holds keys or has access codes to the insured premises for emergency response."
                 },
@@ -1923,7 +1928,7 @@
                     "long-description": "(US) The total number of security personnel or watchmen actively present and patrolling the premises."
                 },
                 "clock_hourly": {
-                    "type": "boolean",
+                    "type": "bool",
                     "description": "(US) guards make hourly clock rounds",
                     "long-description": "(US) A boolean flag indicating whether security guards or watchmen conduct documented hourly rounds using a clocking system to ensure vigilance."
                 }
@@ -1946,12 +1951,12 @@
                 },
                 "monitoring_type_@": {
                     "central": {
-                        "type": "boolean",
+                        "type": "bool",
                         "description": "(US) fire alarm monitored by UL listed central station",
                         "long-description": "(US) A boolean flag indicating that the fire alarm system is connected to and monitored by a UL (Underwriters Laboratories) listed central monitoring station."
                     },
                     "local": {
-                        "type": "boolean",
+                        "type": "bool",
                         "description": "(US) local gong audible alarm only, no monitoring",
                         "long-description": "(US) A boolean flag indicating that the fire alarm system only produces an audible alarm on-site (local gong) and is not connected to a remote monitoring service."
                     }
@@ -1969,23 +1974,23 @@
                     "long-description": "(IN) The manufacturer and model number of the plant or machinery item."
                 },
                 "year_of_manufacture": {
-                    "type": "year",
+                    "type": "number",
                     "description": "(IN) Year of manufacture.",
                     "long-description": "(IN) The calendar year in which the plant or machinery item was manufactured."
                 },
                 "condition_@": {
                     "new": {
-                        "type": "boolean",
+                        "type": "bool",
                         "description": "(IN) Item is new.",
                         "long-description": "(IN) A boolean flag indicating that the plant or machinery item is new and unused."
                     },
                     "second_hand": {
-                        "type": "boolean",
+                        "type": "bool",
                         "description": "(IN) Item is second-hand.",
                         "long-description": "(IN) A boolean flag indicating that the plant or machinery item was purchased used or second-hand."
                     },
                     "obsolete": {
-                        "type": "boolean",
+                        "type": "bool",
                         "description": "(IN) Item is obsolete.",
                         "long-description": "(IN) A boolean flag indicating that the plant or machinery item is considered obsolete or outdated."
                     }
@@ -2006,99 +2011,99 @@
                     "long-description": "(IN) The cost to replace the plant or machinery item with a new one of similar kind and capacity, without deduction for depreciation."
                 },
                 "includes_installation_cost": {
-                    "type": "boolean",
+                    "type": "bool",
                     "description": "(IN) Includes installation cost.",
                     "long-description": "(IN) A boolean flag indicating whether the provided purchase cost or reinstatement value for the machinery includes expenses for its installation."
                 }
             },
             "business_type_@": {
                 "appartments": {
-                    "type": "boolean",
+                    "type": "bool",
                     "description": "Indicates if the premises are primarily used as apartments.",
                     "long-description": "A boolean flag indicating that the primary business conducted at the premises involves operating or managing apartment buildings."
                 },
                 "condos": {
-                    "type": "boolean",
+                    "type": "bool",
                     "description": "Indicates if the premises are primarily used as condos.",
                     "long-description": "A boolean flag indicating that the primary business conducted at the premises involves operating or managing condominium units or associations."
                 },
                 "contractor": {
-                    "type": "boolean",
+                    "type": "bool",
                     "description": "Indicates if the business operating at the premises is a contractor.",
                     "long-description": "A boolean flag indicating that the primary business conducted at the premises is that of a contractor (e.g., general, electrical, plumbing)."
                 },
                 "institutional": {
-                    "type": "boolean",
+                    "type": "bool",
                     "description": "Indicates if the business operating at the premises is institutional (e.g., school, hospital).",
                     "long-description": "A boolean flag indicating that the primary business conducted at the premises is institutional, such as a school, university, or hospital."
                 },
                 "manufacturing": {
-                    "type": "boolean",
+                    "type": "bool",
                     "description": "Indicates if the business operating at the premises is manufacturing.",
                     "long-description": "A boolean flag indicating that the primary business conducted at the premises involves the manufacturing or production of goods."
                 },
                 "office": {
-                    "type": "boolean",
+                    "type": "bool",
                     "description": "Indicates if the premises are primarily used as offices.",
                     "long-description": "A boolean flag indicating that the primary business conducted at the premises is office-based services."
                 },
                 "restaurant": {
-                    "type": "boolean",
+                    "type": "bool",
                     "description": "Indicates if the business operating at the premises is a restaurant.",
                     "long-description": "A boolean flag indicating that the primary business conducted at the premises is a restaurant or food service establishment."
                 },
                 "retail": {
-                    "type": "boolean",
+                    "type": "bool",
                     "description": "Indicates if the business operating at the premises is retail.",
                     "long-description": "A boolean flag indicating that the primary business conducted at the premises involves the direct sale of goods to consumers."
                 },
                 "service": {
-                    "type": "boolean",
+                    "type": "bool",
                     "description": "Indicates if the business operating at the premises is a service provider.",
                     "long-description": "A boolean flag indicating that the primary business conducted at the premises involves providing services rather than selling goods."
                 },
                 "wholesale": {
-                    "type": "boolean",
+                    "type": "bool",
                     "description": "Indicates if the business operating at the premises is wholesale.",
                     "long-description": "A boolean flag indicating that the primary business conducted at the premises involves the sale of goods in large quantities to other businesses."
                 },
                 "others": {
-                    "type": "boolean",
+                    "type": "bool",
                     "description": "Indicates if the business type is other than those listed.",
                     "long-description": "A boolean flag indicating that the primary business type at the premises is not explicitly covered by the other listed options."
                 },
                 "manufacturer": {
-                    "type": "boolean",
+                    "type": "bool",
                     "description": "(IN) Premises used for manufacturing.",
                     "long-description": "(IN) A boolean flag indicating that the premises is used for manufacturing operations."
                 },
                 "trader_wholesale": {
-                    "type": "boolean",
+                    "type": "bool",
                     "description": "(IN) Premises used for wholesale trading.",
                     "long-description": "(IN) A boolean flag indicating that the premises is used for wholesale trading activities."
                 },
                 "trader_retail": {
-                    "type": "boolean",
+                    "type": "bool",
                     "description": "(IN) Premises used for retail trading.",
                     "long-description": "(IN) A boolean flag indicating that the premises is used for retail trading activities."
                 },
                 "hotel_hospitality": {
-                    "type": "boolean",
+                    "type": "bool",
                     "description": "(IN) Premises used for hotel/hospitality.",
                     "long-description": "(IN) A boolean flag indicating that the premises is used for hotel or hospitality services."
                 },
                 "warehouse_cold_storage": {
-                    "type": "boolean",
+                    "type": "bool",
                     "description": "(IN) Premises used as warehouse/cold storage.",
                     "long-description": "(IN) A boolean flag indicating that the premises is used as a warehouse or cold storage facility."
                 },
                 "educational": {
-                    "type": "boolean",
+                    "type": "bool",
                     "description": "(IN) Premises used for educational purposes.",
                     "long-description": "(IN) A boolean flag indicating that the premises is used for educational purposes (e.g., school, college)."
                 },
                 "healthcare": {
-                    "type": "boolean",
+                    "type": "bool",
                     "description": "(IN) Premises used for healthcare services.",
                     "long-description": "(IN) A boolean flag indicating that the premises is used for healthcare services (e.g., hospital, clinic)."
                 }
@@ -2116,62 +2121,62 @@
             "additional_interest_^": {
                 "interest_type_@": {
                     "additional_insured": {
-                        "type": "boolean",
+                        "type": "bool",
                         "description": "The party is an additional insured on the policy.",
                         "long-description": "A boolean flag indicating that the party has been added to the policy to protect their interest in relation to the insured property or operations."
                     },
                     "breach_of_warranty": {
-                        "type": "boolean",
+                        "type": "bool",
                         "description": "The party has Breach of Warranty coverage.",
                         "long-description": "A boolean flag indicating that the party is protected against loss even if the insured breaches a policy condition or warranty."
                     },
                     "co_owner": {
-                        "type": "boolean",
+                        "type": "bool",
                         "description": "The party is a co-owner of the property.",
                         "long-description": "A boolean flag indicating that the party shares ownership of the insured property with the primary insured."
                     },
                     "employee_as_lessor": {
-                        "type": "boolean",
+                        "type": "bool",
                         "description": "The party is an employee acting as a lessor.",
                         "long-description": "A boolean flag indicating that the party is an employee of the insured who also leases property to the insured."
                     },
                     "leaseback_owner": {
-                        "type": "boolean",
+                        "type": "bool",
                         "description": "The party is an owner in a leaseback arrangement.",
                         "long-description": "A boolean flag indicating that the party sold the property to the insured and then leased it back, maintaining an ownership interest."
                     },
                     "lenders_loss_payable": {
-                        "type": "boolean",
+                        "type": "bool",
                         "description": "The party is a lender with a loss payable interest.",
                         "long-description": "A boolean flag indicating that the party is a lender whose financial interest in the insured property is protected in the event of a loss."
                     },
                     "lienholder": {
-                        "type": "boolean",
+                        "type": "bool",
                         "description": "The party holds a lien on the insured property.",
                         "long-description": "A boolean flag indicating that the party has a legal claim against the insured property for a debt or obligation."
                     },
                     "loss_payee": {
-                        "type": "boolean",
+                        "type": "bool",
                         "description": "The party is a designated loss payee.",
                         "long-description": "A boolean flag indicating that the party is designated to receive payment for a loss under the policy, usually for property in which they have a financial interest."
                     },
                     "mortgagee": {
-                        "type": "boolean",
+                        "type": "bool",
                         "description": "The party is a mortgagee with an interest in the property.",
                         "long-description": "A boolean flag indicating that the party is a lender holding a mortgage on the insured property, protected for their financial interest."
                     },
                     "owner": {
-                        "type": "boolean",
+                        "type": "bool",
                         "description": "The party is an owner of the property (other than the primary insured).",
                         "long-description": "A boolean flag indicating that the party is an owner of the insured property, distinct from the primary insured entity."
                     },
                     "registrant": {
-                        "type": "boolean",
+                        "type": "bool",
                         "description": "The party is the registrant of the insured item.",
                         "long-description": "A boolean flag indicating that the party is the official registrant of the insured item (e.g., vehicle, watercraft)."
                     },
                     "trustee": {
-                        "type": "boolean",
+                        "type": "bool",
                         "description": "The party is a trustee related to the insured interest.",
                         "long-description": "A boolean flag indicating that the party acts as a trustee, holding legal title to property for the benefit of another related to the insured interest."
                     }
@@ -2183,17 +2188,17 @@
                 },
                 "evidence_@": {
                     "certificate": {
-                        "type": "boolean",
+                        "type": "bool",
                         "description": "Evidence of interest is provided by a certificate of insurance.",
                         "long-description": "A boolean flag indicating that proof of the additional interest's coverage or status is documented through a certificate of insurance."
                     },
                     "policy": {
-                        "type": "boolean",
+                        "type": "bool",
                         "description": "Evidence of interest is provided by the full policy document.",
                         "long-description": "A boolean flag indicating that proof of the additional interest's coverage or status is documented within the main insurance policy document itself."
                     },
                     "other": {
-                        "type": "boolean",
+                        "type": "bool",
                         "description": "Evidence of interest is provided by other means.",
                         "long-description": "A boolean flag indicating that proof of the additional interest's coverage or status is provided through a method not explicitly listed."
                     }
@@ -2285,17 +2290,17 @@
         "general_liability": {
             "coverage_form_@": {
                 "occurrence": {
-                    "type": "boolean",
+                    "type": "bool",
                     "description": "(US) Coverage is provided on an Occurrence basis.",
                     "long-description": "(US) A boolean flag indicating that the Commercial General Liability (CGL) coverage is provided on an 'occurrence' basis, meaning it covers incidents that occur during the policy period, regardless of when the claim is reported."
                 },
                 "claims_made": {
-                    "type": "boolean",
+                    "type": "bool",
                     "description": "(US) Coverage is provided on a Claims-Made basis.",
                     "long-description": "(US) A boolean flag indicating that the Commercial General Liability (CGL) coverage is provided on a 'claims-made' basis, meaning it covers claims reported during the policy period, provided the incident occurred on or after the retroactive date."
                 },
                 "extended_reporting_period_opted": {
-                    "type": "boolean",
+                    "type": "bool",
                     "description": "(US) Has Extended Reporting Period (ERP) been purchased/offered for Claims-Made policy?",
                     "long-description": "(US) A boolean flag indicating whether an Extended Reporting Period (ERP), or 'tail' coverage, has been purchased or is being offered for a claims-made policy, allowing claims to be reported after the policy expires for incidents that occurred during the policy period."
                 },
@@ -2378,27 +2383,27 @@
                 },
                 "exposure_basis_type_@": {
                     "sales": {
-                        "type": "boolean",
+                        "type": "bool",
                         "description": "(US) Exposure basis is Sales.",
                         "long-description": "(US) A boolean flag indicating that the general liability premium is calculated based on the insured's gross sales revenue."
                     },
                     "payroll": {
-                        "type": "boolean",
+                        "type": "bool",
                         "description": "(US) Exposure basis is Payroll.",
                         "long-description": "(US) A boolean flag indicating that the general liability premium is calculated based on the insured's total payroll."
                     },
                     "area_sq_ft": {
-                        "type": "boolean",
+                        "type": "bool",
                         "description": "(US) Exposure basis is Area (square footage).",
                         "long-description": "(US) A boolean flag indicating that the general liability premium is calculated based on the square footage of the insured premises."
                     },
                     "units": {
-                        "type": "boolean",
+                        "type": "bool",
                         "description": "(US) Exposure basis is Units (per unit produced/sold).",
                         "long-description": "(US) A boolean flag indicating that the general liability premium is calculated based on the number of units produced, sold, or serviced."
                     },
                     "other": {
-                        "type": "boolean",
+                        "type": "bool",
                         "description": "(US) Other exposure basis.",
                         "long-description": "(US) A boolean flag indicating that the general liability premium is calculated based on an exposure basis not explicitly listed."
                     }
@@ -2420,38 +2425,38 @@
                 "long-description": "(US) The total annual gross sales revenue specifically related to products manufactured, sold, handled, or distributed by the insured, or operations completed by or for the insured, used as an exposure basis for Products-Completed Operations Liability."
             },
             "contractual_liability_incl": {
-                "type": "boolean",
+                "type": "bool",
                 "description": "(US) Does coverage include Contractual Liability?",
                 "long-description": "(US) A boolean flag indicating whether the Commercial General Liability (CGL) policy includes coverage for liability assumed by the insured under a contract or agreement."
             },
             "xcu_exposure": {
-                "type": "boolean",
+                "type": "bool",
                 "description": "(US) Is there Explosion, Collapse, or Underground (XCU) exposure?",
                 "long-description": "(US) A boolean flag indicating whether the insured has exposures related to explosion, collapse, or underground hazards, which are often specifically excluded or require special handling under CGL policies."
             },
             "liquor_liability_exposure": {
-                "type": "boolean",
+                "type": "bool",
                 "description": "(US) Does the insured have Liquor Liability exposure?",
                 "long-description": "(US) A boolean flag indicating whether the insured's operations involve the manufacturing, distributing, selling, serving, or furnishing of alcoholic beverages, which can create Liquor Liability exposure."
             },
             "employee_benefits_liability": {
-                "type": "boolean",
+                "type": "bool",
                 "description": "(US) Is Employee Benefits Liability coverage included?",
                 "long-description": "(US) A boolean flag indicating whether coverage for errors or omissions in the administration of the insured's employee benefits programs (e.g., health, life, pension plans) is included."
             },
             "mobile_equipment_coverage": {
-                "type": "boolean",
+                "type": "bool",
                 "description": "(US) Is coverage provided for mobile equipment?",
                 "long-description": "(US) A boolean flag indicating whether the Commercial General Liability (CGL) policy extends coverage to liability arising from the ownership, maintenance, or use of mobile equipment."
             },
             "pollution_exclusion_applicable": {
-                "type": "boolean",
+                "type": "bool",
                 "description": "(US) Is a total pollution exclusion applicable?",
                 "long-description": "(US) A boolean flag indicating whether a total pollution exclusion endorsement is attached to the policy, significantly limiting or removing coverage for pollution-related liability."
             },
             "subcontractors_used": {
                 "opted": {
-                    "type": "boolean",
+                    "type": "bool",
                     "description": "(US) Does the applicant use subcontractors (Y/N)?",
                     "long-description": "(US) A Y/N indicator whether the insured utilizes independent contractors (subcontractors) for any part of their operations."
                 },
@@ -2461,14 +2466,14 @@
                     "long-description": "(US) The total monetary amount paid annually to all subcontractors by the insured."
                 },
                 "certificates_obtained_from_subcontractors": {
-                    "type": "boolean",
+                    "type": "bool",
                     "description": "(US) Are Certificates of Insurance obtained from all subcontractors?",
                     "long-description": "(US) A boolean flag indicating whether the insured consistently obtains Certificates of Insurance from all subcontractors, verifying their own liability coverage."
                 }
             },
             "prior_pending_litigation": {
                 "opted": {
-                    "type": "boolean",
+                    "type": "bool",
                     "description": "(US) Is there any prior or pending litigation against the applicant (Y/N)?",
                     "long-description": "(US) A Y/N indicator whether the applicant has any lawsuits or legal actions that were initiated before the current policy period or are still ongoing."
                 },
@@ -2480,7 +2485,7 @@
             },
             "any_unusual_operations": {
                 "opted": {
-                    "type": "boolean",
+                    "type": "bool",
                     "description": "(US) Does the applicant engage in any unusual operations not typical for their business (Y/N)?",
                     "long-description": "(US) A Y/N indicator whether the insured performs any activities or operations that are outside the normal scope of their declared business type and could present unique liability risks."
                 },
@@ -2505,7 +2510,7 @@
     "underwriting_questions": {
         "is_subsidiary": {
             "opted": {
-                "type": "boolean",
+                "type": "bool",
                 "description": "Indicates if the applicant is a subsidiary of another company (Y/N).",
                 "long-description": "A Y/N indicator whether the applying entity is controlled by or owned by a larger parent company."
             },
@@ -2527,7 +2532,7 @@
         },
         "has_subsidiaries": {
             "opted": {
-                "type": "boolean",
+                "type": "bool",
                 "description": "Indicates if the applicant has any subsidiaries (Y/N).",
                 "long-description": "A Y/N indicator whether the applicant entity controls or owns other companies."
             },
@@ -2549,39 +2554,39 @@
         },
         "safety_program": {
             "opted": {
-                "type": "boolean",
+                "type": "bool",
                 "description": "Indicates if a formal safety program is in place (Y/N).",
                 "long-description": "A Y/N indicator whether the insured has implemented a structured program to promote workplace safety and prevent accidents."
             },
             "manual_safety": {
-                "type": "boolean",
+                "type": "bool",
                 "description": "Does the program include a written safety manual?",
                 "long-description": "A boolean flag indicating if the safety program includes a documented, written manual outlining safety policies and procedures."
             },
             "safety_position": {
-                "type": "boolean",
+                "type": "bool",
                 "description": "Is there a designated safety officer or position?",
                 "long-description": "A boolean flag indicating if the insured has a specific individual or role dedicated to overseeing and managing safety initiatives."
             },
             "monthly_meetings": {
-                "type": "boolean",
+                "type": "bool",
                 "description": "Are monthly safety meetings conducted?",
                 "long-description": "A boolean flag indicating if regular (e.g., monthly) meetings are held to discuss safety topics, address concerns, and provide training."
             },
             "osha": {
-                "type": "boolean",
+                "type": "bool",
                 "description": "Does the program comply with OSHA standards (USA)?",
                 "long-description": "A boolean flag indicating whether the safety program adheres to the occupational safety and health standards set forth by OSHA in the USA."
             },
             "other": {
-                "type": "boolean",
+                "type": "bool",
                 "description": "Are there other safety program features not listed?",
                 "long-description": "A boolean flag indicating the presence of additional safety program features not explicitly detailed in the other options."
             }
         },
         "flammables": {
             "opted": {
-                "type": "boolean",
+                "type": "bool",
                 "description": "Are flammable materials used or stored on premises (Y/N)?",
                 "long-description": "A Y/N indicator whether any materials susceptible to rapid combustion or ignition are present at the insured premises."
             },
@@ -2593,7 +2598,7 @@
         },
         "other_policies_^": {
             "opted": {
-                "type": "boolean",
+                "type": "bool",
                 "description": "Does the applicant have other insurance policies (Y/N)?",
                 "long-description": "A Y/N indicator whether the insured holds any other active insurance policies for different lines of business or with other carriers."
             },
@@ -2610,39 +2615,39 @@
         },
         "declined": {
             "opted": {
-                "type": "boolean",
+                "type": "bool",
                 "description": "Has any insurance coverage ever been declined, cancelled, or non-renewed (Y/N)?",
                 "long-description": "A Y/N indicator whether the applicant has previously faced a situation where an insurance policy was refused, terminated, or not offered for renewal."
             },
             "non_payment": {
-                "type": "boolean",
+                "type": "bool",
                 "description": "Was the denial due to non-payment of premium?",
                 "long-description": "A boolean flag indicating if the previous denial of coverage was specifically caused by the insured's failure to pay premiums."
             },
             "non_renewal": {
-                "type": "boolean",
+                "type": "bool",
                 "description": "Was the denial a non-renewal by an insurer?",
                 "long-description": "A boolean flag indicating if the previous denial of coverage was an insurer's decision not to offer renewal terms for an existing policy."
             },
             "agent_refused": {
-                "type": "boolean",
+                "type": "bool",
                 "description": "Was the denial due to an agent refusing to place coverage?",
                 "long-description": "A boolean flag indicating if the previous denial of coverage resulted from an Ninsurance agent or broker refusing to submit or place the application."
             },
             "underwriter_refused": {
-                "type": "boolean",
+                "type": "bool",
                 "description": "Was the denial due to an underwriter refusing to offer terms?",
                 "long-description": "A boolean flag indicating if the previous denial of coverage was due to an underwriter's decision not to provide insurance terms after risk assessment."
             },
             "condition_corrected": {
-                "type": "boolean",
+                "type": "bool",
                 "description": "Have the conditions that led to the denial been corrected?",
                 "long-description": "A boolean flag indicating if any underlying issues or risks that led to the previous denial of coverage have since been rectified or improved."
             }
         },
         "sexual_abuse_claims": {
             "opted": {
-                "type": "boolean",
+                "type": "bool",
                 "description": "Have there been any claims or allegations of sexual abuse or molestation (Y/N)?",
                 "long-description": "A Y/N indicator whether the insured or its representatives have been subject to any claims, lawsuits, or allegations related to sexual abuse or molestation."
             },
@@ -2654,7 +2659,7 @@
         },
         "criminal_indictment": {
             "opted": {
-                "type": "boolean",
+                "type": "bool",
                 "description": "Has the applicant or any principal ever been criminally indicted or convicted (Y/N)?",
                 "long-description": "A Y/N indicator whether the applicant entity or any of its key individuals (principals) have ever been formally accused (indicted) or found guilty (convicted) of a criminal offense."
             },
@@ -2666,7 +2671,7 @@
         },
         "fire_code": {
             "opted": {
-                "type": "boolean",
+                "type": "bool",
                 "description": "Have there been any fire code violations in the past (Y/N)?",
                 "long-description": "A Y/N indicator whether the insured premises has ever been found in violation of local or national fire safety codes."
             },
@@ -2695,7 +2700,7 @@
         },
         "foreclosure": {
             "opted": {
-                "type": "boolean",
+                "type": "bool",
                 "description": "Has the applicant or any principal ever been subject to foreclosure proceedings (Y/N)?",
                 "long-description": "A Y/N indicator whether the applicant or any key individual has ever had property repossessed by a lender due to failure to make mortgage payments."
             },
@@ -2724,7 +2729,7 @@
         },
         "lien": {
             "opted": {
-                "type": "boolean",
+                "type": "bool",
                 "description": "Are there any outstanding liens against the applicant's property or assets (Y/N)?",
                 "long-description": "A Y/N indicator whether there are any current legal claims (liens) held by others against the applicant's property or assets as security for a debt."
             },
@@ -2753,7 +2758,7 @@
         },
         "under_trust": {
             "opted": {
-                "type": "boolean",
+                "type": "bool",
                 "description": "Is the property insured under a trust (Y/N)?",
                 "long-description": "A Y/N indicator whether the ownership of the insured property is legally held within a trust arrangement."
             },
@@ -2765,7 +2770,7 @@
         },
         "other_uncovered_businesses": {
             "opted": {
-                "type": "boolean",
+                "type": "bool",
                 "description": "Does the applicant own or operate any other businesses not covered by this application (Y/N)?",
                 "long-description": "A Y/N indicator whether the applicant has any other business ventures or operations that are not intended to be covered by the current insurance application."
             },
@@ -2778,7 +2783,7 @@
         "drones": {
             "owns_operates": {
                 "opted": {
-                    "type": "boolean",
+                    "type": "bool",
                     "description": "Does the applicant own or operate drones (Y/N)?",
                     "long-description": "A Y/N indicator whether the applicant directly owns or operates unmanned aerial vehicles (drones) for business purposes."
                 },
@@ -2790,7 +2795,7 @@
             },
             "hiers_operators": {
                 "opted": {
-                    "type": "boolean",
+                    "type": "bool",
                     "description": "Does the applicant hire others to operate drones (Y/N)?",
                     "long-description": "A Y/N indicator whether the applicant contracts third-party individuals or companies to operate drones on their behalf."
                 },
@@ -2824,7 +2829,7 @@
             "long-description": "The license number of the producer within the specific state or jurisdiction where they are authorized to conduct insurance business."
         },
         "national_producer_number": {
-            "type": "string",
+            "type": "naic",
             "description": "NPN, required in Florida",
             "long-description": "The National Producer Number (NPN) is a unique identification number assigned to licensed insurance producers in the United States by the National Association of Insurance Commissioners (NAIC). It is a mandatory requirement in certain states like Florida."
         }
