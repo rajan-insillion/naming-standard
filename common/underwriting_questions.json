@@ -1,0 +1,312 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "$id": "https://example.com/insillion-schemas/common/blocks/underwriting_questions.json",
+    "title": "Underwriting Questions",
+    "description": "A collection of questions relevant for underwriting decisions.",
+    "type": "object",
+    "properties": {
+        "is_subsidiary": {
+            "opted": {
+                "type": "bool",
+                "description": "Indicates if the applicant is a subsidiary of another company (Y/N).",
+                "long-description": "A Y/N indicator whether the applying entity is controlled by or owned by a larger parent company."
+            },
+            "parent_company": {
+                "type": "string",
+                "description": "Name of the parent company.",
+                "long-description": "The full legal name of the controlling entity if the applicant is a subsidiary."
+            },
+            "relationship": {
+                "type": "string",
+                "description": "Description of the relationship with the parent company.",
+                "long-description": "A textual explanation of the legal and operational connection between the applicant and its parent company (e.g., 'wholly owned', 'majority owned')."
+            },
+            "ownership_percent": {
+                "type": "number",
+                "description": "Percentage of ownership by the parent company.",
+                "long-description": "The percentage of the applicant's ownership stake held by the parent company."
+            }
+        },
+        "has_subsidiaries": {
+            "opted": {
+                "type": "bool",
+                "description": "Indicates if the applicant has any subsidiaries (Y/N).",
+                "long-description": "A Y/N indicator whether the applicant entity controls or owns other companies."
+            },
+            "subsidiary_name": {
+                "type": "string",
+                "description": "Name of the subsidiary company.",
+                "long-description": "The full legal name of a company owned or controlled by the applicant."
+            },
+            "relationship": {
+                "type": "string",
+                "description": "Description of the relationship with the subsidiary.",
+                "long-description": "A textual explanation of the legal and operational connection between the applicant and its subsidiary (e.g., 'wholly owned', 'majority owned')."
+            },
+            "ownership_percent": {
+                "type": "number",
+                "description": "Percentage of ownership of the subsidiary by the applicant.",
+                "long-description": "The percentage of the subsidiary's ownership stake held by the applicant company."
+            }
+        },
+        "safety_program": {
+            "opted": {
+                "type": "bool",
+                "description": "Indicates if a formal safety program is in place (Y/N).",
+                "long-description": "A Y/N indicator whether the insured has implemented a structured program to promote workplace safety and prevent accidents."
+            },
+            "manual_safety": {
+                "type": "bool",
+                "description": "Does the program include a written safety manual?",
+                "long-description": "A boolean flag indicating if the safety program includes a documented, written manual outlining safety policies and procedures."
+            },
+            "safety_position": {
+                "type": "bool",
+                "description": "Is there a designated safety officer or position?",
+                "long-description": "A boolean flag indicating if the insured has a specific individual or role dedicated to overseeing and managing safety initiatives."
+            },
+            "monthly_meetings": {
+                "type": "bool",
+                "description": "Are monthly safety meetings conducted?",
+                "long-description": "A boolean flag indicating if regular (e.g., monthly) meetings are held to discuss safety topics, address concerns, and provide training."
+            },
+            "osha": {
+                "type": "bool",
+                "description": "Does the program comply with OSHA standards (USA)?",
+                "long-description": "A boolean flag indicating whether the safety program adheres to the occupational safety and health standards set forth by OSHA in the USA."
+            },
+            "other": {
+                "type": "bool",
+                "description": "Are there other safety program features not listed?",
+                "long-description": "A boolean flag indicating the presence of additional safety program features not explicitly detailed in the other options."
+            }
+        },
+        "flammables": {
+            "opted": {
+                "type": "bool",
+                "description": "Are flammable materials used or stored on premises (Y/N)?",
+                "long-description": "A Y/N indicator whether any materials susceptible to rapid combustion or ignition are present at the insured premises."
+            },
+            "flammable_exposure": {
+                "type": "string",
+                "description": "Description of flammable materials and their storage/use.",
+                "long-description": "A detailed explanation of the types of flammable materials, the quantities involved, and how they are stored or used at the premises."
+            }
+        },
+        "other_policies_^": {
+            "opted": {
+                "type": "bool",
+                "description": "Does the applicant have other insurance policies (Y/N)?",
+                "long-description": "A Y/N indicator whether the insured holds any other active insurance policies for different lines of business or with other carriers."
+            },
+            "line_of_business": {
+                "type": "string",
+                "description": "Line of business for the other policy (e.g., Auto, GL).",
+                "long-description": "The specific type of coverage (e.g., Commercial Auto, General Liability) provided by the other insurance policy."
+            },
+            "policy_no": {
+                "type": "string",
+                "description": "Policy number of the other insurance policy.",
+                "long-description": "The unique identification number assigned to the other insurance policy."
+            }
+        },
+        "declined": {
+            "opted": {
+                "type": "bool",
+                "description": "Has any insurance coverage ever been declined, cancelled, or non-renewed (Y/N)?",
+                "long-description": "A Y/N indicator whether the applicant has previously faced a situation where an insurance policy was refused, terminated, or not offered for renewal."
+            },
+            "non_payment": {
+                "type": "bool",
+                "description": "Was the denial due to non-payment of premium?",
+                "long-description": "A boolean flag indicating if the previous denial of coverage was specifically caused by the insured's failure to pay premiums."
+            },
+            "non_renewal": {
+                "type": "bool",
+                "description": "Was the denial a non-renewal by an insurer?",
+                "long-description": "A boolean flag indicating if the previous denial of coverage was an insurer's decision not to offer renewal terms for an existing policy."
+            },
+            "agent_refused": {
+                "type": "bool",
+                "description": "Was the denial due to an agent refusing to place coverage?",
+                "long-description": "A boolean flag indicating if the previous denial of coverage resulted from an Ninsurance agent or broker refusing to submit or place the application."
+            },
+            "underwriter_refused": {
+                "type": "bool",
+                "description": "Was the denial due to an underwriter refusing to offer terms?",
+                "long-description": "A boolean flag indicating if the previous denial of coverage was due to an underwriter's decision not to provide insurance terms after risk assessment."
+            },
+            "condition_corrected": {
+                "type": "bool",
+                "description": "Have the conditions that led to the denial been corrected?",
+                "long-description": "A boolean flag indicating if any underlying issues or risks that led to the previous denial of coverage have since been rectified or improved."
+            }
+        },
+        "sexual_abuse_claims": {
+            "opted": {
+                "type": "bool",
+                "description": "Have there been any claims or allegations of sexual abuse or molestation (Y/N)?",
+                "long-description": "A Y/N indicator whether the insured or its representatives have been subject to any claims, lawsuits, or allegations related to sexual abuse or molestation."
+            },
+            "description": {
+                "type": "string",
+                "description": "Description of any sexual abuse or molestation claims/allegations.",
+                "long-description": "A textual explanation providing details about any past claims or allegations of sexual abuse or molestation, including dates, outcomes, and current status."
+            }
+        },
+        "criminal_indictment": {
+            "opted": {
+                "type": "bool",
+                "description": "Has the applicant or any principal ever been criminally indicted or convicted (Y/N)?",
+                "long-description": "A Y/N indicator whether the applicant entity or any of its key individuals (principals) have ever been formally accused (indicted) or found guilty (convicted) of a criminal offense."
+            },
+            "description": {
+                "type": "string",
+                "description": "Description of any criminal indictments or convictions.",
+                "long-description": "A textual explanation providing details about any criminal indictments or convictions, including dates, charges, and outcomes."
+            }
+        },
+        "fire_code": {
+            "opted": {
+                "type": "bool",
+                "description": "Have there been any fire code violations in the past (Y/N)?",
+                "long-description": "A Y/N indicator whether the insured premises has ever been found in violation of local or national fire safety codes."
+            },
+            "violations_^": {
+                "date": {
+                    "type": "date",
+                    "description": "Date of the fire code violation.",
+                    "long-description": "The date on which the fire code violation was observed or cited."
+                },
+                "violations_desc": {
+                    "type": "string",
+                    "description": "Description of the fire code violation.",
+                    "long-description": "A textual explanation detailing the specific fire code violation, its nature, and severity."
+                },
+                "resolution": {
+                    "type": "string",
+                    "description": "Description of how the violation was resolved.",
+                    "long-description": "A textual explanation describing the actions taken to rectify the fire code violation."
+                },
+                "resolved_on": {
+                    "type": "date",
+                    "description": "Date the fire code violation was resolved.",
+                    "long-description": "The date on which the fire code violation was officially addressed and deemed resolved."
+                }
+            }
+        },
+        "foreclosure": {
+            "opted": {
+                "type": "bool",
+                "description": "Has the applicant or any principal ever been subject to foreclosure proceedings (Y/N)?",
+                "long-description": "A Y/N indicator whether the applicant or any key individual has ever had property repossessed by a lender due to failure to make mortgage payments."
+            },
+            "occurance_^": {
+                "date": {
+                    "type": "date",
+                    "description": "Date of the foreclosure occurrence.",
+                    "long-description": "The date when the foreclosure proceeding or event took place."
+                },
+                "description": {
+                    "type": "string",
+                    "description": "Description of the foreclosure event.",
+                    "long-description": "A textual explanation detailing the circumstances and nature of the foreclosure event."
+                },
+                "resolution": {
+                    "type": "string",
+                    "description": "Description of how the foreclosure was resolved.",
+                    "long-description": "A textual explanation describing the outcome or resolution of the foreclosure proceedings."
+                },
+                "resolved_on": {
+                    "type": "date",
+                    "description": "Date the foreclosure was resolved.",
+                    "long-description": "The date on which the foreclosure issue was officially concluded or resolved."
+                }
+            }
+        },
+        "lien": {
+            "opted": {
+                "type": "bool",
+                "description": "Are there any outstanding liens against the applicant's property or assets (Y/N)?",
+                "long-description": "A Y/N indicator whether there are any current legal claims (liens) held by others against the applicant's property or assets as security for a debt."
+            },
+            "occurance_^": {
+                "date": {
+                    "type": "date",
+                    "description": "Date the lien was placed.",
+                    "long-description": "The date on which the lien was legally recorded or became effective."
+                },
+                "description": {
+                    "type": "string",
+                    "description": "Description of the lien.",
+                    "long-description": "A textual explanation detailing the type of lien (e.g., tax lien, mechanic's lien) and the debt it secures."
+                },
+                "resolution": {
+                    "type": "string",
+                    "description": "Description of how the lien was resolved.",
+                    "long-description": "A textual explanation describing the actions taken to satisfy or remove the lien."
+                },
+                "resolved_on": {
+                    "type": "date",
+                    "description": "Date the lien was resolved.",
+                    "long-description": "The date on which the lien was officially satisfied or removed from the property/asset."
+                }
+            }
+        },
+        "under_trust": {
+            "opted": {
+                "type": "bool",
+                "description": "Is the property insured under a trust (Y/N)?",
+                "long-description": "A Y/N indicator whether the ownership of the insured property is legally held within a trust arrangement."
+            },
+            "trust_name": {
+                "type": "string",
+                "description": "Name of the trust.",
+                "long-description": "The full legal name of the trust that owns or holds the insured property."
+            }
+        },
+        "other_uncovered_businesses": {
+            "opted": {
+                "type": "bool",
+                "description": "Does the applicant own or operate any other businesses not covered by this application (Y/N)?",
+                "long-description": "A Y/N indicator whether the applicant has any other business ventures or operations that are not intended to be covered by the current insurance application."
+            },
+            "uncovered_businesses_desc": {
+                "type": "string",
+                "description": "Description of other businesses not covered.",
+                "long-description": "A textual explanation detailing the nature and scope of any other businesses owned or operated by the applicant that are outside the scope of this insurance application."
+            }
+        },
+        "drones": {
+            "owns_operates": {
+                "opted": {
+                    "type": "bool",
+                    "description": "Does the applicant own or operate drones (Y/N)?",
+                    "long-description": "A Y/N indicator whether the applicant directly owns or operates unmanned aerial vehicles (drones) for business purposes."
+                },
+                "drones_desc": {
+                    "type": "string",
+                    "description": "Description of drone ownership/operation activities.",
+                    "long-description": "A textual explanation detailing the type of drones, their purpose of use, and frequency of operation if the applicant owns or operates them."
+                }
+            },
+            "hiers_operators": {
+                "opted": {
+                    "type": "bool",
+                    "description": "Does the applicant hire others to operate drones (Y/N)?",
+                    "long-description": "A Y/N indicator whether the applicant contracts third-party individuals or companies to operate drones on their behalf."
+                },
+                "hiers_operator_desc": {
+                    "type": "string",
+                    "description": "Description of hiring practices for drone operators.",
+                    "long-description": "A textual explanation detailing the nature of services for which drone operators are hired, frequency, and any vetting procedures if the applicant hires others."
+                }
+            }
+        },
+        "remarks": {
+            "type": "string",
+            "description": "Any additional remarks or information relevant to underwriting.",
+            "long-description": "An open text field for any supplementary comments, explanations, or additional information that the applicant believes is relevant for the underwriter's consideration."
+        }
+    }
+}

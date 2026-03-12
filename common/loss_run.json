@@ -1,6 +1,6 @@
 {
     "$schema": "http://json-schema.org/draft-07/schema#",
-    "$id": "https://example.com/insillion-schemas/common/blocks/loss_run.json",
+    "$id": "https://example.com/insillion-schemas/common/loss_run.json",
     "title": "Loss Run History",
     "description": "Summary of prior loss and claim history. (Properties omitted as requested)",
     "type": "object",

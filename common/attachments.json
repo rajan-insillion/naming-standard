@@ -1,6 +1,6 @@
 {
     "$schema": "http://json-schema.org/draft-07/schema#",
-    "$id": "https://insillion-schemas/common/blocks/attachments.json",
+    "$id": "https://insillion-schemas/common/attachments.json",
     "title": "Application Attachments",
     "description": "List of documents or schedules attached to the insurance application. (Properties omitted as requested)",
     "type": "object",

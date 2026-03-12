@@ -1,6 +1,6 @@
 {
     "$schema": "http://json-schema.org/draft-07/schema#",
-    "$id": "https://insillion-schemas/common/blocks/carrier.json",
+    "$id": "https://insillion-schemas/common/carrier.json",
     "title": "Insurance Carrier Information",
     "description": "Details about the insurance company providing coverage. (Properties omitted as requested)",
     "type": "object",

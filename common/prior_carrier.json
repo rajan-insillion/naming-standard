@@ -1,6 +1,6 @@
 {
     "$schema": "http://json-schema.org/draft-07/schema#",
-    "$id": "https://insillion-schemas/common/blocks/prior_carrier.json",
+    "$id": "https://insillion-schemas/common/prior_carrier.json",
     "title": "Prior Carrier Information",
     "description": "Details about a prior insurance carrier and policy. (Properties omitted as requested)",
     "type": "object",

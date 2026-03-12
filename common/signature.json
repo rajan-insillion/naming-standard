@@ -1,6 +1,6 @@
 {
     "$schema": "http://json-schema.org/draft-07/schema#",
-    "$id": "https://example.com/insillion-schemas/common/blocks/signature.json",
+    "$id": "https://example.com/insillion-schemas/common/signature.json",
     "title": "Signature Details",
     "description": "Information related to the application's signatures.",
     "type": "object",

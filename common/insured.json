@@ -1,6 +1,6 @@
 {
     "$schema": "http://json-schema.org/draft-07/schema#",
-    "$id": "https://example.com/insillion-schemas/common/blocks/insured.json",
+    "$id": "https://example.com/insillion-schemas/common/insured.json",
     "title": "Insured Information",
     "description": "Details about the primary insured entity. (Properties omitted as requested)",
     "type": "object",
