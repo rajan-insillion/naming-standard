@@ -31,7 +31,7 @@ Before writing any naming rule, the following 8 dimensions must be resolved. Eve
 |---|-----------|--------------------|--------------------|
 | 1 | **Lexicon** | What words are allowed for field names? | snake_case, from an approved glossary |
 | 2 | **Suffix Sigils** | How are structural roles encoded in the name? | `_^` = array, `_@` = mutually exclusive group |
-| 3 | **Type System** | What scalar types exist, and are they shared? | `currency`, `YN`, `state`, `naic` etc. |
+| 3 | **Type System** | What scalar types exist, and are they shared? | `currency`, `year`, `date`, `naic` etc. |
 | 4 | **Hierarchy Depth** | How deep may nesting go before a ref/anchor is required? | Max 4 levels; beyond that extract as `$ref` |
 | 5 | **Repeatability** | How are one-to-many relationships expressed? | `_^` suffix, consistent across all schemas |
 | 6 | **Geography Variance** | How do jurisdiction-specific fields sit alongside universal fields? | `_geo` sub-object or override layer |
@@ -97,17 +97,7 @@ Maintain a central glossary. Do not abbreviate freely. Approved short forms:
 
 Any new abbreviation must be added to the glossary via Pull Request before use.
 
-### 2.4 Boolean vs YN vs Opted
-
-Three patterns exist for yes/no semantics — use the correct one per context:
-
-| Pattern | Type | When to Use | Example |
-|---------|------|------------|---------|
-| `{"type": "bool"}` | Boolean | Inside `_@` option groups where exactly 1 is true | `occurrence: {type: bool}` inside `policy_type_@` |
-| `{"type": "YN"}` | String `"Y"` / `"N"` | Standalone yes/no field (nullable, LLM-extracted) | `subrogation: {type: YN}` |
-| `opted + description` | Object | When a yes/no answer requires a follow-up narrative | `blasting_or_explosives: {opted: {type: YN}, description: {type: string}}` |
-
-### 2.5 Name Reuse Rule
+### 2.4 Name Reuse Rule
 
 **If a field name already exists in any ACORD schema in the repository, reuse that exact name and structure.**  
 This is already the stated rule in `objective.md` and is the single most important convention to enforce.
@@ -137,18 +127,18 @@ Every schema — regardless of line of business or geography — must open with 
   "policy_start_date":{"type": "date"},
   "policy_start_time":{"type": "string"},
 
-  "agency":  { ... },
+  "producer":  { ... },
   "carrier": { ... },
   "insured": { ... }
 }
 ```
 
-### 3.2 Standard Agency / Carrier / Insured Blocks
+### 3.2 Standard Producer / Carrier / Insured Blocks
 
 These 3 sub-objects are identical across all 3 existing ACORD schemas. They are canonical. Copy verbatim, do not modify field names.
 
 ```json
-"agency": {
+"producer": {
   "name":      {"type": "agency"},
   "address_1": {"type": "string"},
   "address_2": {"type": "string"},
@@ -208,11 +198,11 @@ Underwriting questions use a consistent `opted + description` pattern. Group the
 ```json
 "qa": {
   "blasting_or_explosives": {
-    "opted":       {"type": "YN"},
+    "opted":       {"type": "boolean"},
     "description": {"type": "string"}
   },
   "subcontractors_without_coi": {
-    "opted":       {"type": "YN"},
+    "opted":       {"type": "boolean"},
     "description": {"type": "string"}
   }
 }
@@ -229,7 +219,6 @@ Underwriting questions use a consistent `opted + description` pattern. Group the
 | ACORD forms | `acord_` | Standard ACORD application forms | `acord_125`, `acord_126`, `acord_140` |
 | Line of business | `lob_` | LOB-specific supplement schemas | `lob_cyber`, `lob_marine`, `lob_wc` |
 | Geography supplement | `geo_` | Jurisdiction-specific field overlays | `geo_india_fire`, `geo_uae_motor` |
-| Common / shared | `common_` | Reusable type definitions and shared blocks | `common_types`, `common_address` |
 | Product schema | `product_` | Assembled schema for a specific product | `product_bop_usa`, `product_fire_india` |
 | Report / view | `view_` | Projected subset for dashboards/reports | `view_premium_summary`, `view_loss_run` |
 
@@ -272,21 +261,14 @@ All `{"type": "..."}` values must come from this registry. No ad-hoc type names.
 |------------|---------|---------------------|
 | `string` | Free text | Any UTF-8 string |
 | `number` | Numeric (int or float) | JSON number |
-| `bool` | Boolean | `true` / `false` |
+| `boolean` | Boolean | `true` / `false` |
 | `date` | Calendar date | ISO 8601: `YYYY-MM-DD` |
 | `year` | 4-digit year | `YYYY` |
 | `currency` | Monetary amount | Numeric, 2 decimal places |
-| `YN` | Yes/No answer | `"Y"` or `"N"` |
-| `state` | US state or equivalent | 2-letter code |
-| `zip` | Postal code | String (allows non-US formats) |
 | `phone_no` | Phone number | String |
 | `email` | Email address | String, valid email format |
 | `website` | URL | String |
-| `agency` | Agency name | String |
-| `carrier` | Insurance carrier name | String |
-| `company` | Insured company/entity name | String |
 | `naic` | NAIC code | String |
-| `policy_no` | Policy number | String |
 
 ### 5.2 Adding New Types
 
@@ -435,13 +417,12 @@ insillion-schemas/
 │
 ├── common/
 │   ├── types_registry.json         ← all scalar type definitions
-│   ├── blocks/
-│   │   ├── agency.json             ← reusable canonical blocks
-│   │   ├── carrier.json
-│   │   ├── insured.json
-│   │   ├── address.json
-│   │   ├── additional_interest.json
-│   │   └── signature.json
+│   │── agency.json             ← reusable canonical blocks
+│   │── carrier.json
+│   │── insured.json
+│   │── address.json
+│   │── additional_interest.json
+│   │── signature.json
 │   └── glossary.json               ← approved abbreviations & terms
 │
 ├── acord/
@@ -450,9 +431,9 @@ insillion-schemas/
 │   └── acord_140_v2016.03.json
 │
 ├── lob/
-│   ├── lob_cyber_v1.0.json
-│   ├── lob_marine_v1.0.json
-│   └── lob_workers_comp_v1.0.json
+│   ├── liability/lob_liability.json
+│   ├── liability/lob_general_liability.json
+│   └── property/lob_property.json
 │
 ├── geo/
 │   ├── geo_india_fire_v1.0.json

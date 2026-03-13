@@ -11,69 +11,69 @@
         "policy_start_time": {"type": "string", "description": "Proposed effective time of the policy.", "long-description": "The specific time on the policy start date when the insurance coverage is intended to begin, usually in HH:MM format."},
         "policy_end_date": {"type": "date", "description": "proposed expiry date", "long-description": "The desired or proposed date when the insurance policy is intended to expire and coverage will cease, unless renewed."},
         "insured": {
-            "$ref": "common/blocks/insured.json",
+            "$ref": "common/insured.json",
             "other_insured_^": {
-                "$ref": "common/blocks/insured.json"
+                "$ref": "common/insured.json"
             }
         },
         "producer": {
-            "$ref": "common/blocks/producer.json"
+            "$ref": "common/producer.json"
         },
         "attachments": {
-            "$ref": "common/blocks/attachments.json"
+            "$ref": "common/attachments.json"
         },
         "location_^": {
-            "$ref": "common/blocks/location.json"
+            "$ref": "common/location.json"
         },
         "carrier": {
-            "$ref": "common/blocks/carrier.json"
+            "$ref": "common/carrier.json"
         },
         "prior_carrier_^": {
-            "$ref": "common/blocks/prior_carrier.json"
+            "$ref": "common/prior_carrier.json"
         },
         "loss_run": {
-            "$ref": "common/blocks/loss_run.json"
+            "$ref": "common/loss_run.json"
         },
         "property": {
-            "$ref": "lob/property/property.json"
+            "$ref": "lob/property/lob_property_v1.0.json"
         },
         "workers_comp": {
-            "$ref": "lob/workers_comp/workers_comp.json"
+            "$ref": "lob/workers_comp/lob_workers_comp_v1.0.json"
         },
         "group_medical": {
-            "$ref": "lob/group_medical/group_medical.json"
+            "$ref": "lob/group_medical/lob_group_medical_v1.0.json"
         },
         "group_accident": {
-            "$ref": "lob/group_medical/group_medical.json"
+            "$ref": "lob/group_medical/lob_group_medical_v1.0.json"
         },
         "liability": {
             "general_liability": {
-                "$ref": "lob/liability/general_liability.json"
+                "$ref": "lob/liability/lob_general_liability_v1.0.json"
             },
             "product_liability": {
-                "$ref": "lob/liability/product_liability.json"            
+                "$ref": "lob/liability/lob_product_liability_v1.0.json"            
             },
             "errors_ommissions": {
-                "$ref": "lob/liability/errors_ommissions.json"
+                "$ref": "lob/liability/lob_errors_ommissions_v1.0.json"
             },
             "directors_officers": {
-                "$ref": "lob/liability/directors_officers.json"
+                "$ref": "lob/liability/lob_directors_officers_v1.0.json"
             }
         },
         "engineering": {
-            "$ref": "lob/engineering/engineering.json"
+            "$ref": "lob/engineering/lob_engineering_v1.0.json"
         },
         "life": {
-            "$ref": "lob/life/life.json"
+            "$ref": "lob/life/lob_life_v1.0.json"
         },
         "underwriting_questions": {
-            "$ref": "common/blocks/underwriting_questions.json"
+            "$ref": "common/underwriting_questions.json"
         },
         "signature": {
-            "$ref": "common/blocks/signature.json"
+            "$ref": "common/signature.json"
         },
         "blanket_^": {
-            "$ref": "common/blocks/blanket.json"
+            "$ref": "common/blanket.json"
         }
     },
     "required": [
